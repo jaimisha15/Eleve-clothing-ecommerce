@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ELEVÉ &mdash; Premium luxury streetwear brand. Explore our curated collections of modern essentials designed for the bold and refined.">
+  <meta name="keywords" content="luxury streetwear, fashion, clothing, premium apparel, designer wear">
+  <meta name="author" content="ELEVÉ">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80'>É</text></svg>">
+  <title>ELEVÉ &mdash; Luxury wear</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Page Loader -->
+  <div class="page-loader" id="pageLoader" role="status" aria-label="Loading">
+    <div class="loader-brand">ELEVÉ</div>
+    <div class="loader-bar"></div>
+  </div>
+
+  <!-- Header  -->
+  <header class="header" id="header" role="banner">
+    <div class="container header-main">
+      <div class="header-left">
+        <a href="index.html" class="nav-logo" aria-label="ELEVÉ Home">ELEVÉ</a>
+      </div>
+
+      <!-- Inline Search -->
+      <div class="header-search-box">
+        <span class="header-search-icon">🔍</span>
+        <input type="search" id="headerSearchInput" class="header-search-input" placeholder="What are you looking for?" autocomplete="off" aria-label="What are you looking for?">
+      </div>
+
+      <!-- Header Utilities -->
+      <div class="header-actions">
+        <a href="admin/index.php" class="btn-admin-pill" style="padding:0.42rem 0.85rem;background:linear-gradient(135deg,#c9a96e,#b89355);color:#0a0a0a;border-radius:20px;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-decoration:none;display:inline-flex;align-items:center;gap:0.35rem;text-transform:uppercase;box-shadow:0 2px 8px rgba(201,169,110,0.3);white-space:nowrap;transition:opacity 0.2s;" title="Admin Dashboard">👑 Admin</a>
+        <button class="btn-auth-pill" id="authBtn">SIGN UP / SIGN IN</button>
+
+        <button class="header-action-item" id="wishlistNavBtn" aria-label="Favourites">
+          <span class="action-icon">♡</span>
+          <span class="action-label">Favourites</span>
+          <span class="wishlist-count" aria-live="polite">0</span>
+        </button>
+
+        <button class="header-action-item" id="cartBtn" aria-label="Basket">
+          <span class="action-icon">🛍️</span>
+          <span class="action-label">Basket</span>
+          <span class="cart-count" id="cartCount" aria-live="polite">0</span>
+        </button>
+
+        <div class="header-more-dropdown">
+          <button class="header-action-item" id="moreNavBtn" aria-label="More options">
+            <span class="action-icon">⋮</span>
+            <span class="action-label">More</span>
+          </button>
+          <div class="more-menu" id="moreMenu">
+            <a href="admin/index.php" style="color:#c9a96e;font-weight:700;">👑 Admin Panel</a>
+            <a href="products.html">All Products</a>
+            <a href="about.html">About Brand</a>
+            <a href="contact.html">Customer Care</a>
+          </div>
+        </div>
+
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Category Thumbnail Strip (Women, Men, Kids) -->
+    <div class="category-strip-wrapper">
+      <div class="container">
+        <div class="category-strip" role="navigation" aria-label="Categories">
+          <a href="women.html" class="category-card-pill">
+            <div class="category-img-circle">
+              <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=240&h=240&fit=crop&q=80" alt="Women" loading="lazy">
+            </div>
+            <span class="category-card-name">Women</span>
+          </a>
+
+          <a href="men.html" class="category-card-pill">
+            <div class="category-img-circle">
+              <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=240&h=240&fit=crop&q=80" alt="Men" loading="lazy">
+            </div>
+            <span class="category-card-name">Men</span>
+          </a>
+
+          <a href="kids.html" class="category-card-pill">
+            <div class="category-img-circle">
+              <img src="https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?w=240&h=240&fit=crop&q=80" alt="Kids" loading="lazy">
+            </div>
+            <span class="category-card-name">Kids</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+    <a href="admin/index.php" style="color:#c9a96e;font-weight:700;">👑 Admin Panel</a>
+    <a href="index.html">Home</a>
+    <a href="men.html">Men</a>
+    <a href="women.html">Women</a>
+    <a href="kids.html">Kids</a>
+    <a href="products.html">Shop All</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&q=80')"></div>
+    <div class="hero-content">
+      <p class="hero-overline">New Collection 2026</p>
+      <h1 class="hero-title">Define Your <span>Elegance</span></h1>
+      <p class="hero-desc">Every thread tells a story of precision, passion, and modern sophistication.</p>
+      <div class="hero-actions">
+        <a href="products.html" class="btn btn-primary">Shop Collection</a>
+        <a href="about.html" class="btn btn-outline">Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Bar -->
+  <section class="section" aria-label="Brand features">
+    <div class="container">
+      <div class="features-bar reveal">
+        <div class="feature-item">
+          <div class="feature-icon">&#128666;</div>
+          <div class="feature-title">Free Shipping</div>
+          <div class="feature-desc">On orders over $150</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">&#10024;</div>
+          <div class="feature-title">Premium Quality</div>
+          <div class="feature-desc">Handcrafted materials</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">&#128260;</div>
+          <div class="feature-title">Easy Returns</div>
+          <div class="feature-desc">30-day return policy</div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">&#128274;</div>
+          <div class="feature-title">Secure Payment</div>
+          <div class="feature-desc">100% encrypted checkout</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Promo Banner -->
+  <div class="promo-banner reveal">
+    <div class="container">
+      <p class="promo-text">🚚 Free Shipping on all orders over <strong>₹999</strong> &nbsp;|&nbsp; Premium Quality Assured</p>
+    </div>
+  </div>
+
+  <!-- Shop by Gender -->
+  <section class="section" id="categories" aria-labelledby="catTitle">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title" id="catTitle">Shop by <span class="text-accent">Gender</span></h2>
+        <p class="section-subtitle">Explore our curated collections for everyone</p>
+      </div>
+      <div class="gender-nav reveal">
+        <a href="men.html" class="gender-card">
+          <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=600&q=80&fit=crop" alt="Men's Collection" loading="lazy">
+          <div class="gender-card-label">Men<span>Shop Now</span></div>
+        </a>
+        <a href="women.html" class="gender-card">
+          <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=600&q=80&fit=crop" alt="Women's Collection" loading="lazy">
+          <div class="gender-card-label">Women<span>Shop Now</span></div>
+        </a>
+        <a href="kids.html" class="gender-card">
+          <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=600&q=80&fit=crop" alt="Kids' Collection" loading="lazy">
+          <div class="gender-card-label">Kids<span>Shop Now</span></div>
+        </a>
+        <a href="footwear.html" class="gender-card">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80&fit=crop" alt="Footwear Collection" loading="lazy">
+          <div class="gender-card-label">Footwear<span>Shop Now</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="section" id="featured" aria-labelledby="featTitle">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-title" id="featTitle">Featured <span class="text-accent">Products</span></h2>
+        <p class="section-subtitle">Our most sought-after pieces this season</p>
+      </div>
+      
+      <!-- Skeleton Loaders -->
+      <div class="grid grid-4" id="skeletonGrid" aria-hidden="true">
+        <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-text"></div><div class="skeleton-text short"></div><div class="skeleton-text price"></div></div>
+        <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-text"></div><div class="skeleton-text short"></div><div class="skeleton-text price"></div></div>
+        <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-text"></div><div class="skeleton-text short"></div><div class="skeleton-text price"></div></div>
+        <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-text"></div><div class="skeleton-text short"></div><div class="skeleton-text price"></div></div>
+      </div>
+
+      <div class="grid grid-4 stagger-children" id="featuredGrid" style="display:none">
+        <!-- Products populated dynamically by app.js -->
+      </div>
+      <div style="text-align:center;margin-top:var(--sp-xl)">
+        <a href="products.html" class="btn btn-outline reveal">View All Products &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="section" aria-labelledby="nlTitle">
+    <div class="container">
+      <div class="newsletter reveal">
+        <h2 class="section-title" id="nlTitle" style="margin-bottom:var(--sp-sm)">Stay <span class="text-accent">Connected</span></h2>
+        <p class="section-subtitle" style="margin-bottom:0">Subscribe to receive exclusive drops, styling tips, and 10% off your first order.</p>
+        <form class="newsletter-form" id="newsletterForm" aria-label="Newsletter signup">
+          <label for="nlEmail" class="sr-only">Email address</label>
+          <input type="email" id="nlEmail" placeholder="Enter your email" required aria-required="true">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">ELEVÉ</div>
+          <p class="footer-desc">Luxury streetwear for the modern individual. Every piece is designed with intent, crafted with passion.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" aria-label="Twitter"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+            <a href="#" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+            <a href="#" aria-label="Pinterest"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Shop</h4>
+          <ul class="footer-links">
+            <li><a href="men.html">Men</a></li>
+            <li><a href="women.html">Women</a></li>
+            <li><a href="kids.html">Kids</a></li>
+            <li><a href="products.html?filter=new">New Arrivals</a></li>
+            <li><a href="products.html?filter=bestseller">Best Sellers</a></li>
+            <li><a href="products.html?filter=sale">Sale</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">Careers</a></li>
+            <li><a href="about.html">Press</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Support</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">FAQ</a></li>
+            <li><a href="contact.html">Shipping & Returns</a></li>
+            <li><a href="contact.html">Size Guide</a></li>
+            <li><a href="contact.html">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 ELEVÉ. All rights reserved.</p>
+        <p>Designed with ♥ for modern fashion</p>
+      </div>
+    </div>
+  </footer>
+  <script src='https://cdn.jotfor.ms/agent/embedjs/019d1b8c15967bc6a65f0d5fe22d8c95fdee/embed.js'></script>
+  
+
+
+  <!-- Sign Up / Sign In Modal -->
+  <div class="auth-overlay" id="authOverlay" aria-hidden="true"></div>
+  <div class="auth-modal" id="authModal" role="dialog" aria-label="Sign In or Sign Up" aria-hidden="true">
+    <button class="auth-close" id="authClose" aria-label="Close modal">&times;</button>
+    <div class="auth-header">
+      <div class="auth-brand">ELEVÉ</div>
+      <h2 class="auth-title">Welcome to Luxury Fashion</h2>
+      <p class="auth-subtitle">Sign in or create your account to unlock exclusive perks</p>
+    </div>
+        <!-- Tabs for Sign In vs Register -->
+    <div class="auth-tabs" id="authTabs">
+      <button type="button" class="auth-tab active" id="tabSignInBtn">Sign In</button>
+      <button type="button" class="auth-tab" id="tabRegisterBtn">Create Account</button>
+    </div>
+
+    <!-- Sign In Form -->
+    <form class="auth-form" id="authForm">
+      <div class="form-group">
+        <label for="authEmail">Email Address</label>
+        <input type="email" id="authEmail" class="form-control" placeholder="name@example.com" required>
+      </div>
+      <div class="form-group">
+        <label for="authPassword">Password</label>
+        <input type="password" id="authPassword" class="form-control" placeholder="••••••••" required>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%">Sign In</button>
+      <div class="auth-divider"><span>OR</span></div>
+      <button type="button" class="btn btn-outline" style="width:100%" id="guestCheckoutBtn">Continue as Guest</button>
+      <div class="auth-full-links">
+        <a href="login.php">Full Login Page</a> &bull;
+        <a href="register.php">Full Register Page</a>
+      </div>
+    </form>
+
+    <!-- Register Form -->
+    <form class="auth-form" id="registerForm" style="display:none;">
+      <div class="form-group">
+        <label for="regName">Full Name</label>
+        <input type="text" id="regName" class="form-control" placeholder="Your Name" required>
+      </div>
+      <div class="form-group">
+        <label for="regEmail">Email Address</label>
+        <input type="email" id="regEmail" class="form-control" placeholder="name@example.com" required>
+      </div>
+      <div class="form-group">
+        <label for="regPhone">Phone Number</label>
+        <input type="tel" id="regPhone" class="form-control" placeholder="+91 98765 43210">
+      </div>
+      <div class="form-group">
+        <label for="regPassword">Password</label>
+        <input type="password" id="regPassword" class="form-control" placeholder="At least 3 characters" required>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%">Create Account</button>
+      <div class="auth-full-links">
+        <span>Already registered?</span> <a href="#" id="linkSwitchToSignIn">Sign In</a> &bull;
+        <a href="register.php">Full Register Page</a>
+      </div>
+    </form>
+  </div>
+
+  <!-- Cart Flyout -->
+  <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+  <aside class="cart-flyout" id="cartFlyout" role="dialog" aria-label="Shopping cart" aria-hidden="true">
+    <div class="cart-flyout-header">
+      <h2 class="cart-flyout-title">Your Cart</h2>
+      <button class="cart-close" id="cartClose" aria-label="Close cart">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">Your cart is empty</div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <span class="amount" id="cartTotal">&#8377;0</span>
+      </div>
+      <a href="checkout.html" class="btn btn-primary" style="width:100%;display:block;text-align:center;text-decoration:none">Proceed to Checkout</a>
+    </div>
+  </aside>
+
+  <!-- Wishlist Flyout -->
+  <div class="cart-overlay" id="wishlistOverlay" aria-hidden="true"></div>
+  <aside class="cart-flyout" id="wishlistFlyout" role="dialog" aria-label="Wishlist" aria-hidden="true">
+    <div class="cart-flyout-header">
+      <h2 class="cart-flyout-title">Your Wishlist</h2>
+      <button class="cart-close" id="wishlistClose" aria-label="Close wishlist">&times;</button>
+    </div>
+    <div class="cart-items" id="wishlistItems"><div class="cart-empty">Your wishlist is empty</div></div>
+    <div class="cart-footer">
+      <a href="products.html" class="btn btn-primary" style="width:100%;text-align:center;text-decoration:none">Browse Products</a>
+    </div>
+  </aside>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="alert" aria-live="assertive">
+    <span class="toast-icon">&check;</span>
+    <span class="toast-message" id="toastMessage">Success!</span>
+  </div>
+
+  <script src="product-data.js"></script>
+  <script src="product-data-extra.js"></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
+
+
+
