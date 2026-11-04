@@ -1,5 +1,5 @@
 /* ============================================================
-   Siya Clothing — Core Application JavaScript
+   ELEVÉ — Core Application JavaScript
    ============================================================
    Features:
    - Page loader with timeout

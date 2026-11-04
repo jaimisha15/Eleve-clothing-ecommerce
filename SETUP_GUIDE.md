@@ -15,14 +15,14 @@
 
 Browser mein visit karo:
 ```
-http://localhost/atte/Siya-Clothing-ecommerce-main/Eleve%20E-commerce%20-main/php/fix_admin_password.php
+http://localhost/Eleve-clothing-ecommerce/php/fix_admin_password.php
 ```
 Ek baar run karo, phir ye file delete kar do.
 
 ## Step 3: Admin Panel Access
 
 ```
-URL:      http://localhost/atte/Siya-Clothing-ecommerce-main/Eleve%20E-commerce%20-main/admin/login.php
+URL:      http://localhost/Eleve-clothing-ecommerce/admin/login.php
 Email:    admin@gmail.com
 Password: admin
 ```
@@ -30,7 +30,7 @@ Password: admin
 ## Step 4: Store Access
 
 ```
-http://localhost/atte/Siya-Clothing-ecommerce-main/Eleve%20E-commerce%20-main/index.html
+http://localhost/Eleve-clothing-ecommerce/index.html
 ```
 
 ---

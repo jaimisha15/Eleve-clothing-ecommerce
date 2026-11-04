@@ -1,4 +1,4 @@
-/* Siya Clothing — Extended Product Catalog (Men / Women / Kids / Footwear) */
+/* ELEVÉ — Extended Product Catalog (Men / Women / Kids / Footwear) */
 const EXTRA_PRODUCTS = [
   /* ===== MEN ===== */
   {id:13,name:'Classic Polo Shirt',category:'Polo',subcategory:'polo',gender:'men',price:899,oldPrice:null,badge:'New',color:'navy',rating:4.6,isNewArrival:true,isBestSeller:false,sizes:['S','M','L','XL','XXL'],colors:[{name:'Navy',hex:'#1a2744'},{name:'White',hex:'#f5f5f5'},{name:'Black',hex:'#1a1a1a'}],images:['https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?w=800&q=80&fit=crop','https://images.unsplash.com/photo-1625910513416-6c8c1ae4d8e8?w=800&q=80&fit=crop'],description:'Premium 220GSM pique cotton polo with ribbed collar — the ultimate smart-casual essential.',details:['100% pique cotton, 220GSM','Ribbed collar and cuffs','Slim fit with side vents'],fit:'Regular fit. True to size. Model is 6\'0\" wearing M.'},

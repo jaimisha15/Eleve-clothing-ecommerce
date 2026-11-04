@@ -1,6 +1,6 @@
 <?php
 // ELEVÉ — Fix Admin Password to 123
-// Visit: http://localhost/Siya-Clothing-ecommerce-main/Eleve%20E-commerce%20-main/php/fix_admin_password.php
+// Visit: http://localhost/Eleve-clothing-ecommerce/php/fix_admin_password.php
 
 require_once __DIR__ . '/config.php';
 

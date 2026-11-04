@@ -455,5 +455,5 @@ echo "  Admin Panel : admin/login.php\n";
 echo "  Email       : admin@gmail.com\n";
 echo "  Password    : admin\n";
 echo "  Store       : index.html\n\n";
-echo "  URL: http://localhost/atte/Siya-Clothing-ecommerce-main/Eleve E-commerce -main/admin/login.php\n\n";
+echo "  URL: http://localhost/Eleve-clothing-ecommerce/admin/login.php\n\n";
 echo "========================================\n\n";

@@ -9,7 +9,7 @@ define('DB_PASS', '');
 define('DB_NAME', 'eleve_ecommerce');
 define('DB_CHARSET', 'utf8mb4');
 
-define('SITE_URL', 'http://localhost/Siya-Clothing-ecommerce-main/Eleve%20E-commerce%20-main');
+define('SITE_URL', 'http://localhost/Eleve-clothing-ecommerce');
 define('ADMIN_EMAIL', 'admin@gmail.com');
 define('ADMIN_PASS', '123');
 

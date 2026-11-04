@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/badge/License-Academic%20Project-green.svg?style=flat-square)]()
 [![Status](https://img.shields.io/badge/Project%20Status-Completed-success.svg?style=flat-square)]()
 
-An end-to-end, full-stack e-commerce web application designed for **ELEVÉ / Siya Clothing**, a contemporary luxury fashion and streetwear brand. The platform provides a sleek, high-fashion storefront for customers coupled with a feature-packed administrative dashboard and a robust PHP & MySQL backend.
+An end-to-end, full-stack e-commerce web application designed for **ELEVÉ**, a contemporary luxury fashion and streetwear brand. The platform provides a sleek, high-fashion storefront for customers coupled with a feature-packed administrative dashboard and a robust PHP & MySQL backend.
 
 ---
 
@@ -22,10 +22,10 @@ An end-to-end, full-stack e-commerce web application designed for **ELEVÉ / Siy
 
 - [Project Overview](#-project-overview)
 - [Key Features](#-key-features)
-  - [Customer Front-End Experience](#1-customer-front-end-experience)
-  - [Shopping & Checkout System](#2-shopping--checkout-system)
-  - [Admin Management Portal](#3-admin-management-portal)
-  - [Backend & Security](#4-backend--security)
+  - [1. Customer Front-End Experience](#1-customer-front-end-experience)
+  - [2. Shopping & Checkout System](#2-shopping--checkout-system)
+  - [3. Admin Management Portal](#3-admin-management-portal)
+  - [4. Backend Architecture & Security](#4-backend-architecture--security)
 - [Technology Stack](#-technology-stack)
 - [Database Architecture](#-database-architecture)
 - [Directory Structure](#-directory-structure)
@@ -36,16 +36,16 @@ An end-to-end, full-stack e-commerce web application designed for **ELEVÉ / Siy
   - [Step 3: Admin & User Credentials](#step-3-admin--user-credentials)
   - [Step 4: Launching the Application](#step-4-launching-the-application)
 - [REST API Endpoints](#-rest-api-endpoints)
-- [Contributing & License](#-contributing--license)
+- [Academic Acknowledgment & Disclaimers](#-academic-acknowledgment--disclaimers)
 
 ---
 
 ## 📖 Project Overview
 
-**ELEVÉ** is a modern e-commerce solution built for the User Defined Project (UDP) curriculum. It provides an immersive shopping environment inspired by top-tier global luxury streetwear brands. 
+**ELEVÉ** is a modern e-commerce solution developed as part of the **User Defined Project (UDP)** curriculum. It provides an immersive shopping environment inspired by top-tier global luxury streetwear brands. 
 
 The application solves common e-commerce requirements:
-- **Instant Product Discovery:** Search, filter, and view curated categories with zero latency.
+- **Instant Product Discovery:** Search, filter, and view curated collections with zero latency.
 - **Cart & Wishlist Synchronization:** Both client-side state and server-side session persistence.
 - **Order Pipeline:** Multi-step checkout with multiple payment methods and order tracking.
 - **Centralized Administration:** Complete data-driven control over products, orders, categories, customer feedback, and sales analytics.
@@ -56,15 +56,15 @@ The application solves common e-commerce requirements:
 
 ### 1. Customer Front-End Experience
 - **Luxury Brand Aesthetic:** High-end dark & gold-accented typography, fluid responsive grid, micro-animations, and custom scrollbars.
-- **Curated Collections:** Dedicated department portals for **Women**, **Men**, and **Kids**, with category badges (New Arrivals, Best Sellers, Featured).
+- **Curated Collections:** Dedicated department portals for **Women**, **Men**, and **Kids**, with category badges (*New Arrivals*, *Best Sellers*, *Featured*).
 - **Dynamic Product Catalog:** Real-time search bar, sorting (price low-high, high-low, rating), gender filters, and live category chips.
 - **Interactive Product Details:**
   - Multi-image gallery with thumbnail selection.
   - Interactive Size Selector (`XS`, `S`, `M`, `L`, `XL`, `XXL`).
-  - Dynamic Color Swatch picker.
-  - Real-time stock display and quantity counters.
+  - Dynamic Color Swatch picker with real-time UI feedback.
+  - Live stock display and quantity counters.
   - Customer review display with star ratings.
-- **Mobile-First Responsive Layout:** Bottom navigation bar for effortless single-thumb mobile browsing across all device sizes.
+- **Mobile-First Responsive Layout:** Persistent bottom navigation bar for effortless single-thumb mobile browsing across all device sizes.
 
 ### 2. Shopping & Checkout System
 - **Slide-Out Cart & Wishlist Drawers:** Off-canvas flyout panels that allow reviewing items and adjusting quantities without leaving the current page.
@@ -94,7 +94,7 @@ The application solves common e-commerce requirements:
 - **Newsletter Management (`newsletter.php`):** View subscriber list and export contacts directly to CSV.
 - **Store Settings (`settings.php`):** Configure site name, contact email, currency, shipping fees, tax rates, and administrator password.
 
-### 4. Backend & Security
+### 4. Backend Architecture & Security
 - **Modern PHP REST API:** Modular endpoints for authentication, cart, orders, and products.
 - **Secure Authentication:** `password_hash()` and `password_verify()` (Bcrypt) for user and admin credentials.
 - **SQL Injection Prevention:** 100% prepared statements via PHP Data Objects (PDO).
@@ -119,20 +119,6 @@ The application solves common e-commerce requirements:
 
 The system utilizes an optimized MySQL database (`eleve_ecommerce`) composed of 13 interconnected tables:
 
-```mermaid
-erDiagram
-    USERS ||--o{ ORDERS : places
-    USERS ||--o{ REVIEWS : writes
-    CATEGORIES ||--o{ PRODUCTS : contains
-    PRODUCTS ||--o{ PRODUCT_IMAGES : has
-    PRODUCTS ||--o{ PRODUCT_SIZES : has
-    PRODUCTS ||--o{ PRODUCT_COLORS : has
-    PRODUCTS ||--o{ ORDER_ITEMS : contains
-    PRODUCTS ||--o{ REVIEWS : receives
-    ORDERS ||--|{ ORDER_ITEMS : includes
-    COUPONS ||--o{ ORDERS : applies_to
-```
-
 - `users` — Customer accounts, password hashes, and user roles (`user`, `admin`).
 - `categories` — Product categories with department mapping (Men, Women, Kids, Unisex).
 - `products` — Core inventory details, pricing, discount badges, ratings, and descriptions.
@@ -152,56 +138,53 @@ erDiagram
 ## 📂 Directory Structure
 
 ```text
-FINALUDPFOLDER/
+Eleve-clothing-ecommerce/
 │
-├── .gitignore                                 # Git ignore configuration
-├── README.md                                  # Repository overview and guide
+├── .gitignore                         # Git ignore configuration
+├── README.md                          # Repository overview and documentation
+├── SETUP_GUIDE.md                     # Quick setup instructions
 │
-└── Siya-Clothing-ecommerce-main/
-    │
-    ├── index.php                              # Root entry point redirector
-    ├── login.php / register.php / logout.php  # User authentication shortcuts
-    ├── checkout.php / checkout.html           # Checkout shortcuts
-    │
-    └── Eleve E-commerce -main/                # Main Application Core
-        ├── index.html                         # Storefront Home Page
-        ├── products.html                      # All Products / Catalog
-        ├── product-detail.html                # Product Detail Page
-        ├── men.html                           # Men's Collection
-        ├── women.html                         # Women's Collection
-        ├── kids.html                          # Kids' Collection
-        ├── about.html                         # About Brand & Story
-        ├── contact.html                       # Customer Support & Form
-        ├── checkout.html                      # Order Checkout & Payment
-        ├── 404.html                           # Not Found Error Page
-        ├── styles.css                         # Master Stylesheet (Variables, Responsive UI)
-        ├── app.js                             # Client-side Interactions & State Logic
-        ├── product-data.js                    # Catalog Dataset / Client Fallback
-        ├── product-data-extra.js              # Additional Product Mock Data
-        ├── database.sql                       # Complete MySQL Schema & Initial Data
-        ├── manifest.json                      # PWA Web App Manifest
-        │
-        ├── admin/                             # Admin Management Portal
-        │   ├── index.php                      # Admin Dashboard with Sales Charts
-        │   ├── login.php / logout.php         # Admin Authentication
-        │   ├── products.php                   # Product Inventory CRUD
-        │   ├── orders.php                     # Order Tracking & Status
-        │   ├── users.php                      # Customer Account Management
-        │   ├── categories.php                 # Category Management
-        │   ├── coupons.php                    # Coupon & Discount Codes
-        │   ├── reviews.php                    # Product Review Moderation
-        │   ├── messages.php                   # Contact Form Inbox
-        │   ├── newsletter.php                 # Newsletter Subscribers & CSV Export
-        │   ├── settings.php                   # Store Configuration & Password Reset
-        │   └── includes/                      # Admin Layout Templates & Partials
-        │
-        └── php/                               # Backend REST API
-            ├── config.php                     # PDO Connection, CORS & Helpers
-            ├── auth.php                       # Authentication API (Login/Register/Session)
-            ├── products.php                   # Products API (Search/Filter/List/Detail)
-            ├── cart.php                       # Cart, Wishlist, Contact & Newsletter API
-            ├── orders.php                     # Orders Creation & History API
-            └── fix_admin_password.php         # Admin Password Reset Utility
+├── index.html                         # Storefront Home Page
+├── products.html                      # All Products / Catalog
+├── product-detail.html                # Product Detail Page
+├── men.html                           # Men's Collection
+├── women.html                         # Women's Collection
+├── kids.html                          # Kids' Collection
+├── about.html                         # About Brand & Story
+├── contact.html                       # Customer Support & Form
+├── checkout.html                      # Order Checkout & Payment
+├── 404.html                           # Not Found Error Page
+├── login.php                          # Customer Login
+├── register.php                       # Customer Registration
+├── logout.php                         # Session Logout
+├── styles.css                         # Master Stylesheet (Variables, Responsive UI)
+├── app.js                             # Client-side Interactions & State Logic
+├── product-data.js                    # Catalog Dataset / Client Fallback
+├── product-data-extra.js              # Additional Product Mock Data
+├── database.sql                       # Complete MySQL Schema & Initial Data
+├── manifest.json                      # PWA Web App Manifest
+│
+├── admin/                             # Admin Management Portal
+│   ├── index.php                      # Admin Dashboard with Sales Charts
+│   ├── login.php / logout.php         # Admin Authentication
+│   ├── products.php                   # Product Inventory CRUD
+│   ├── orders.php                     # Order Tracking & Status
+│   ├── users.php                      # Customer Account Management
+│   ├── categories.php                 # Category Management
+│   ├── coupons.php                    # Coupon & Discount Codes
+│   ├── reviews.php                    # Product Review Moderation
+│   ├── messages.php                   # Contact Form Inbox
+│   ├── newsletter.php                 # Newsletter Subscribers & CSV Export
+│   ├── settings.php                   # Store Configuration & Password Reset
+│   └── includes/                      # Admin Layout Templates & Partials
+│
+└── php/                               # Backend REST API
+    ├── config.php                     # PDO Connection, CORS & Helpers
+    ├── auth.php                       # Authentication API (Login/Register/Session)
+    ├── products.php                   # Products API (Search/Filter/List/Detail)
+    ├── cart.php                       # Cart, Wishlist, Contact & Newsletter API
+    ├── orders.php                     # Orders Creation & History API
+    └── fix_admin_password.php         # Admin Password Reset Utility
 ```
 
 ---
@@ -219,7 +202,7 @@ FINALUDPFOLDER/
 
 1. Copy the project folder into your XAMPP `htdocs` directory:
    ```text
-   C:\xampp\htdocs\FINALUDPFOLDER
+   C:\xampp\htdocs\Eleve-clothing-ecommerce
    ```
 2. Start **Apache** and **MySQL** modules from the **XAMPP Control Panel**.
 
@@ -236,10 +219,7 @@ FINALUDPFOLDER/
    - Collation: `utf8mb4_unicode_ci`
    - Click **Create**.
 3. Select the `eleve_ecommerce` database, then navigate to the **Import** tab.
-4. Click **Choose File** and select:
-   ```text
-   FINALUDPFOLDER/Siya-Clothing-ecommerce-main/Eleve E-commerce -main/database.sql
-   ```
+4. Click **Choose File** and select `database.sql` from the project root.
 5. Click **Import** (or **Go**) at the bottom. All 13 tables with starter data will be created automatically.
 
 ---
@@ -247,12 +227,12 @@ FINALUDPFOLDER/
 ### Step 3: Admin & User Credentials
 
 #### 👑 Admin Portal Credentials
-- **Login URL:** `http://localhost/FINALUDPFOLDER/Siya-Clothing-ecommerce-main/Eleve%20E-commerce%20-main/admin/login.php`
+- **Login URL:** `http://localhost/Eleve-clothing-ecommerce/admin/login.php`
 - **Email:** `admin@gmail.com`
 - **Password:** `123` *(or `admin`)*
 
 > **Tip:** If you need to re-hash the admin password, run:  
-> `http://localhost/FINALUDPFOLDER/Siya-Clothing-ecommerce-main/Eleve%20E-commerce%20-main/php/fix_admin_password.php` once in your browser.
+> `http://localhost/Eleve-clothing-ecommerce/php/fix_admin_password.php` once in your browser.
 
 #### 🛍️ Customer Test Account
 - You can register a new account on the storefront or use any existing customer entry in the database.
@@ -263,11 +243,11 @@ FINALUDPFOLDER/
 
 - **Storefront (Customer View):**
   ```text
-  http://localhost/FINALUDPFOLDER/Siya-Clothing-ecommerce-main/Eleve%20E-commerce%20-main/index.html
+  http://localhost/Eleve-clothing-ecommerce/index.html
   ```
 - **Admin Dashboard (Management View):**
   ```text
-  http://localhost/FINALUDPFOLDER/Siya-Clothing-ecommerce-main/Eleve%20E-commerce%20-main/admin/index.php
+  http://localhost/Eleve-clothing-ecommerce/admin/index.php
   ```
 
 ---
@@ -303,4 +283,4 @@ This project is developed as an academic requirement for the **User Defined Proj
 
 ---
 
-&copy; 2026 ELEVÉ / Siya Clothing. Designed & Developed for Academic Demonstration.
+&copy; 2026 ELEVÉ. Designed & Developed for Academic Demonstration.
