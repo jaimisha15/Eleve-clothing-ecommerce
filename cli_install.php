@@ -306,10 +306,6 @@ $products = [
     [30,'Girls Floral Dress','Dresses','dresses','kids',799,null,null,4.6,0,0,0,'Smocked floral dress for girls — perfect for parties and everyday play.','Regular fit. Order by age.','100% cotton|Smocked bodice|Flared skirt with pockets'],
     [31,'Kids School Uniform Shirt','School Wear','school-wear','kids',499,null,null,4.3,0,1,0,'Wrinkle-resistant school shirt in easy-care cotton blend — built to last the school day.','Regular fit. Order by age.','65% polyester 35% cotton|Wrinkle-resistant|Easy-care machine washable'],
     [32,'Kids Winter Jacket','Winter Wear','winter-wear','kids',1299,null,'New',4.7,1,0,0,'Padded winter jacket with water-resistant outer shell and warm fleece lining.','Regular fit. Size up for layering.','Water-resistant outer shell|Warm fleece lining|Full-zip with hood'],
-    [33,'Classic White Sneakers','Sneakers','sneakers','unisex',1999,null,'New',4.8,1,1,1,'Minimalist vulcanised canvas sneakers with clean white profile — a timeless classic.','True to size. Half size up for wide feet.','Canvas upper|Vulcanised rubber sole|Lace-up closure'],
-    [34,'Logo Slides','Slides','slides','unisex',799,null,null,4.4,0,0,0,'Lightweight EVA logo slides with cushioned footbed — poolside to pavement.','True to size.','EVA upper and sole|Cushioned contoured footbed|Embossed logo strap'],
-    [35,'Chelsea Boots','Boots','boots','men',3499,3999,'Sale',4.7,0,0,0,'Full-grain leather Chelsea boots with elastic side panels and stacked leather heel.','True to size. Half size up for wide feet.','Full-grain leather upper|Elastic side gussets|Leather stacked heel'],
-    [36,'Running Shoes','Running Shoes','running-shoes','unisex',2499,null,'New',4.6,1,0,0,'Lightweight mesh running shoes with responsive foam midsole for daily training.','Half size up recommended.','Engineered mesh upper|Responsive foam midsole|Rubber outsole for grip'],
 ];
 
 try {
@@ -361,10 +357,6 @@ $images = [
     [30,'https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?w=800&q=80&fit=crop',0],
     [31,'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&q=80&fit=crop',0],
     [32,'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=800&q=80&fit=crop',0],
-    [33,'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80&fit=crop',0],
-    [34,'https://images.unsplash.com/photo-1603487742131-4160ec999306?w=800&q=80&fit=crop',0],
-    [35,'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80&fit=crop',0],
-    [36,'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80&fit=crop',0],
 ];
 $sizes = [
     [1,'S'],[1,'M'],[1,'L'],[1,'XL'],[2,'XS'],[2,'S'],[2,'M'],[2,'L'],[2,'XL'],
@@ -382,10 +374,6 @@ $sizes = [
     [30,'3-4Y'],[30,'5-6Y'],[30,'7-8Y'],[30,'9-10Y'],
     [31,'3-4Y'],[31,'5-6Y'],[31,'7-8Y'],[31,'9-10Y'],[31,'11-12Y'],
     [32,'3-4Y'],[32,'5-6Y'],[32,'7-8Y'],[32,'9-10Y'],[32,'11-12Y'],
-    [33,'UK6'],[33,'UK7'],[33,'UK8'],[33,'UK9'],[33,'UK10'],[33,'UK11'],
-    [34,'UK6'],[34,'UK7'],[34,'UK8'],[34,'UK9'],[34,'UK10'],
-    [35,'UK6'],[35,'UK7'],[35,'UK8'],[35,'UK9'],[35,'UK10'],[35,'UK11'],
-    [36,'UK6'],[36,'UK7'],[36,'UK8'],[36,'UK9'],[36,'UK10'],[36,'UK11'],
 ];
 $colors = [
     [1,'Black','#1a1a1a'],[1,'White','#f5f5f5'],[1,'Charcoal','#808080'],
@@ -412,10 +400,6 @@ $colors = [
     [30,'Pink','#FFB6C1'],[30,'Yellow','#FFD700'],
     [31,'White','#f5f5f5'],[31,'Light Blue','#add8e6'],
     [32,'Navy','#1a2744'],[32,'Red','#c0392b'],[32,'Black','#1a1a1a'],
-    [33,'White','#f5f5f5'],[33,'Black','#1a1a1a'],
-    [34,'Black','#1a1a1a'],[34,'White','#f5f5f5'],[34,'Gray','#808080'],
-    [35,'Brown','#8B6914'],[35,'Black','#1a1a1a'],
-    [36,'Gray','#808080'],[36,'Black','#1a1a1a'],[36,'Navy','#1a2744'],
 ];
 
 try {

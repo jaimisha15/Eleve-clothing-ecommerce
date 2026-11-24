@@ -25,7 +25,7 @@
   const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
   function productImg(url, width = 800) {
-    if (!url) return 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80&fit=crop';
+    if (!url) return 'images/men/tshirt-1.jpg';
     if (url.includes('unsplash.com')) {
       return url.replace(/w=\d+/, 'w=' + width);
     }
@@ -167,7 +167,7 @@
           id: item.id || 0,
           name: item.name,
           price: parseFloat(item.price) || 0,
-          img: item.img || 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=150',
+          img: item.img || 'images/men/tshirt-1.jpg',
           size: item.size || 'M',
           color: item.color || '',
           qty: parseInt(item.qty) || 1
@@ -219,7 +219,7 @@
         container.innerHTML = items.map((item, i) => `
           <div class="cart-item" style="display:flex;gap:0.75rem;padding:0.75rem 0;border-bottom:1px solid var(--clr-border);align-items:center;">
             <div class="cart-item-img" style="width:55px;height:65px;flex-shrink:0;border-radius:4px;overflow:hidden;background:#1e1e1e;">
-              <img src="${item.img || 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=150'}" alt="${item.name}" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
+              <img src="${item.img || 'images/men/tshirt-1.jpg'}" alt="${item.name}" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
             </div>
             <div style="flex:1;min-width:0;">
               <div class="cart-item-name" style="font-weight:600;font-size:0.85rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${item.name}</div>
@@ -570,7 +570,7 @@
     else if (p.badge) badges.push(`<span class="product-badge">${p.badge}</span>`);
     
     // Default image
-    const imgUrl = p.images && p.images.length > 0 ? p.images[0] : 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80&fit=crop';
+    const imgUrl = p.images && p.images.length > 0 ? productImg(p.images[0], 800) : 'images/men/tshirt-1.jpg';
     
     // Build comma separated sizes for data attribute
     const sizesStr = p.sizes ? p.sizes.join(',') : '';
@@ -584,7 +584,7 @@
         data-size="${sizesStr}" 
         data-color="${(p.colors && p.colors[0]) || ''}">
         <div class="product-card-img">
-          <img src="${imgUrl}" alt="${p.name}" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80&fit=crop'">
+          <img src="${imgUrl}" alt="${p.name}" loading="lazy" onerror="this.onerror=null;this.src='images/men/tshirt-1.jpg'">
           ${badges.join('')}
           <div class="product-overlay" style="display:flex;gap:0.4rem;flex-wrap:wrap;justify-content:center;padding:0.5rem;">
             <a href="product-detail.html?id=${p.id}" class="btn btn-primary btn-sm">Quick View</a>
@@ -1315,7 +1315,7 @@
         <p class="search-hint">${q === '' ? 'Popular trending picks' : `${matched.length} result${matched.length !== 1 ? 's' : ''} for "${query}"`}</p>
         <div class="search-grid">
           ${matched.map(p => {
-        const img = (p.images && p.images[0]) ? `${p.images[0]}&w=200&q=70&fit=crop` : '';
+        const img = (p.images && p.images[0]) ? productImg(p.images[0], 200) : 'images/men/tshirt-1.jpg';
         const price = p.oldPrice
           ? `<span class="search-price">₹${p.price.toFixed(0)}</span><span class="search-old-price">₹${p.oldPrice.toFixed(0)}</span>`
           : `<span class="search-price">₹${p.price.toFixed(0)}</span>`;
