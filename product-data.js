@@ -251,16 +251,16 @@ const PRODUCTS = [
     },
     {
         id: 8,
-        name: 'Signature Leather Bag',
+        name: 'Signature Leather Belt',
         category: 'Accessories',
-        subcategory: 'bags',
-        gender: 'women',
-        rating: 4.6,
+        subcategory: 'accessories',
+        gender: 'men',
+        rating: 4.8,
         isNewArrival: false,
-        isBestSeller: false,
-        price: 499,
+        isBestSeller: true,
+        price: 999,
         oldPrice: null,
-        badge: null,
+        badge: 'Popular',
         color: 'black',
         sizes: ['M'],
         colors: [
@@ -268,12 +268,11 @@ const PRODUCTS = [
             { name: 'Brown', hex: '#8B6914' }
         ],
         images: [
-            'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&q=80&fit=crop',
             'https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=800&q=80&fit=crop',
-            'https://images.unsplash.com/photo-1585856331426-d7b3f9fc5c16?w=800&q=80&fit=crop',
-            'https://images.unsplash.com/photo-1609505848912-b7c3b8b4beda?w=800&q=80&fit=crop'
+            'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&q=80&fit=crop',
+            'https://images.unsplash.com/photo-1585856331426-d7b3f9fc5c16?w=800&q=80&fit=crop'
         ],
-        description: 'The finishing touch. Our Signature Leather Bag is hand-crafted from full-grain Italian leather with a brushed nickel buckle. Designed to develop character over years of wear.',
+        description: 'The finishing touch. Our Signature Leather Belt is hand-crafted from full-grain Italian leather with a brushed nickel buckle. Designed to develop character over years of wear.',
         details: [
             'Full-grain Italian leather, 3.5cm width',
             'Brushed nickel buckle with ELEVÉ monogram',

@@ -186,8 +186,8 @@
           </select>
         </div>
 
-        <!-- Skeleton Loaders -->
-        <div class="grid grid-3" id="skeletonGrid" aria-hidden="true">
+        <!-- Skeleton Loaders (hidden once products render) -->
+        <div class="grid grid-3" id="skeletonGrid" aria-hidden="true" style="display:none">
           <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-text"></div><div class="skeleton-text short"></div><div class="skeleton-text price"></div></div>
           <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-text"></div><div class="skeleton-text short"></div><div class="skeleton-text price"></div></div>
           <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-text"></div><div class="skeleton-text short"></div><div class="skeleton-text price"></div></div>
@@ -197,7 +197,7 @@
         </div>
 
         <!-- Product Grid (Populated dynamically by app.js) -->
-        <div class="grid grid-3 stagger-children" id="productGrid" style="display:none">
+        <div class="grid grid-3 stagger-children" id="productGrid">
         </div>
       </div>
     </div>

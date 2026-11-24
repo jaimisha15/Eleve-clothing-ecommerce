@@ -194,15 +194,15 @@
         <p class="section-subtitle">Our most sought-after pieces this season</p>
       </div>
       
-      <!-- Skeleton Loaders -->
-      <div class="grid grid-4" id="skeletonGrid" aria-hidden="true">
+      <!-- Skeleton Loaders (hidden once products render) -->
+      <div class="grid grid-4" id="skeletonGrid" aria-hidden="true" style="display:none">
         <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-text"></div><div class="skeleton-text short"></div><div class="skeleton-text price"></div></div>
         <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-text"></div><div class="skeleton-text short"></div><div class="skeleton-text price"></div></div>
         <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-text"></div><div class="skeleton-text short"></div><div class="skeleton-text price"></div></div>
         <div class="skeleton-card"><div class="skeleton-img"></div><div class="skeleton-text"></div><div class="skeleton-text short"></div><div class="skeleton-text price"></div></div>
       </div>
 
-      <div class="grid grid-4 stagger-children" id="featuredGrid" style="display:none">
+      <div class="grid grid-4 stagger-children" id="featuredGrid">
         <!-- Products populated dynamically by app.js -->
       </div>
       <div style="text-align:center;margin-top:var(--sp-xl)">
@@ -276,7 +276,7 @@
       </div>
     </div>
   </footer>
-  <script src='https://cdn.jotfor.ms/agent/embedjs/019d1b8c15967bc6a65f0d5fe22d8c95fdee/embed.js'></script>
+  <script src='https://cdn.jotfor.ms/agent/embedjs/019d1b8c15967bc6a65f0d5fe22d8c95fdee/embed.js' async defer></script>
   
 
 

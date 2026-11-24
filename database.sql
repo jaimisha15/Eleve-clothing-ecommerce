@@ -270,7 +270,7 @@ INSERT INTO products (id, name, category, subcategory, gender, price, old_price,
 (5, 'Graphic Print Tee', 'T-Shirts', 't-shirts', '', 799, NULL, NULL, 4.5, 0, 0, 0, 'Wearable art meets streetwear. Our Graphic Print Tee features an exclusive artwork collaboration, screen-printed by hand using eco-friendly water-based inks.', 'Boxy fit — slightly wider and shorter than our Essential Tee. True to size.', '100% organic cotton 220GSM heavyweight|Hand screen-printed graphic|Water-based eco-friendly inks|Boxy fit with ribbed crew neck'),
 (6, 'Navy Bomber Jacket', 'Outerwear', 'jackets', '', 1599, 1999, 'Sale', 4.5, 0, 0, 0, 'The perfect transitional piece. Our Navy Bomber Jacket features a water-resistant nylon shell, quilted satin lining, and ribbed trims.', 'Regular fit — true to size for a classic bomber silhouette.', 'Water-resistant nylon shell|Quilted satin lining for warmth|Ribbed collar cuffs and hem|Two exterior slash pockets + interior pocket'),
 (7, 'Slim Fit Denim', 'Bottoms', 'jeans', '', 999, NULL, NULL, 4.5, 0, 0, 0, 'Engineered for the perfect silhouette. Our Slim Fit Denim is crafted from Japanese selvedge denim with 2% stretch.', 'Slim fit — fitted through the thigh with a narrow leg. Size up one if between sizes.', '98% Japanese selvedge cotton 2% elastane|13oz raw denim — develops unique fades|Slim fit through thigh and leg|Classic five-pocket construction'),
-(8, 'Signature Leather Bag', 'Accessories', 'bags', 'women', 499, NULL, NULL, 4.6, 0, 0, 0, 'The finishing touch. Our Signature Leather Bag is hand-crafted from full-grain Italian leather with a brushed nickel buckle.', 'One size — adjustable from 28" to 38" waist.', 'Full-grain Italian leather|Brushed nickel buckle with ELEVÉ monogram|Hand-painted and burnished edges'),
+(8, 'Signature Leather Belt', 'Accessories', 'accessories', 'men', 999, NULL, 'Popular', 4.8, 0, 1, 0, 'The finishing touch. Our Signature Leather Belt is hand-crafted from full-grain Italian leather with a brushed nickel buckle.', 'One size — adjustable from 28" to 38" waist.', 'Full-grain Italian leather|Brushed nickel buckle with ELEVÉ monogram|Hand-painted and burnished edges'),
 (9, 'Washed Crew Neck', 'T-Shirts', 't-shirts', 'unisex', 849, NULL, NULL, 4.6, 0, 0, 0, 'Lived-in luxury from the first wear. The Washed Crew Neck is garment-dyed and enzyme-washed to achieve a perfectly broken-in feel.', 'Relaxed fit — slightly wider and longer. True to size for a relaxed look.', '100% combed cotton 240GSM heavyweight|Garment-dyed and enzyme-washed|Double-needle stitching throughout'),
 (10, 'Tailored Wool Overcoat', 'Outerwear', 'outerwear', '', 1999, NULL, NULL, 4.5, 0, 0, 0, 'Effortless sophistication. The Tailored Wool Overcoat is constructed from a premium Italian wool-cashmere blend.', 'Tailored fit — designed to layer over suits or knitwear. True to size.', '80% Italian wool 20% cashmere blend|Half-canvas construction for natural drape|Notch lapel with functional buttonholes'),
 (13, 'Classic Polo Shirt', 'Polo', 'polo', 'men', 899, NULL, 'New', 4.6, 1, 0, 1, 'Premium 220GSM pique cotton polo with ribbed collar — the ultimate smart-casual essential.', 'Regular fit. True to size.', '100% pique cotton 220GSM|Ribbed collar and cuffs|Slim fit with side vents'),
@@ -304,14 +304,17 @@ INSERT INTO product_images (product_id, url, sort_order) VALUES
 (13,'https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?w=800&q=80&fit=crop',0),
 (14,'https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=800&q=80&fit=crop',0),
 (16,'https://images.unsplash.com/photo-1509942774463-acf339cf87d5?w=800&q=80&fit=crop',0),
-(19,'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80&fit=crop',0),
+(19,'https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=800&q=80&fit=crop',0),
+(24,'https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&q=80&fit=crop',0),
+(26,'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&q=80&fit=crop',0),
 (21,'https://images.unsplash.com/photo-1554568218-0f1715e72254?w=800&q=80&fit=crop',0),
 (22,'https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=800&q=80&fit=crop',0),
 (25,'https://images.unsplash.com/photo-1506629082955-511b1aa562c8?w=800&q=80&fit=crop',0),
-(29,'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=800&q=80&fit=crop',0),
+(29,'https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=800&q=80&fit=crop',0),
+(32,'https://images.unsplash.com/photo-1516627145497-ae6968895b74?w=800&q=80&fit=crop',0),
 (30,'https://images.unsplash.com/photo-1518831959646-742c3a14ebf7?w=800&q=80&fit=crop',0),
-(33,'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80&fit=crop',0),
-(35,'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80&fit=crop',0);
+(33,'https://images.unsplash.com/photo-1600269452121-4f2416e55c28?w=800&q=80&fit=crop',0),
+(35,'https://images.unsplash.com/photo-1638247025967-b4e38f787b76?w=800&q=80&fit=crop',0);
 
 -- Product Sizes
 INSERT INTO product_sizes (product_id, size) VALUES

@@ -584,7 +584,7 @@
         data-size="${sizesStr}" 
         data-color="${(p.colors && p.colors[0]) || ''}">
         <div class="product-card-img">
-          <img src="${imgUrl}" alt="${p.name}" loading="lazy">
+          <img src="${imgUrl}" alt="${p.name}" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=800&q=80&fit=crop'">
           ${badges.join('')}
           <div class="product-overlay" style="display:flex;gap:0.4rem;flex-wrap:wrap;justify-content:center;padding:0.5rem;">
             <a href="product-detail.html?id=${p.id}" class="btn btn-primary btn-sm">Quick View</a>
@@ -614,16 +614,15 @@
     const skeletonGrid = $('#skeletonGrid');
     const featuredGrid = $('#featuredGrid'); // For homepage
     
-    // Check if we need to render the featured grid on homepage
+    // Render featured products on homepage immediately
     if (featuredGrid && typeof PRODUCTS !== 'undefined') {
-      const featuredProducts = PRODUCTS.slice(0, 4); // Just take first 4 for now, or filter by isBestSeller
+      const topPicks = PRODUCTS.filter(p => p.isBestSeller || p.isNewArrival);
+      const featuredProducts = topPicks.length >= 4 ? topPicks.slice(0, 8) : PRODUCTS.slice(0, 8);
       featuredGrid.innerHTML = featuredProducts.map(createProductCard).join('');
-      setTimeout(() => {
-        if (skeletonGrid) skeletonGrid.style.display = 'none';
-        featuredGrid.style.display = '';
-        initTiltCards();
-        initScrollReveal();
-      }, 1200);
+      if (skeletonGrid) skeletonGrid.style.display = 'none';
+      featuredGrid.style.display = '';
+      initTiltCards();
+      initScrollReveal();
     }
 
     if (!productGrid) return;
@@ -633,11 +632,13 @@
     let activeTag = urlParams.get('filter') || ''; // 'new', 'bestseller', 'sale'
     let urlGender = urlParams.get('gender') || '';
     let urlCategory = urlParams.get('category') || '';
+    let urlSearchQuery = (urlParams.get('q') || urlParams.get('search') || '').trim().toLowerCase();
     
-    // Update page title if tag filter active
+    // Update page title if tag filter or search active
     const pageTitle = $('.page-title');
     if (pageTitle) {
-      if (activeTag === 'new') pageTitle.textContent = 'New Arrivals';
+      if (urlSearchQuery) pageTitle.textContent = `Search results for "${urlParams.get('q') || urlParams.get('search')}"`;
+      else if (activeTag === 'new') pageTitle.textContent = 'New Arrivals';
       else if (activeTag === 'bestseller') pageTitle.textContent = 'Best Sellers';
       else if (activeTag === 'sale') pageTitle.textContent = 'Sale';
       else if (urlGender) pageTitle.textContent = urlGender.charAt(0).toUpperCase() + urlGender.slice(1) + "'s Collection";
@@ -736,10 +737,19 @@
         const pColors = p.colors || [];
         const priceMatch = p.price <= maxPrice;
 
+        const searchMatch = !urlSearchQuery || 
+          (p.name && p.name.toLowerCase().includes(urlSearchQuery)) ||
+          (p.category && p.category.toLowerCase().includes(urlSearchQuery)) ||
+          (p.subcategory && p.subcategory.toLowerCase().includes(urlSearchQuery)) ||
+          (p.gender && p.gender.toLowerCase().includes(urlSearchQuery)) ||
+          (p.description && p.description.toLowerCase().includes(urlSearchQuery));
+
         const genderMatch = activeGenders.length === 0 || activeGenders.includes(pGender) || (urlGender && pGender === urlGender && activeGenders.length === 0);
         const catMatch = activeCategories.length === 0 || activeCategories.includes(pSubCat) || activeCategories.includes(pCat.toLowerCase()) || (urlCategory && (pSubCat === urlCategory || pCat.toLowerCase() === urlCategory) && activeCategories.length === 0);
         const sizeMatch = activeSizes.length === 0 || activeSizes.some(s => pSizes.includes(s));
-        const colorMatch = activeColors.length === 0 || activeColors.some(c => pColors.includes(c));
+        const colorMatch = activeColors.length === 0 || activeColors.some(c => 
+          pColors.some(pc => (pc.name && pc.name.toLowerCase() === c.toLowerCase()) || (typeof pc === 'string' && pc.toLowerCase() === c.toLowerCase()))
+        );
         
         let tagMatch = true;
         if (activeTag === 'new') tagMatch = p.isNewArrival;
@@ -752,7 +762,7 @@
           if (activeTags.includes('sale') && !p.oldPrice) tagMatch = false;
         }
 
-        return genderMatch && catMatch && sizeMatch && colorMatch && tagMatch && priceMatch;
+        return searchMatch && genderMatch && catMatch && sizeMatch && colorMatch && tagMatch && priceMatch;
       });
 
       // Sort
@@ -776,12 +786,10 @@
       initScrollReveal();
     }
 
-    // Initial render
-    setTimeout(() => {
-      if (skeletonGrid) skeletonGrid.style.display = 'none';
-      productGrid.style.display = '';
-      applyFilters();
-    }, 800);
+    // Initial render immediately without delay
+    if (skeletonGrid) skeletonGrid.style.display = 'none';
+    productGrid.style.display = '';
+    applyFilters();
   }
 
   /* ---------- Newsletter Form (PHP Backend) ---------- */
