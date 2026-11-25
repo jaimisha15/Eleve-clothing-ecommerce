@@ -198,6 +198,14 @@ function selectPay(el, val) {
   el.querySelector('input').checked = true;
 }
 
+
+function getApiUrl(relPath) {
+  if (window.location.protocol === 'file:' || window.location.port === '5500' || window.location.port === '3000') {
+    return 'http://localhost/FINALUDPFOLDER/' + relPath.replace(/^\//, '');
+  }
+  return relPath;
+}
+
 async function applyCoupon() {
   const code  = document.getElementById('couponInput').value.trim();
   const total = cartItems.reduce((s, i) => s + i.price * i.qty, 0);
@@ -209,7 +217,7 @@ async function applyCoupon() {
   fd.append('total', total);
 
   try {
-    const res = await fetch('php/cart.php', {method:'POST', body:fd});
+    const res = await fetch(getApiUrl('php/cart.php'), {method:'POST', body:fd});
     const data = await res.json();
     const msg = document.getElementById('couponMsg');
     if (data.success) {
@@ -288,11 +296,11 @@ async function placeOrder() {
     ifd.append('size', item.size || '');
     ifd.append('color', item.color || '');
     ifd.append('qty', item.qty || 1);
-    fetch('php/cart.php', {method:'POST', body:ifd}).catch(() => {});
+    fetch(getApiUrl('php/cart.php'), {method:'POST', body:ifd}).catch(() => {});
   }
 
   try {
-    const res  = await fetch('php/orders.php', {method:'POST', body:fd});
+    const res  = await fetch(getApiUrl('php/orders.php'), {method:'POST', body:fd});
     const data = await res.json();
     if (data.success) {
       localStorage.removeItem('elev_cart');
@@ -307,17 +315,17 @@ async function placeOrder() {
     }
   } catch (e) {
     console.error('Order error:', e);
-    // Offline / fallback order placement if network completely unavailable
-    const orderNum = 'ELV' + Math.random().toString(36).substr(2, 6).toUpperCase();
-    localStorage.removeItem('elev_cart');
-    document.getElementById('successOrderNum').textContent = orderNum;
-    document.getElementById('successOverlay').classList.add('show');
+    showToast('Cannot connect to XAMPP server. Please ensure Apache & MySQL are running in XAMPP, or open via http://localhost/FINALUDPFOLDER/checkout.html', 'error');
+    if (btn) {
+      btn.disabled = false;
+      btn.innerHTML = btn.dataset.oldText || 'Place Order →';
+    }
   }
 }
 
 async function checkAuthAndPrefill() {
   try {
-    const res = await fetch('php/auth.php?action=check');
+    const res = await fetch(getApiUrl('php/auth.php?action=check'));
     const data = await res.json();
     if (data.logged_in && data.user) {
       const u = data.user;

@@ -15,7 +15,7 @@ $subscribers    = $db->query("SELECT COUNT(*) FROM newsletter_subscribers WHERE 
 $todayOrders    = $db->query("SELECT COUNT(*) FROM orders WHERE DATE(created_at) = CURDATE()")->fetchColumn();
 
 // Recent orders
-$recentOrders = $db->query("SELECT o.*, COALESCE(u.name, o.shipping_name) AS customer_name FROM orders o LEFT JOIN users u ON u.id = o.user_id ORDER BY o.created_at DESC LIMIT 8")->fetchAll();
+$recentOrders = $db->query("SELECT o.*, COALESCE(u.name, NULLIF(o.shipping_name, ''), 'Guest') AS customer_name FROM orders o LEFT JOIN users u ON u.id = o.user_id ORDER BY o.created_at DESC LIMIT 8")->fetchAll();
 
 // Top products (by order items)
 $topProducts = $db->query("SELECT p.name, p.price, SUM(oi.qty) AS sold, SUM(oi.total) AS revenue,

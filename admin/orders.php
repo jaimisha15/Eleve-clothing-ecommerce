@@ -8,6 +8,15 @@ $view    = (int) ($_GET['view'] ?? 0);
 $filter  = sanitize($_GET['status'] ?? '');
 $search  = sanitize($_GET['q'] ?? '');
 
+// Handle delete order
+if (isset($_GET['delete'])) {
+    $delId = (int) $_GET['delete'];
+    if ($delId > 0) {
+        $db->prepare("DELETE FROM orders WHERE id=?")->execute([$delId]);
+        $message = "Order #$delId has been deleted successfully.";
+    }
+}
+
 // Update order status
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_status'])) {
     $orderId   = (int) $_POST['order_id'];
@@ -19,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_status'])) {
 
 // View single order
 if ($view) {
-    $order = $db->query("SELECT o.*, COALESCE(u.name,'Guest') AS customer_name FROM orders o LEFT JOIN users u ON u.id=o.user_id WHERE o.id=$view")->fetch();
+    $order = $db->query("SELECT o.*, COALESCE(u.name, NULLIF(o.shipping_name, ''), 'Guest') AS customer_name FROM orders o LEFT JOIN users u ON u.id=o.user_id WHERE o.id=$view")->fetch();
     $items = $db->query("SELECT * FROM order_items WHERE order_id=$view")->fetchAll();
     if (!$order) {
         header('Location: orders.php');
@@ -34,6 +43,7 @@ if ($view) {
       $statMap = ['pending'=>'badge-yellow','confirmed'=>'badge-blue','processing'=>'badge-blue','shipped'=>'badge-gold','delivered'=>'badge-green','cancelled'=>'badge-red','refunded'=>'badge-gray'];
       ?>
       <span class="badge <?= $statMap[$order['status']] ?? 'badge-gray' ?>"><?= ucfirst($order['status']) ?></span>
+      <a href="orders.php?delete=<?= $order['id'] ?>" class="btn btn-sm btn-danger" style="margin-left:auto" onclick="return confirm('Are you sure you want to delete Order #<?= htmlspecialchars($order['order_number']) ?>?');">🗑️ Delete Order</a>
     </div>
 
     <div style="display:grid;grid-template-columns:1fr 380px;gap:1.25rem">
@@ -150,7 +160,7 @@ if ($search) {
 }
 
 $whereStr = implode(' AND ', $where);
-$stmt     = $db->prepare("SELECT o.*, COALESCE(u.name,'Guest') AS customer_name FROM orders o LEFT JOIN users u ON u.id=o.user_id WHERE $whereStr ORDER BY o.created_at DESC LIMIT 100");
+$stmt     = $db->prepare("SELECT o.*, COALESCE(u.name, NULLIF(o.shipping_name, ''), 'Guest') AS customer_name FROM orders o LEFT JOIN users u ON u.id=o.user_id WHERE $whereStr ORDER BY o.created_at DESC LIMIT 100");
 $stmt->execute($params);
 $orders = $stmt->fetchAll();
 ?>
@@ -207,7 +217,10 @@ $orders = $stmt->fetchAll();
           <td><span class="badge <?= $payMap[$order['payment_status']] ?? 'badge-gray' ?>"><?= ucfirst($order['payment_status']) ?></span></td>
           <td><span class="badge <?= $statMap[$order['status']] ?? 'badge-gray' ?>"><?= ucfirst($order['status']) ?></span></td>
           <td style="color:var(--muted);font-size:.8rem"><?= date('d M Y', strtotime($order['created_at'])) ?></td>
-          <td><a href="orders.php?view=<?= $order['id'] ?>" class="btn btn-sm btn-ghost">View</a></td>
+          <td style="white-space:nowrap">
+            <a href="orders.php?view=<?= $order['id'] ?>" class="btn btn-sm btn-ghost">View</a>
+            <a href="orders.php?delete=<?= $order['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete Order #<?= htmlspecialchars($order['order_number']) ?>?');">Delete</a>
+          </td>
         </tr>
         <?php endforeach; ?>
         <?php if (empty($orders)): ?>
