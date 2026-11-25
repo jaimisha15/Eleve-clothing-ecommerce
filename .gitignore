@@ -24,3 +24,8 @@ images of clothes/
 
 # Distribution archives
 *.zip
+
+# Office temporary lock files
+~$*.docx
+__pycache__/
+*.pyc

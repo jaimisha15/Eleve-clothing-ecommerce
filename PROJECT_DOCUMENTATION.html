@@ -6,18 +6,18 @@
 <title>ELEVÉ — Academic Project Documentation (LJKU)</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
 <style>
-  @page { size: A4; margin: 20mm; }
+  @page { size: A4; margin: 18mm; }
   *, *::before, *::after { box-sizing: border-box; }
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.65;
     color: #1e293b;
-    background: #f8fafc;
+    background: #f1f5f9;
     margin: 0;
     padding: 2.5rem 1rem;
   }
   .doc-container {
-    max-width: 900px;
+    max-width: 960px;
     margin: 0 auto;
     background: #ffffff;
     padding: 3.5rem 4rem;
@@ -62,7 +62,7 @@
   }
   .project-title {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
     letter-spacing: 0.15em;
     color: #e2c08d;
@@ -75,6 +75,25 @@
     margin: 0;
     font-style: italic;
   }
+  .meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    text-align: left;
+    background: #f8fafc;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+  }
+  .meta-col h4 {
+    margin: 0 0 0.5rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #0284c7;
+  }
+  .meta-col p { margin: 0 0 0.3rem; font-size: 0.9rem; color: #334155; }
   h1 {
     font-size: 1.5rem;
     font-weight: 700;
@@ -104,763 +123,542 @@
     vertical-align: top;
   }
   th {
-    background: #f1f5f9;
-    font-weight: 700;
-    color: #0f172a;
+    background: #1e3a8a;
+    color: #ffffff;
+    font-weight: 600;
   }
   tr:nth-child(even) td { background: #f8fafc; }
-  pre {
-    background: #0f172a;
-    color: #e2e8f0;
-    padding: 1rem 1.25rem;
+  .doc-figure {
+    margin: 2rem 0;
+    text-align: center;
+  }
+  .doc-figure img {
+    max-width: 100%;
+    height: auto;
     border-radius: 8px;
-    font-size: 0.82rem;
-    overflow-x: auto;
-    font-family: 'Consolas', 'Courier New', monospace;
-    line-height: 1.5;
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.07);
   }
-  code {
-    background: #f1f5f9;
-    color: #b89355;
-    padding: 0.15rem 0.35rem;
-    border-radius: 4px;
-    font-family: 'Consolas', monospace;
-    font-size: 0.88em;
-  }
-  pre code { background: transparent; color: inherit; padding: 0; }
-  .badge {
-    display: inline-block;
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
+  .doc-caption {
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: #475569;
+    margin-top: 0.5rem;
+    font-style: italic;
   }
   .print-btn {
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    background: linear-gradient(135deg, #c9a96e, #b89355);
-    color: #0a0a0a;
+    top: 20px;
+    right: 20px;
+    background: #0284c7;
+    color: #ffffff;
     border: none;
-    padding: 0.8rem 1.5rem;
-    font-weight: 700;
-    font-size: 0.9rem;
-    border-radius: 30px;
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+    border-radius: 6px;
     cursor: pointer;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    box-shadow: 0 4px 12px rgba(2,132,199,0.3);
     z-index: 1000;
-    transition: transform 0.2s;
   }
-  .print-btn:hover { transform: scale(1.05); }
   @media print {
-    body { background: #fff; padding: 0; }
+    body { background: #ffffff; padding: 0; }
     .doc-container { box-shadow: none; border: none; padding: 0; max-width: 100%; }
     .print-btn { display: none; }
-    h1 { page-break-before: always; }
-    table, pre { page-break-inside: avoid; }
   }
 </style>
 </head>
 <body>
-<button class="print-btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+<button class="print-btn" onclick="window.print()">Print / Save as PDF</button>
 <div class="doc-container">
-<h1>LOK JAGRUTI KENDRA UNIVERSITY</h1>
-<h2>Department of Computer Applications</h2>
-<h3>MASTER OF COMPUTER APPLICATIONS (INTEGRATED) — MCA (Integrated)</h3>
-<h3>ACADEMIC YEAR: 2024 – 2028 | SEMESTER PROJECT DOCUMENTATION</h3>
-<hr style='border:0;border-top:1px solid #cbd5e1;margin:1.75rem 0;'>
-<h1>PROJECT TITLE: ELEVÉ CLOTHING STORE</h1>
-<h3>*An End-to-End Luxury Apparel &amp; Fashion E-Commerce Web Application*</h3>
-<table>
-<thead><tr><th><strong>Project Metadata</strong></th><th><strong>Details</strong></th></tr></thead>
-<tbody>
-</tbody></table>
-<p>|:---|:---|</p>
-<table>
-<thead><tr><th><strong>Course</strong></th><th>Master of Computer Applications (Integrated)</th></tr></thead>
-<tbody>
-<tr><td><strong>Institute</strong></td><td>LJ Institute of Computer Applications (LJICA), LJKU, Ahmedabad</td></tr>
-<tr><td><strong>Project Type</strong></td><td>User Defined Project (UDP) / Full-Stack Web Application</td></tr>
-<tr><td><strong>Academic Guide / Mentor</strong></td><td><strong>Dr. Anjum Y. Mansuri</strong>, Assistant Professor, Computer Applications, LJ University (GitHub: <a href="https://github.com/anjum-mansuri" target="_blank">@anjum-mansuri</a>)</td></tr>
-<tr><td><strong>Submission Date</strong></td><td>21/08/2026</td></tr>
-<tr><td><strong>GitHub Repository</strong></td><td><a href="https://github.com/jaimisha15/Eleve-clothing-ecommerce" target="_blank">https://github.com/jaimisha15/Eleve-clothing-ecommerce</a></td></tr>
-</tbody></table>
-<h3>**Team Members &amp; Responsibilities**</h3>
-<table>
-<thead><tr><th><strong>Roll No.</strong></th><th><strong>Student Name</strong></th><th><strong>Role in Project</strong></th><th><strong>Core Responsibilities</strong></th></tr></thead>
-<tbody>
-</tbody></table>
-<p>|:---|:---|:---|:---|</p>
-<table>
-<thead><tr><th><strong>E-01</strong></th><th><strong>Harsh Agechaniya</strong></th><th>Documentation Lead &amp; QA Analyst</th><th>System requirements specification, documentation compilation, test-case authoring, and user-flow validation.</th></tr></thead>
-<tbody>
-<tr><td><strong>E-10</strong></td><td><strong>Mit Dodiya</strong></td><td>Backend Developer &amp; Database Designer</td><td>MySQL relational database schema, PDO secure architecture, session management, REST APIs, and order processing.</td></tr>
-<tr><td><strong>H-11</strong></td><td><strong>Jaimisha Chunara</strong></td><td>Frontend Developer &amp; UI/UX Designer</td><td>Luxury storefront interface, responsive layouts, client state management, catalog filtering, and admin dashboard styling.</td></tr>
-</tbody></table>
-<hr style='border:0;border-top:1px solid #cbd5e1;margin:1.75rem 0;'>
+
+<div class="cover-header">
+  <div class="univ-title">Lok Jagruti Kendra University (LJKU)</div>
+  <div class="dept-title">Department of Computer Applications — LJICA, Ahmedabad</div>
+  <div class="degree-title">Master of Computer Applications (Integrated) — Academic Session 2024–2028</div>
+  
+  <div class="project-title-box">
+    <div class="project-title">ELEVÉ CLOTHING STORE</div>
+    <div class="project-subtitle">A Full-Stack Luxury Apparel & Streetwear E-Commerce Web Application</div>
+  </div>
+  
+  <div class="meta-grid">
+    <div class="meta-col">
+      <h4>Project Team</h4>
+      <p><strong>1. Harsh Agechaniya (Roll: E-01)</strong> — Documentation Lead & QA</p>
+      <p><strong>2. Mit Dodiya (Roll: E-10)</strong> — Backend Developer & DB Architect</p>
+      <p><strong>3. Jaimisha Chunara (Roll: H-11)</strong> — Frontend Developer & UI/UX</p>
+    </div>
+    <div class="meta-col">
+      <h4>Project Guide</h4>
+      <p><strong>Dr. Anjum Y. Mansuri</strong></p>
+      <p>Assistant Professor, Computer Applications</p>
+      <p>LJ Institute of Computer Applications, Ahmedabad</p>
+      <p>GitHub: <code>@anjum-mansuri</code></p>
+    </div>
+  </div>
+</div>
+
+<div id="content-body">
+<h1>ELEVÉ CLOTHING STORE</h1>
+<h2>A Full-Stack Luxury Apparel & Streetwear E-Commerce Web Application</h2>
+<h3>User Driven Project (UDP) Report — Lok Jagruti Kendra University (LJKU)</h3>
+<hr style="border:none;border-top:1px solid #e2e8f0;margin:2rem 0;">
+<p><strong>Institute:</strong> Department of Computer Applications, LJ Institute of Computer Applications (LJICA), LJ University, Ahmedabad</p>
+<p><strong>Degree:</strong> Master of Computer Applications (Integrated) — MCA (Integrated), 2024–2028</p>
+<p><strong>Faculty Guide:</strong> Dr. Anjum Y. Mansuri, Assistant Professor, Computer Applications (GitHub: <code>@anjum-mansuri</code>)</p>
+<p><strong>Project Team:</strong></p>
+<p>1. <strong>Harsh Agechaniya</strong> (Roll: E-01) — Documentation Lead & Quality Assurance Engineer</p>
+<p>2. <strong>Mit Dodiya</strong> (Roll: E-10) — Backend Developer & Database Architect</p>
+<p>3. <strong>Jaimisha Chunara</strong> (Roll: H-11) — Frontend Developer & UI/UX Designer</p>
+<p><strong>Repository:</strong> <a href="https://github.com/jaimisha15/Eleve-clothing-ecommerce">https://github.com/jaimisha15/Eleve-clothing-ecommerce</a></p>
+<p><strong>Merchandising Boundary:</strong> Curated exclusively across Men, Women, and Kids (29 verified apparel garments; footwear completely purged).</p>
+<hr style="border:none;border-top:1px solid #e2e8f0;margin:2rem 0;">
 <h2>TABLE OF CONTENTS</h2>
-<p>1. <strong>Introduction</strong></p>
-<p>   - 1.1 Existing System</p>
-<p>   - 1.2 Need for the New System</p>
-<p>   - 1.3 Objective of the New System</p>
-<p>   - 1.4 Problem Definition</p>
-<p>   - 1.5 Core Components &amp; Modules</p>
-<p>   - 1.6 Project Profile</p>
-<p>   - 1.7 Assumptions and Constraints</p>
-<p>   - 1.8 Advantages and Limitations</p>
-<p>2. <strong>Project Planning</strong></p>
-<p>   - 2.1 Team Details and Roles</p>
-<p>   - 2.2 Proposed Timeline (Gantt Chart &amp; Sprint Schedule)</p>
-<p>3. <strong>Requirement Determination &amp; Analysis</strong></p>
-<p>   - 3.1 Requirement Determination Methodology</p>
-<p>   - 3.2 Functional Requirements</p>
-<p>   - 3.3 Non-Functional Requirements</p>
-<p>   - 3.4 Targeted Users &amp; Personas</p>
-<p>4. <strong>System Design</strong></p>
-<p>   - 4.1 System Architecture Diagram</p>
-<p>   - 4.2 Use Case Diagram &amp; Actor Descriptions</p>
-<p>   - 4.3 Class Diagram &amp; Domain Entities</p>
-<p>   - 4.4 Interaction / Sequence Diagram (Customer Checkout &amp; Admin Workflow)</p>
-<p>   - 4.5 Activity Diagram (Order Placement Pipeline)</p>
-<p>   - 4.6 Comprehensive Data Dictionary (14 Relational Tables)</p>
-<p>5. <strong>Development &amp; Implementation</strong></p>
-<p>   - 5.1 Development Methodology (Agile &amp; Iterative Sprints)</p>
-<p>   - 5.2 Coding Standards &amp; Architectural Best Practices</p>
-<p>   - 5.3 GitHub Repository Architecture &amp; Version Control</p>
-<p>   - 5.4 AI Tools, Development Libraries &amp; Frameworks</p>
-<p>   - 5.5 Implementation Walkthrough &amp; Screen Modules</p>
-<p>6. <strong>Proposed Enhancements</strong></p>
-<p>7. <strong>Conclusion</strong></p>
-<p>8. <strong>Bibliography &amp; References</strong></p>
-<hr style='border:0;border-top:1px solid #cbd5e1;margin:1.75rem 0;'>
+<p>1. <a href="#1-introduction">Introduction</a></p>
+<ul>
+<li>1.1 Project Overview & Purpose</li>
+<li>1.2 Problem Statement</li>
+<li>1.3 Project Scope & Deliverables</li>
+<li>1.4 Hardware Requirements</li>
+<li>1.5 Software Requirements</li>
+<li>1.6 Project Profile</li>
+<li>1.7 Assumptions and Constraints</li>
+<li>1.8 Advantages and Limitations</li>
+</ul>
+<p>2. <a href="#2-project-planning">Project Planning</a></p>
+<ul>
+<li>2.1 Team Details and Roles</li>
+<li>2.2 Proposed Timeline & Implementation Schedule (Gantt Chart)</li>
+</ul>
+<p>3. <a href="#3-requirement-determination--analysis">Requirement Determination & Analysis</a></p>
+<ul>
+<li>3.1 Requirement Determination Methodology</li>
+<li>3.2 Functional Requirements (FR-01 to FR-07)</li>
+<li>3.3 Non-Functional Requirements (NFR-01 to NFR-04)</li>
+<li>3.4 Targeted Users & Roles</li>
+</ul>
+<p>4. <a href="#4-system-design">System Design</a></p>
+<ul>
+<li>4.1 System Architecture Diagram (High-Resolution 3-Tier Architecture)</li>
+<li>4.2 Use Case Diagram & Actor Descriptions</li>
+<li>4.3 Class Diagram & Domain Entities</li>
+<li>4.4 Interaction / Sequence Diagram</li>
+<li>4.5 Activity Diagram (Order Placement Pipeline)</li>
+<li>4.6 Comprehensive Data Dictionary (14 Relational Tables)</li>
+</ul>
+<p>5. <a href="#5-development--implementation">Development & Implementation</a></p>
+<ul>
+<li>5.1 Development Approach (Agile Methodology)</li>
+<li>5.2 Coding Standards & Architectural Best Practices</li>
+<li>5.3 GitHub Repository Details & Version Control Structure</li>
+<li>5.4 AI Tools, Libraries and APIs Used</li>
+<li>5.5 Implementation Walkthrough & Live System Screenshots (15 Modules)</li>
+</ul>
+<p>6. <a href="#6-proposed-enhancements">Proposed Enhancements</a></p>
+<p>7. <a href="#7-conclusion">Conclusion</a></p>
+<p>8. <a href="#8-bibliography--references">Bibliography & References</a></p>
+<hr style="border:none;border-top:1px solid #e2e8f0;margin:2rem 0;">
 <h1>1. INTRODUCTION</h1>
-<p><strong>ELEVÉ</strong> is a full-stack, enterprise-grade e-commerce web application engineered specifically for luxury modern fashion and contemporary apparel. Developed with semantic <strong>HTML5</strong>, modern <strong>CSS3</strong>, modular <strong>Vanilla JavaScript (ES6+)</strong>, and a high-performance <strong>PHP 8.x PDO</strong> and <strong>MySQL</strong> backend, ELEVÉ bridges the gap between high-fashion aesthetics and responsive, ergonomic web design.</p>
-<p>The platform provides an exclusive shopping catalog structured strictly into three core apparel categories: <strong>Men</strong>, <strong>Women</strong>, and <strong>Kids</strong> (with all non-clothing items such as footwear completely purged). It features real-time product discovery, a sliding cart drawer with live state persistence, an intuitive guest and authenticated checkout pipeline, and a centralized, password-protected <strong>Admin Control Center</strong> allowing administrators to monitor revenues, process and update customer orders, moderate products, and audit transaction histories.</p>
-<h3>1.1 Existing System</h3>
-<p>In traditional retail and conventional multi-purpose shopping websites, apparel purchasing faces significant operational barriers:</p>
-<p>1. <strong>Physical Retail Shopping:</strong> Consumers must travel to physical retail stores, navigate manual garment racks, wait in queue for trial rooms and checkout counters, and face inventory uncertainty where desired sizes or colorways may be out of stock.</p>
-<p>2. <strong>Standard Online Marketplaces:</strong> Traditional e-commerce websites frequently crowd user interfaces with intrusive advertising, generic product listings, and top-only navigation hierarchies. When shoppers scroll through hundreds of apparel items, they are forced to scroll all the way back to the top just to view their cart or search for items. Furthermore, excessive framework bloat and unoptimized third-party plugins lead to sluggish loading speeds, high bounce rates, and degraded mobile usability.</p>
-<h4>Drawbacks of the Existing System:</h4>
-<li><strong>Severe Time &amp; Geographic Constraints:</strong> Shopping is tied to shop operating hours and physical travel.</li>
-<li><strong>High Navigation Friction:</strong> Monolithic top bars force continuous page jumping on long product catalogs.</li>
-<li><strong>Suboptimal Mobile Ergonomics:</strong> Critical controls like Cart, Wishlist, and Search are positioned out of easy thumb reach on mobile devices.</li>
-<li><strong>Cluttered Visual Interfaces:</strong> Absence of luxury, minimalist brand identity.</li>
-<li><strong>Performance Overhead:</strong> Heavy framework dependencies result in slow First Contentful Paint (FCP) and high data consumption.</li>
-<h3>1.2 Need for the New System</h3>
-<p>The digital transformation of consumer retail demands an apparel-focused platform offering:</p>
-<li><strong>24/7 Omnichannel Accessibility:</strong> Shoppers can browse, customize, and order high-end fashion anytime, anywhere.</li>
-<li><strong>Instantaneous Product Discovery:</strong> Zero-latency client filtering by gender, subcategory, size, color, price range, and search keyword.</li>
-<li><strong>Streamlined Frictionless Checkout:</strong> Fast guest checkout without requiring lengthy mandatory registration barriers.</li>
-<li><strong>Direct Inventory &amp; Sales Oversight:</strong> A centralized administrative console for store owners to track revenues, manage stock levels, and update order fulfillment statuses in real time.</li>
-<h3>1.3 Objective of the New System</h3>
-<li><strong>Elevated Shopping Experience:</strong> Deliver a fast, responsive, and luxury-themed apparel destination.</li>
-<li><strong>Strictly Curated Apparel Categories:</strong> Eliminate cluttered multi-vendor listings; organize inventory cleanly into <strong>Men</strong>, <strong>Women</strong>, and <strong>Kids</strong>.</li>
-<li><strong>Ergonomic Shopping Utilities:</strong> Provide sliding cart and wishlist drawers, live search with highlight matches, and an automated coupon validation engine.</li>
-<li><strong>Unified Administrative Governance:</strong> Provide an administrative portal equipped with role-based authentication, real-time analytics dashboards, order status workflows, and product CRUD capabilities.</li>
-<li><strong>Zero-Dependency Architecture:</strong> Implement core capabilities using lightweight vanilla standards without fragile external runtime frameworks.</li>
-<h3>1.4 Problem Definition</h3>
-<p>Traditional retail and legacy platforms suffer from inventory opacity, rigid store hours, high physical operating overhead (store leases, electrical utilities, floor staffing), and inability to maintain persistent consumer preferences across visits.</p>
-<p><strong>The Solution:</strong> ELEVÉ provides an agile digital storefront engineered on local XAMPP Apache/MySQL architecture, featuring real-time session persistence, secure prepared SQL execution, automatic pricing calculation, and complete order management.</p>
-<h3>1.5 Core Components &amp; Modules</h3>
-<p>The application is architected into modular sub-systems:</p>
-<li><strong>Storefront Header &amp; Navigation:</strong> Responsive sticky header featuring brand logo, inline live search bar, unified <code>LOGIN / REGISTER</code> customer modal button, and a dedicated <code>👑 ADMIN</code> pill button.</li>
-<li><strong>Visual Category Quick-Bar:</strong> Floating pill navigation for Men, Women, and Kids with responsive image thumbnails.</li>
-<li><strong>Landing Gateway (<code>index.html</code>):</strong> Hero brand showcase, collection banners, new arrivals carousel, and customer review highlights.</li>
-<li><strong>Department Portals (<code>men.html</code>, <code>women.html</code>, <code>kids.html</code>):</strong> Tailored apparel portals featuring curated collections (T-shirts, Jeans, Co-Ord Sets).</li>
-<li><strong>Global Catalog (<code>products.html</code>):</strong> Complete collection gallery with dynamic price sorting, badge filters, and category toggles.</li>
-<li><strong>Interactive Product Detail (<code>product-detail.html</code>):</strong> Multi-angle photo gallery, dynamic size selector (XS, S, M, L, XL, XXL, Kids age sizes), color swatch preview, stock counter, and fabric specifications.</li>
-<li><strong>Sliding Drawers (Cart &amp; Wishlist):</strong> Asynchronous side panels displaying subtotal calculations, free shipping progress bars, quantity selectors, and item removal.</li>
-<li><strong>Streamlined Checkout (<code>checkout.html</code>):</strong> Multi-payment checkout (COD, UPI, Credit/Debit Card, Net Banking), shipping address validation, coupon engine (<code>WELCOME10</code>, <code>FLAT200</code>, <code>SAVE15</code>), and instant database order dispatch.</li>
-<li><strong>Admin Control Center (<code>admin/index.php</code>):</strong> Authenticated administrative suite featuring revenue charts, live order processing, order status transitions (<code>pending</code>, <code>confirmed</code>, <code>processing</code>, <code>shipped</code>, <code>delivered</code>, <code>cancelled</code>), single-click order deletion, product inventory management, category editing, customer reviews moderation, and newsletter tracking.</li>
+<p>ELEVÉ is an enterprise-grade, responsive full-stack e-commerce web application engineered specifically for contemporary luxury apparel and high-fashion streetwear. Built using semantic HTML5, modern CSS3, modular Vanilla JavaScript (ES6+), and a secure PHP 8.x PDO backend interfacing with a MySQL relational database, the platform delivers a premium, uninterrupted digital shopping experience across three curated apparel collections: Men, Women, and Kids (with all footwear completely purged).</p>
+<h3>1.1 Project Overview & Purpose</h3>
+<p>In the competitive digital fashion industry, e-commerce stores often fail to engage consumers due to cluttered user interfaces, sluggish catalog browsing, mismatched product data, and generic checkout experiences. ELEVÉ addresses these challenges by merging an haute-couture aesthetic—inspired by luxury European fashion houses—with modern engineering practices. The purpose of this project is to create an authentic, full-featured retail platform that operates reliably in local development sandbox environments (such as XAMPP Apache/MySQL) while upholding strict data integrity standards through 3rd Normal Form relational schemas and parameterized prepared queries.</p>
+<h3>1.2 Problem Statement</h3>
+<p>Modern apparel retailers confront significant operational hurdles when transitioning to online commerce platforms:</p>
+<ul>
+<li><strong>Category Clutter:</strong> Existing off-the-shelf templates frequently bundle conflicting merchandise categories (such as athletic footwear mixed into bespoke streetwear), confusing shoppers and compromising brand prestige.</li>
+<li><strong>Performance Bottlenecks:</strong> Heavy monolithic JavaScript frameworks often impose large script payloads that degrade performance on low-bandwidth mobile connections.</li>
+<li><strong>Security Vulnerabilities:</strong> Many educational projects use vulnerable PHP scripts susceptible to SQL injection and unhandled guest order references.</li>
+<li><strong>Fragmented Back-Office Tools:</strong> Administrators frequently lack dedicated tools to monitor real-time revenue, manage category taxonomies, and track order fulfillment states.</li>
+</ul>
+<h3>1.3 Project Scope & Deliverables</h3>
+<ul>
+<li><strong>Merchandising Focus:</strong> Curated merchandise strictly limited to Men's, Women's, and Kids' clothing (29 total verified items). Footwear has been completely removed across database tables, product categories, and UI components.</li>
+<li><strong>Storefront Experience:</strong> A client-side presentation layer offering dynamic department filtering, a live keyword search overlay, interactive size swatches, and slide-out cart and wishlist drawers.</li>
+<li><strong>Transaction Handling:</strong> A resilient two-step checkout pipeline supporting Cash on Delivery (COD), UPI (GPay/PhonePe), Credit/Debit Card, and Net Banking.</li>
+<li><strong>Administrative Operations:</strong> An administrative control center at <code>admin/</code> displaying revenue metrics, sales trends, product management, category configuration, and order lifecycle tools.</li>
+</ul>
+<h3>1.4 Hardware Requirements</h3>
+<table>
+<thead><tr><th>Component</th><th>Minimum Requirement</th><th>Recommended Specification</th></tr></thead>
+<tbody>
+<tr><td>Processor (CPU)</td><td>Intel Core i3 / AMD Ryzen 3 (2.0 GHz)</td><td>Intel Core i5 / AMD Ryzen 5 (3.0 GHz) quad-core</td></tr>
+<tr><td>System Memory (RAM)</td><td>4 GB DDR4</td><td>8 GB to 16 GB DDR4</td></tr>
+<tr><td>Storage Space</td><td>1 GB available disk space</td><td>5 GB free SSD storage</td></tr>
+<tr><td>Display Resolution</td><td>1280 × 720 (HD) minimum</td><td>1920 × 1080 (Full HD)</td></tr>
+<tr><td>Input Devices</td><td>Standard keyboard & two-button mouse</td><td>Precision trackpad or multi-touch display</td></tr>
+</tbody></table>
+<h3>1.5 Software Requirements</h3>
+<table>
+<thead><tr><th>Software Layer</th><th>Minimum Requirement</th><th>Recommended Specification</th></tr></thead>
+<tbody>
+<tr><td>Operating System</td><td>Windows 10 / 11 (64-bit)</td><td>Windows 11 Pro / Ubuntu Linux 22.04 LTS</td></tr>
+<tr><td>Web Server Stack</td><td>XAMPP v3.3.0 (Apache 2.4, PHP 8.2)</td><td>XAMPP 8.2.12 with Apache HTTP Server 2.4</td></tr>
+<tr><td>Database Engine</td><td>MySQL 8.0 / MariaDB 10.4</td><td>MySQL Community Server 8.0 (InnoDB)</td></tr>
+<tr><td>Backend Runtime</td><td>PHP 8.0+ with `pdo_mysql`</td><td>PHP 8.2+ with JSON, PDO, cURL, mbstring</td></tr>
+<tr><td>Web Browsers</td><td>Google Chrome 110+, Firefox 110+</td><td>Chrome latest, Microsoft Edge latest</td></tr>
+<tr><td>Developer Tools</td><td>VS Code, Git 2.40+, phpMyAdmin</td><td>VS Code, Antigravity Agent, Postman</td></tr>
+</tbody></table>
 <h3>1.6 Project Profile</h3>
 <table>
-<thead><tr><th>Attribute</th><th>Specification</th></tr></thead>
+<thead><tr><th>Attribute</th><th>Specification Details</th></tr></thead>
 <tbody>
+<tr><td>Project Title</td><td>ELEVÉ Clothing Store (Luxury Apparel & Streetwear Web Application)</td></tr>
+<tr><td>Academic Course</td><td>Master of Computer Applications (Integrated) — MCA (Integrated)</td></tr>
+<tr><td>Academic Institution</td><td>Lok Jagruti Kendra University (LJKU), Ahmedabad, Gujarat</td></tr>
+<tr><td>Department</td><td>Department of Computer Applications, LJ Institute of Computer Applications (LJICA)</td></tr>
+<tr><td>Project Type</td><td>User Driven Project (UDP) / Full-Stack Web Application</td></tr>
+<tr><td>Faculty Guide</td><td>Dr. Anjum Y. Mansuri, Assistant Professor, Computer Applications (GitHub: `@anjum-mansuri`)</td></tr>
+<tr><td>Team Members</td><td>Harsh Agechaniya (E-01), Mit Dodiya (E-10), Jaimisha Chunara (H-11)</td></tr>
+<tr><td>Source Code Repository</td><td>https://github.com/jaimisha15/Eleve-clothing-ecommerce</td></tr>
+<tr><td>Target Localhost URL</td><td>`http://localhost/FINALUDPFOLDER/` or `http://localhost:8000/`</td></tr>
 </tbody></table>
-<p>|:---|:---|</p>
-<table>
-<thead><tr><th><strong>Project Name</strong></th><th><strong>ELEVÉ — Luxury Apparel E-Commerce System</strong></th></tr></thead>
-<tbody>
-<tr><td><strong>Application Type</strong></td><td>Responsive Full-Stack Web Application</td></tr>
-<tr><td><strong>Frontend Technologies</strong></td><td>HTML5, CSS3 (Custom Variables, Flexbox, Grid), Modern JavaScript (ES6+ Vanilla)</td></tr>
-<tr><td><strong>Backend Technologies</strong></td><td>PHP 8.x (PDO Object-Oriented Database Driver, Prepared Statements)</td></tr>
-<tr><td><strong>Database Server</strong></td><td>MySQL / MariaDB (utf8mb4_unicode_ci)</td></tr>
-<tr><td><strong>Local Web Server</strong></td><td>Apache (XAMPP for Windows)</td></tr>
-<tr><td><strong>Version Control</strong></td><td>Git 2.x, GitHub Remote Repository</td></tr>
-<tr><td><strong>Target Audience</strong></td><td>Urban fashion consumers seeking premium Men, Women, and Kids wear</td></tr>
-<tr><td><strong>Total Apparel Products</strong></td><td>29 Verified Real Garment Products (with local high-definition photographs)</td></tr>
-<tr><td><strong>Apparel Departments</strong></td><td>Men (11 items), Women (10 items), Kids (8 items) — *Zero footwear*</td></tr>
-<tr><td><strong>Primary Admin Credentials</strong></td><td><code>admin@gmail.com</code> / Password: <code>123</code></td></tr>
-</tbody></table>
-<h3>1.7 Assumptions and Constraints</h3>
-<li><strong>Assumptions:</strong></li>
-<p>  - Client devices operate modern standards-compliant web browsers (Google Chrome, Microsoft Edge, Mozilla Firefox, Safari).</p>
-<p>  - Local server environment runs XAMPP with Apache and MySQL active on standard ports (80/443 and 3306).</p>
-<p>  - Users have active network connectivity for loading web fonts and submitting orders.</p>
-<li><strong>Constraints:</strong></li>
-<p>  - Online payment gateways (Razorpay / Stripe) are simulated with authentic checkout validation logic.</p>
-<p>  - Production deployments require HTTPS for secure cookie transmission.</p>
-<h3>1.8 Advantages and Limitations</h3>
-<li><strong>Advantages:</strong></li>
-<p>  - <strong>High Performance:</strong> Zero third-party JavaScript framework overhead (No React/Angular/Vue dependencies); near-instant rendering.</p>
-<p>  - <strong>Elegant UI/UX:</strong> Luxury dark mode aesthetic accented with gold typography (<code>#c9a96e</code>) and subtle glassmorphic overlays.</p>
-<p>  - <strong>Single-Click Setup:</strong> Auto-initialization database routine (<code>seed_db.php</code> and <code>ensureAllTablesAndAdmin</code>) guarantees that products, categories, and sample orders populate automatically without manual SQL configuration.</p>
-<p>  - <strong>Resilient Navigation:</strong> Smart routing prevents broken <code>file:///</code> executions by gracefully redirecting to the local server.</p>
-<li><strong>Limitations:</strong></li>
-<p>  - Multi-warehouse inventory synchronization is not implemented in current single-store release.</p>
-<p>  - Automated shipping courier API webhooks (e.g., Shiprocket) require live merchant keys.</p>
-<hr style='border:0;border-top:1px solid #cbd5e1;margin:1.75rem 0;'>
+<hr style="border:none;border-top:1px solid #e2e8f0;margin:2rem 0;">
 <h1>2. PROJECT PLANNING</h1>
 <h3>2.1 Team Details and Roles</h3>
-<pre>               ┌────────────────────────────────────────────────────────┐
-               │         PROJECT MENTOR &amp; ACADEMIC GUIDE                │
-               │               Dr. Anjum Y. Mansuri                     │
-               │   Assistant Professor, Computer Applications, LJKU     │
-               └──────────────────────────┬─────────────────────────────┘
-                                          │
-            ┌─────────────────────────────┼─────────────────────────────┐
-            │                             │                             │
-            ▼                             ▼                             ▼
-┌────────────────────────┐   ┌────────────────────────┐   ┌────────────────────────┐
-│   Jaimisha Chunara     │   │      Mit Dodiya        │   │    Harsh Agechaniya    │
-│  (Roll No: H-11)       │   │  (Roll No: E-10)       │   │   (Roll No: E-01)      │
-│  Frontend Developer    │   │  Backend Developer     │   │   Documentation Lead   │
-│  &amp; UI/UX Designer      │   │  &amp; Database Designer   │   │   &amp; QA Specialist      │
-└────────────────────────┘   └────────────────────────┘   └────────────────────────┘
-</pre>
-<li><strong>Jaimisha Chunara (Frontend Lead &amp; UI/UX Designer):</strong> Architected the luxury visual identity, responsive layouts across 9 HTML views, client state logic (<code>app.js</code>), local storage cart synchronization, modal management, and admin visual dashboards.</li>
-<li><strong>Mit Dodiya (Backend Lead &amp; Database Designer):</strong> Engineered the relational MySQL schema (<code>database.sql</code>), PDO connection engine, security sanitization routines, session-based authentication, and REST API controllers (<code>php/orders.php</code>, <code>php/cart.php</code>, <code>php/auth.php</code>).</li>
-<li><strong>Harsh Agechaniya (Documentation Lead &amp; QA):</strong> Spearheaded system requirement specifications, authored UML behavioral diagrams, constructed the data dictionary, and coordinated functional user-acceptance testing across all checkout and admin pipelines.</li>
-<h3>2.2 Proposed Timeline (Gantt Chart &amp; Sprint Schedule)</h3>
-<p>The project was executed across an intensive 16-week structured lifecycle:</p>
 <table>
-<thead><tr><th>Phase / Sprint</th><th>Milestone Description</th><th>Start Date</th><th>End Date</th><th>Lead Responsible</th></tr></thead>
+<thead><tr><th>Student Name</th><th>Roll No</th><th>Assigned Role</th><th>Key Responsibilities</th></tr></thead>
 <tbody>
+<tr><td>Harsh Agechaniya</td><td>E-01</td><td>Documentation Lead & QA Engineer</td><td>SRS compilation, UML modeling, testing schedules, academic formatting, project documentation.</td></tr>
+<tr><td>Mit Dodiya</td><td>E-10</td><td>Backend Developer & Database Architect</td><td>14-table MySQL schema, PHP PDO prepared controllers, REST APIs, transactional order processor.</td></tr>
+<tr><td>Jaimisha Chunara</td><td>H-11</td><td>Frontend Developer & UI/UX Designer</td><td>Luxury Haute-Couture UI, responsive CSS3 styling, category navigation, live search modal, cart/wishlist drawers.</td></tr>
 </tbody></table>
-<p>|:---|:---|:---|:---|:---|</p>
-<table>
-<thead><tr><th><strong>Sprint 1: Inception</strong></th><th>Problem definition, stakeholder interviews, literature review of luxury apparel platforms</th><th>01-Mar-2026</th><th>14-Mar-2026</th><th>Harsh Agechaniya</th></tr></thead>
-<tbody>
-<tr><td><strong>Sprint 2: Design</strong></td><td>Wireframing, color palette selection, UML system modeling (Use Case, Class, Activity)</td><td>15-Mar-2026</td><td>28-Mar-2026</td><td>Jaimisha Chunara</td></tr>
-<tr><td><strong>Sprint 3: Database</strong></td><td>Relational schema design, normalization (3NF), database script creation</td><td>29-Mar-2026</td><td>11-Apr-2026</td><td>Mit Dodiya</td></tr>
-<tr><td><strong>Sprint 4: Frontend</strong></td><td>HTML5 semantic templates, CSS design system, responsive grid layouts</td><td>12-Apr-2026</td><td>02-May-2026</td><td>Jaimisha Chunara</td></tr>
-<tr><td><strong>Sprint 5: Backend</strong></td><td>PHP PDO services, REST endpoints, session handling, authentication</td><td>03-May-2026</td><td>23-May-2026</td><td>Mit Dodiya</td></tr>
-<tr><td><strong>Sprint 6: Admin</strong></td><td>Administrative control suite, CRUD modules, order status management, deletion</td><td>24-May-2026</td><td>13-Jun-2026</td><td>Mit / Jaimisha</td></tr>
-<tr><td><strong>Sprint 7: Integration</strong></td><td>Local clothing reference cataloging (29 products), purging footwear, checkout wiring</td><td>14-Jun-2026</td><td>11-Jul-2026</td><td>Full Team</td></tr>
-<tr><td><strong>Sprint 8: QA &amp; Audit</strong></td><td>Cross-browser verification, XAMPP synchronization, bug fixes, final documentation</td><td>12-Jul-2026</td><td>21-Aug-2026</td><td>Harsh Agechaniya</td></tr>
-</tbody></table>
-<hr style='border:0;border-top:1px solid #cbd5e1;margin:1.75rem 0;'>
-<h1>3. REQUIREMENT DETERMINATION &amp; ANALYSIS</h1>
+<h3>2.2 Proposed Timeline & Implementation Schedule</h3>
+<p>The project lifecycle spanned a 16-week period from March 2026 to August 2026, divided into eight two-week sprints:</p>
+<div class="doc-figure"><img src="doc_assets/gantt_chart.png" alt="Figure 2.1: Project Implementation Gantt Chart"><div class="doc-caption">Figure 2.1: Project Implementation Gantt Chart</div></div>
+<p><em>Figure 2.1: Project Implementation Gantt Chart (16-Week Agile Timeline)</em></p>
+<hr style="border:none;border-top:1px solid #e2e8f0;margin:2rem 0;">
+<h1>3. REQUIREMENT DETERMINATION & ANALYSIS</h1>
 <h3>3.1 Requirement Determination Methodology</h3>
-<p>To ensure high commercial relevance, requirements were gathered through three core techniques:</p>
-<p>1. <strong>Target User Interviews:</strong> Conducted structured interviews with college students and retail apparel buyers regarding navigation pain points, mobile cart abandonment, and preferred checkout steps.</p>
-<p>2. <strong>Competitive Feature Benchmarking:</strong> Analyzed leading fashion platforms (Zara, ASOS, Max Fashion) to study optimal product card ergonomics, size guide presentations, and sliding cart behaviors.</p>
-<p>3. <strong>Operational Workflow Mapping:</strong> Mapped the physical retail counter billing workflow into an automated digital equivalent with real-time tax calculation, discount coupon deduction, and immediate order receipts.</p>
+<p>Requirements were gathered using a hybrid approach combining competitive analysis of high-end fashion portals (such as Zara and SSENSE) with stakeholder interviews conducted under the guidance of Dr. Anjum Y. Mansuri.</p>
 <h3>3.2 Functional Requirements</h3>
-<li><strong>FR-01: User &amp; Admin Authentication:</strong> Secure bcrypt hashing for passwords; distinct role-based access for shoppers (<code>user</code>) and administrators (<code>admin</code>).</li>
-<li><strong>FR-02: Categorized Catalog Exploration:</strong> Dedicated views for <strong>Men</strong>, <strong>Women</strong>, and <strong>Kids</strong>, with instantaneous filter chips (T-shirts, Jeans, Co-Ord Sets).</li>
-<li><strong>FR-03: Real-Time Live Search:</strong> Fast client-side search indexing product names, tags, and subcategories with zero page reloading.</li>
-<li><strong>FR-04: Product Customization:</strong> Selection of garment sizes (XS to XXL and kids age brackets), dynamic color swatches, stock availability checking, and price display in Indian Rupees (₹).</li>
-<li><strong>FR-05: Cart &amp; Wishlist Drawers:</strong> Asynchronous slide-out sidebars allowing item quantity modification, real-time total recalculation, and coupon validation (<code>WELCOME10</code>, <code>FLAT200</code>, <code>SAVE15</code>).</li>
-<li><strong>FR-06: Checkout &amp; Order Creation:</strong> Form validation for recipient name, phone, address, and city; generation of unique order serials (<code>ELV-2026-XXXX</code>); transactional database insertion across <code>orders</code> and <code>order_items</code>.</li>
-<li><strong>FR-07: Admin Dashboard &amp; Order Management:</strong> Metric cards for revenue and order count, status updates (<code>pending</code> to <code>delivered</code>), single-click order deletion, and product catalog management.</li>
+<ul>
+<li><strong>FR-01 (Catalog Browsing):</strong> The platform shall provide dedicated storefronts for Men (<code>men.html</code>), Women (<code>women.html</code>), and Kids (<code>kids.html</code>), with 29 verified items and no footwear.</li>
+<li><strong>FR-02 (Live Search):</strong> A live search modal shall filter products in real time by name, category, and tags, rendering matching product cards with prices.</li>
+<li><strong>FR-03 (Product Customization):</strong> The product detail view shall support dynamic color swatches, size selection (S, M, L, XL, XXL), quantity steppers, and accordion specifications.</li>
+<li><strong>FR-04 (Cart & Wishlist):</strong> Off-canvas drawers shall maintain shopping cart and wishlist items using LocalStorage with instant DOM synchronization.</li>
+<li><strong>FR-05 (Checkout & Orders):</strong> The checkout pipeline shall collect shipping details, calculate tax and delivery charges, and execute multi-item database orders.</li>
+<li><strong>FR-06 (User Authentication):</strong> The system shall support customer authentication (registration/login) as well as guest checkout workflows.</li>
+<li><strong>FR-07 (Admin Management):</strong> The admin panel (<code>admin/orders.php</code>) shall display customer names, allow order status updates, and support single-click order deletion.</li>
+</ul>
 <h3>3.3 Non-Functional Requirements</h3>
-<li><strong>NFR-01: Performance &amp; Latency:</strong> Catalog filtering and search queries execute within <strong>150 milliseconds</strong>; page load times under 1.5 seconds.</li>
-<li><strong>NFR-02: Responsive Ergonomics:</strong> Seamless multi-breakpoint adaptation across mobile phones (360px+), tablets (768px+), laptops (1024px+), and ultrawide monitors (1440px+).</li>
-<li><strong>NFR-03: Security &amp; Sanitization:</strong> All incoming user parameters sanitized using <code>htmlspecialchars</code> and prepared SQL statements to completely prevent SQL Injection and Cross-Site Scripting (XSS).</li>
-<li><strong>NFR-04: Maintainability &amp; Modularity:</strong> Adherence to DRY (Don&#039;t Repeat Yourself) principles with separate concern layers for styling (<code>styles.css</code>), behavior (<code>app.js</code>), database config (<code>php/config.php</code>), and administrative logic.</li>
-<h3>3.4 Targeted Users &amp; Personas</h3>
-<table>
-<thead><tr><th>User Persona</th><th>Role</th><th>Primary Responsibilities &amp; Permissions</th></tr></thead>
-<tbody>
-</tbody></table>
-<p>|:---|:---|:---|</p>
-<table>
-<thead><tr><th><strong>Apparel Shopper (End User)</strong></th><th>Customer / Shopper</th><th>Browse curated garments, search items, apply coupons, add garments to cart/wishlist, submit checkout orders, and track order histories.</th></tr></thead>
-<tbody>
-<tr><td><strong>Guest Shopper</strong></td><td>Unauthenticated User</td><td>Experience full catalog browsing, live cart management, and guest checkout without mandatory account creation.</td></tr>
-<tr><td><strong>Store Administrator</strong></td><td>Business Owner / Manager</td><td>Authenticate via administrative portal, audit revenues and sales metrics, update fulfillment statuses, manage products/categories, and delete orders.</td></tr>
-</tbody></table>
-<hr style='border:0;border-top:1px solid #cbd5e1;margin:1.75rem 0;'>
+<ul>
+<li><strong>NFR-01 (Performance):</strong> All pages shall load in under 1.5 seconds on standard broadband connections. Product filtering operations shall complete within 100 milliseconds.</li>
+<li><strong>NFR-02 (Security):</strong> All database queries shall use PDO prepared statements to eliminate SQL injection vulnerabilities. Customer passwords shall be hashed using Bcrypt.</li>
+<li><strong>NFR-03 (Responsiveness):</strong> The layout shall render responsively across mobile, tablet, and desktop viewports (320px to 2560px) using flexible CSS grid systems.</li>
+<li><strong>NFR-04 (Reliability):</strong> The backend database shall use the InnoDB engine to guarantee ACID transaction properties during concurrent order placements.</li>
+</ul>
+<hr style="border:none;border-top:1px solid #e2e8f0;margin:2rem 0;">
 <h1>4. SYSTEM DESIGN</h1>
 <h3>4.1 System Architecture Diagram</h3>
-<pre>┌────────────────────────────────────────────────────────────────────────┐
-│                        CLIENT LAYER (BROWSER)                          │
-│   HTML5 Views (Storefront &amp; Admin)  │  CSS3 Styles  │  ES6+ JavaScript │
-└───────────────────────────────────┬────────────────────────────────────┘
-                                    │ HTTP / Fetch API Requests
-                                    ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│                     APPLICATION SERVER (APACHE / PHP)                  │
-│  ┌────────────────────────┐  ┌──────────────────────────────────────┐  │
-│  │   Storefront API       │  │       Admin Control Center           │  │
-│  │   php/orders.php       │  │       admin/index.php (Dashboard)    │  │
-│  │   php/cart.php         │  │       admin/products.php (Catalog)   │  │
-│  │   php/auth.php         │  │       admin/orders.php (Fulfillment) │  │
-│  │   php/config.php       │  │       admin/categories.php           │  │
-│  └───────────┬────────────┘  └──────────────────┬───────────────────┘  │
-└──────────────┼──────────────────────────────────┼──────────────────────┘
-               │ PDO Prepared Statements          │
-               ▼                                  ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│                 RELATIONAL DATABASE LAYER (MYSQL)                      │
-│   eleve_ecommerce (users, products, categories, orders, order_items)   │
-└────────────────────────────────────────────────────────────────────────┘
-</pre>
-<h3>4.2 Use Case Diagram &amp; Actor Descriptions</h3>
-<pre>                        ELEVÉ E-COMMERCE PLATFORM
-        ┌─────────────────────────────────────────────────────────┐
-        │                                                         │
-        │   ( Browse Categories: Men, Women, Kids )               │
-        │                         ▲                               │
-        │                         │                               │
-        │   ( Live Product Search &amp; Filter )                      │
-        │                         ▲                               │
-        │                         │                               │
-        │   ( View Product Details, Select Size &amp; Color )         │
-        │                         ▲                               │
-        │                         │                               │
-        │   ( Manage Cart Drawer &amp; Apply Coupon )                 │
-        │                         ▲                               │
-        │                         │                               │
-[Shopper] ──( Submit Order via Checkout )                         │
-        │                         ▲                               │
-        │                         │                               │
-        │   ( Manage Wishlist Favorites )                         │
-        │                         ▲                               │
-        │                         │                               │
-        │   ( Customer Account Login / Register )                 │
-        │                                                         │
-        ├─────────────────────────────────────────────────────────┤
-        │                                                         │
-        │   ( Admin Secure Login: admin@gmail.com ) ◄─────────────┤
-        │                                                         │
-        │   ( View Revenue Metrics &amp; 7-Day Chart )  ◄─────────────┤
-        │                                                         │ [Store Admin]
-        │   ( Update Order Status: Shipped/Delivered ) ◄──────────┤
-        │                                                         │
-        │   ( Delete Test / Stale Orders )          ◄─────────────┤
-        │                                                         │
-        │   ( Product Catalog CRUD &amp; Inventory )    ◄─────────────┤
-        │                                                         │
-        └─────────────────────────────────────────────────────────┘
-</pre>
-<h3>4.3 Class Diagram &amp; Domain Entities</h3>
-<pre>┌────────────────────────┐         1..* ┌────────────────────────┐
-│        Category        │◄─────────────┤        Product         │
-├────────────────────────┤              ├────────────────────────┤
-│ + id: int (PK)         │              │ + id: int (PK)         │
-│ + name: string         │              │ + category_id: int(FK) │
-│ + slug: string         │              │ + name: string         │
-│ + gender: string       │              │ + gender: string       │
-│ + image_url: string    │              │ + price: decimal       │
-│ + is_active: boolean   │              │ + old_price: decimal   │
-└────────────────────────┘              │ + stock_qty: int       │
-                                        │ + rating: decimal      │
-                                        │ + badge: string        │
-                                        └───────────┬────────────┘
-                                                    │ 1
-                                                    │
-                                                    │ 1..*
-                                        ┌───────────▼────────────┐
-                                        │       OrderItem        │
-┌────────────────────────┐ 1            ├────────────────────────┤
-│         Order          │◄─────────────┤ + id: int (PK)         │
-├────────────────────────┤              │ + order_id: int (FK)   │
-│ + id: int (PK)         │ 1..*         │ + product_id: int(FK)  │
-│ + order_number: string │              │ + product_name: string │
-│ + user_id: int (FK)    │              │ + product_image: string│
-│ + status: string       │              │ + size: string         │
-│ + payment_status: string              │ + color: string        │
-│ + total: decimal       │              │ + qty: int             │
-│ + shipping_name: string│              │ + price: decimal       │
-│ + shipping_address: str│              │ + total: decimal       │
-└────────────────────────┘              └────────────────────────┘
-</pre>
-<h3>4.4 Interaction / Sequence Diagram (Checkout &amp; Fulfillment)</h3>
-<pre>Shopper                checkout.html           php/orders.php             MySQL Database             Admin Panel
-   │                         │                        │                         │                         │
-   │── Fills Shipping Info ─&gt;│                        │                         │                         │
-   │── Clicks Place Order ──&gt;│                        │                         │                         │
-   │                         │── POST /php/orders.php&gt;│                         │                         │
-   │                         │   (FormData + Items)   │                         │                         │
-   │                         │                        │── BEGIN TRANSACTION ───&gt;│                         │
-   │                         │                        │── INSERT INTO orders ──&gt;│                         │
-   │                         │                        │── INSERT order_items ──&gt;│                         │
-   │                         │                        │── COMMIT TRANSACTION ──&gt;│                         │
-   │                         │                        │&lt;─ Return Order ID / Num─│                         │
-   │                         │&lt;─ JSON {success: true}─│                         │                         │
-   │&lt;─ Show Success Modal ───│                        │                         │                         │
-   │                         │                        │                         │                         │
-   │                         │                        │                         │── Admin Views Orders ──&gt;│
-   │                         │                        │                         │&lt;─ Display Name &amp; Total ─│
-   │                         │                        │                         │                         │
-   │                         │                        │                         │&lt;─ Status Updated / Del ─│
-</pre>
-<h3>4.5 Activity Diagram (Customer Shopping &amp; Order Workflow)</h3>
-<pre>        ( Start )
-            │
-            ▼
-   [ Browse Collection ] ──── (Filter by Men / Women / Kids)
-            │
-            ▼
-    [ View Garment Details ]
-            │
-            ▼
-    [ Select Size &amp; Color ]
-            │
-            ▼
-      [ Add to Cart ] ───────&gt; [ Save to Wishlist ]
-            │
-            ▼
-   [ Open Cart Drawer ]
-            │
-            ├── (Apply Promo Coupon)
-            │
-            ▼
-    [ Proceed to Checkout ]
-            │
-            ▼
-   [ Enter Shipping Address &amp; Choose Payment Mode ]
-            │
-            ▼
-     &lt; Form Valid? &gt;
-       ├── No ───&gt; [ Show Validation Warning ] ───┐
-       │                                          │
-       └── Yes ──&gt; [ Send Order Data to Server ]  │
-                         │                        │
-                         ▼                        │
-                [ Save in Database ]              │
-                         │                        │
-                         ▼                        │
-              [ Display Order Number ] &lt;──────────┘
-                         │
-                      ( End )
-</pre>
+<p>ELEVÉ follows a decoupled 3-tier web architecture comprising the Client Presentation Layer, the Application / Web Server Layer, and the Relational Database Layer:</p>
+<div class="doc-figure"><img src="doc_assets/architecture_diagram.png" alt="Figure 4.1: Decoupled 3-Tier Enterprise Architecture"><div class="doc-caption">Figure 4.1: Decoupled 3-Tier Enterprise Architecture</div></div>
+<p><em>Figure 4.1: Decoupled 3-Tier Enterprise Architecture — ELEVÉ Platform</em></p>
+<ul>
+<li><strong>Tier 1 — Presentation Layer (Browser Client):</strong> Comprises responsive semantic HTML5 structure, custom Haute-Couture dark styling (CSS3) with luxury gold accents (<code>#C9A96E</code>), and Vanilla JavaScript (ES6+). State management for shopping cart and wishlist is handled via LocalStorage with real-time DOM synchronization. Shopper interactions dispatch asynchronous HTTP/HTTPS fetch requests with serialized JSON payloads.</li>
+<li><strong>Tier 2 — Application / Server Layer (Apache & PHP):</strong> Hosted on an Apache HTTP 2.4 server within the XAMPP stack. The backend is powered by PHP 8.2 delivering RESTful API endpoints (<code>php/orders.php</code>, <code>php/cart.php</code>, <code>php/auth.php</code>, <code>php/products.php</code>) and the comprehensive administrative control suite (<code>admin/*.php</code>). The server layer enforces strict session security, parameter validation, role-based access control, and executes atomic business logic.</li>
+<li><strong>Tier 3 — Relational Persistence Layer (MySQL / MariaDB):</strong> Powered by an ACID-compliant MySQL 8.0 InnoDB storage engine under the <code>eleve_ecommerce</code> schema. The database is fully normalized across 14 relational tables with InnoDB foreign key constraints and cascading integrity. The database was populated using an automated seed migration script with 29 real apparel products strictly spanning Men, Women, and Kids.</li>
+</ul>
+<h3>4.2 Use Case Diagram & Actor Descriptions</h3>
+<p>The Use Case diagram visualizes the behavioral interactions between the two primary system actors (Customer and Store Admin) and the core platform functionalities:</p>
+<div class="doc-figure"><img src="doc_assets/use_case_diagram.png" alt="Figure 4.2: Comprehensive Use Case Diagram"><div class="doc-caption">Figure 4.2: Comprehensive Use Case Diagram</div></div>
+<p><em>Figure 4.2: Comprehensive Use Case Diagram — Customer & Admin Interactions</em></p>
+<h3>4.3 Class Diagram & Domain Entities</h3>
+<ul>
+<li><strong>User Entity:</strong> <code>id</code>, <code>name</code>, <code>email</code>, <code>password</code>, <code>phone</code>, <code>address</code>, <code>role</code>, <code>is_active</code>. Methods: <code>register()</code>, <code>login()</code>, <code>logout()</code>, <code>updateProfile()</code>.</li>
+<li><strong>Product Entity:</strong> <code>id</code>, <code>name</code>, <code>category</code>, <code>subcategory</code>, <code>gender</code>, <code>price</code>, <code>old_price</code>, <code>stock_qty</code>, <code>rating</code>. Methods: <code>getDetails()</code>, <code>updateStock()</code>, <code>calculateDiscount()</code>.</li>
+<li><strong>Order Entity:</strong> <code>id</code>, <code>order_number</code>, <code>user_id</code>, <code>status</code>, <code>payment_status</code>, <code>total</code>, <code>shipping_name</code>, <code>shipping_address</code>. Methods: <code>placeOrder()</code>, <code>updateStatus()</code>, <code>deleteOrder()</code>, <code>calculateTax()</code>.</li>
+<li><strong>OrderItem Entity:</strong> <code>id</code>, <code>order_id</code>, <code>product_id</code>, <code>product_name</code>, <code>size</code>, <code>color</code>, <code>qty</code>, <code>price</code>, <code>total</code>. Methods: <code>calculateLineTotal()</code>.</li>
+<li><strong>Coupon Entity:</strong> <code>id</code>, <code>code</code>, <code>type</code>, <code>value</code>, <code>min_order</code>, <code>is_active</code>. Methods: <code>validate()</code>, <code>applyDiscount()</code>.</li>
+</ul>
+<h3>4.4 Interaction / Sequence Diagram</h3>
+<p>1. <strong>Step 1 (Checkout Dispatch):</strong> Shopper submits shipping address and selects payment method on <code>checkout.html</code>.</p>
+<p>2. <strong>Step 2 (API Handshake):</strong> <code>checkout.html</code> sends an asynchronous POST request with FormData and cart line items to <code>php/orders.php</code>.</p>
+<p>3. <strong>Step 3 (Atomic Insertion):</strong> <code>php/orders.php</code> opens a database transaction, inserts master record into <code>orders</code> table, and batch-inserts line items into <code>order_items</code>.</p>
+<p>4. <strong>Step 4 (Receipt Generation):</strong> Database commits transaction; <code>php/orders.php</code> returns JSON confirmation with unique order number (e.g. <code>ELV-2026-1006</code>).</p>
+<p>5. <strong>Step 5 (Admin Processing):</strong> Store Administrator accesses <code>admin/orders.php</code> to review customer name, shipping destination, order total, and update status to 'Shipped' or 'Delivered'.</p>
+<h3>4.5 Activity Diagram (Order Placement Pipeline)</h3>
+<p>The Activity Diagram models the dynamic operational workflow of the end-to-end purchasing process, tracing the shopper journey from initial collection exploration through checkout validation, atomic database persistence, and administrative fulfillment:</p>
+<div class="doc-figure"><img src="doc_assets/activity_diagram.png" alt="Figure 4.5: UML Activity Diagram"><div class="doc-caption">Figure 4.5: UML Activity Diagram</div></div>
+<p><em>Figure 4.5: UML Activity Diagram — End-to-End Order Placement Pipeline & Multi-Tier Transaction Flow</em></p>
+<ul>
+<li><strong>Stage 1 (Catalog Browsing):</strong> Shopper navigates the storefront via category navigation pills (Men, Women, Kids) or the curated seasonal feature banners.</li>
+<li><strong>Stage 2 (Garment Selection):</strong> Shopper explores filtered garments, inspects product photography, examines size charts, and selects dynamic colorway swatches and sizes (XS to XXL).</li>
+<li><strong>Stage 3 (Cart Drawer Integration):</strong> Shopper clicks 'Add to Cart', triggering immediate LocalStorage serialization and sliding open the off-canvas shopping drawer with line-item totals.</li>
+<li><strong>Stage 4 (Shipping Details Capture):</strong> Shopper clicks 'Proceed to Checkout', navigating to <code>checkout.html</code> where shipping credentials (Full Name, Phone, Email, Street Address, City, State, PIN) are entered.</li>
+<li><strong>Stage 5 (Form Validation Branching):</strong> Client-side JavaScript inspects mandatory input fields. If any required field or phone number format is invalid, an alert is rendered and execution halts until resolved.</li>
+<li><strong>Stage 6 (Payment Method Selection):</strong> Shopper chooses from supported payment methods: Cash on Delivery (COD), UPI (GPay/PhonePe/Paytm), Credit/Debit Card, or Net Banking.</li>
+<li><strong>Stage 7 (Async API Dispatch):</strong> Shopper confirms order; <code>checkout.js</code> dispatches an asynchronous HTTP POST request containing order metadata and line items to <code>php/orders.php</code>.</li>
+<li><strong>Stage 8 (Transaction Initiation):</strong> <code>php/orders.php</code> receives payload, verifies user session or guest data, and opens a MySQL database transaction (<code>$pdo->beginTransaction()</code>).</li>
+<li><strong>Stage 9 (Master Order Persistence):</strong> A master record is inserted into the <code>orders</code> table containing order number (<code>ELV-2026-XXXX</code>), customer full name, contact, address, total sum, and <code>status='Confirmed'</code>.</li>
+<li><strong>Stage 10 (Item Insertion & Stock Deduction):</strong> Each cart item is iterated and inserted into <code>order_items</code>. Simultaneously, an atomic UPDATE query decrements available <code>stock_qty</code> in the <code>products</code> table.</li>
+<li><strong>Stage 11 (Transaction Commit & Receipt):</strong> The transaction commits successfully (<code>$pdo->commit()</code>). The server returns a 200 OK JSON response containing the generated order tracking number.</li>
+<li><strong>Stage 12 (Order Lifecycle & Admin Fulfillment):</strong> The client UI displays a modal order confirmation, empties the shopping cart, and the new order immediately surfaces in <code>admin/orders.php</code> for processing.</li>
+</ul>
 <h3>4.6 Comprehensive Data Dictionary (14 Relational Tables)</h3>
-<h4>Table 1: `users`</h4>
-<p>Represents registered customers and system administrators.</p>
+<h4>Table 1: `users` (User Accounts & Administrators)</h4>
 <table>
-<thead><tr><th>Column Name</th><th>Data Type</th><th>Constraint</th><th>Description</th><th>Example</th></tr></thead>
+<thead><tr><th>Column Name</th><th>Data Type</th><th>Constraints</th><th>Description</th><th>Sample Value</th></tr></thead>
 <tbody>
+<tr><td>`id`</td><td>INT</td><td>PRIMARY KEY, AUTO_INCREMENT</td><td>Unique user identifier</td><td>`1`</td></tr>
+<tr><td>`name`</td><td>VARCHAR(100)</td><td>NOT NULL</td><td>Full customer or admin name</td><td>`Admin / Rahul Sharma`</td></tr>
+<tr><td>`email`</td><td>VARCHAR(150)</td><td>UNIQUE, NOT NULL</td><td>Login email address</td><td>`admin@gmail.com`</td></tr>
+<tr><td>`password`</td><td>VARCHAR(255)</td><td>NOT NULL</td><td>Bcrypt cryptographic password hash</td><td>`$2y$12$NdjdsGvv7T...`</td></tr>
+<tr><td>`phone`</td><td>VARCHAR(20)</td><td>NULL</td><td>Contact phone number</td><td>`+91 98251 12345`</td></tr>
+<tr><td>`address`</td><td>TEXT</td><td>NULL</td><td>Default residential delivery address</td><td>`A-402, Titanium City`</td></tr>
+<tr><td>`role`</td><td>ENUM('user','admin')</td><td>DEFAULT 'user'</td><td>Access control authority</td><td>`admin`</td></tr>
+<tr><td>`is_active`</td><td>TINYINT(1)</td><td>DEFAULT 1</td><td>Account enablement flag</td><td>`1`</td></tr>
+<tr><td>`created_at`</td><td>TIMESTAMP</td><td>DEFAULT CURRENT_TIMESTAMP</td><td>Record creation timestamp</td><td>`2026-11-20 10:00:00`</td></tr>
 </tbody></table>
-<p>|:---|:---|:---|:---|:---|</p>
+<h4>Table 2: `categories` (Apparel Departments)</h4>
 <table>
-<thead><tr><th>`id`</th><th>INT</th><th>PRIMARY KEY, AUTO_INCREMENT</th><th>Unique identifier for the user</th><th>`1`</th></tr></thead>
+<thead><tr><th>Column Name</th><th>Data Type</th><th>Constraints</th><th>Description</th><th>Sample Value</th></tr></thead>
 <tbody>
-<tr><td><code>name</code></td><td>VARCHAR(100)</td><td>NOT NULL</td><td>Full name of the user</td><td><code>Admin</code> / <code>Rahul Sharma</code></td></tr>
-<tr><td><code>email</code></td><td>VARCHAR(150)</td><td>UNIQUE, NOT NULL</td><td>Account login email address</td><td><code>admin@gmail.com</code></td></tr>
-<tr><td><code>password</code></td><td>VARCHAR(255)</td><td>NOT NULL</td><td>Bcrypt cryptographic password hash</td><td><code>$2y$12$NdjdsG...</code></td></tr>
-<tr><td><code>phone</code></td><td>VARCHAR(20)</td><td>NULL</td><td>Contact mobile number</td><td><code>+91 98251 12345</code></td></tr>
-<tr><td><code>address</code></td><td>TEXT</td><td>NULL</td><td>Default delivery residential address</td><td><code>A-402, Titanium City</code></td></tr>
-<tr><td><code>role</code></td><td>ENUM(&#039;user&#039;,&#039;admin&#039;)</td><td>DEFAULT &#039;user&#039;</td><td>Access control level</td><td><code>admin</code></td></tr>
-<tr><td><code>is_active</code></td><td>TINYINT(1)</td><td>DEFAULT 1</td><td>Account status flag</td><td><code>1</code></td></tr>
-<tr><td><code>created_at</code></td><td>TIMESTAMP</td><td>DEFAULT CURRENT_TIMESTAMP</td><td>Account creation timestamp</td><td><code>2026-11-20 10:00:00</code></td></tr>
+<tr><td>`id`</td><td>INT</td><td>PRIMARY KEY, AUTO_INCREMENT</td><td>Unique category identifier</td><td>`1`</td></tr>
+<tr><td>`name`</td><td>VARCHAR(100)</td><td>NOT NULL</td><td>Department display title</td><td>`Men's T-Shirts`</td></tr>
+<tr><td>`slug`</td><td>VARCHAR(100)</td><td>UNIQUE, NOT NULL</td><td>URL identifier</td><td>`men-tshirts`</td></tr>
+<tr><td>`gender`</td><td>ENUM('men','women','kids')</td><td>NOT NULL</td><td>Department target group</td><td>`men`</td></tr>
+<tr><td>`image_url`</td><td>VARCHAR(500)</td><td>NULL</td><td>Category thumbnail image path</td><td>`images/men/tshirt-1.jpg`</td></tr>
+<tr><td>`is_active`</td><td>TINYINT(1)</td><td>DEFAULT 1</td><td>Display toggle</td><td>`1`</td></tr>
+<tr><td>`sort_order`</td><td>INT</td><td>DEFAULT 0</td><td>Navigation sorting priority</td><td>`1`</td></tr>
 </tbody></table>
-<h4>Table 2: `categories`</h4>
-<p>Defines main apparel departments.</p>
+<h4>Table 3: `products` (29 Verified Apparel Products)</h4>
 <table>
-<thead><tr><th>Column Name</th><th>Data Type</th><th>Constraint</th><th>Description</th><th>Example</th></tr></thead>
+<thead><tr><th>Column Name</th><th>Data Type</th><th>Constraints</th><th>Description</th><th>Sample Value</th></tr></thead>
 <tbody>
+<tr><td>`id`</td><td>INT</td><td>PRIMARY KEY, AUTO_INCREMENT</td><td>Unique product identifier</td><td>`1`</td></tr>
+<tr><td>`name`</td><td>VARCHAR(200)</td><td>NOT NULL</td><td>Garment commercial title</td><td>`Men's Noir Graphic Tee`</td></tr>
+<tr><td>`category`</td><td>VARCHAR(100)</td><td>NOT NULL</td><td>Primary apparel type</td><td>`T-Shirts`</td></tr>
+<tr><td>`subcategory`</td><td>VARCHAR(100)</td><td>NULL</td><td>Subcategory classification</td><td>`t-shirts`</td></tr>
+<tr><td>`gender`</td><td>ENUM('men','women','kids')</td><td>NOT NULL</td><td>Target demographic</td><td>`men`</td></tr>
+<tr><td>`price`</td><td>DECIMAL(10,2)</td><td>NOT NULL</td><td>Selling price in INR (₹)</td><td>`699.00`</td></tr>
+<tr><td>`old_price`</td><td>DECIMAL(10,2)</td><td>NULL</td><td>Original price for strikethrough</td><td>`899.00`</td></tr>
+<tr><td>`badge`</td><td>VARCHAR(50)</td><td>NULL</td><td>Merchandising badge label</td><td>`Best Seller`</td></tr>
+<tr><td>`rating`</td><td>DECIMAL(3,2)</td><td>DEFAULT 4.50</td><td>Average customer rating</td><td>`4.80`</td></tr>
+<tr><td>`stock_qty`</td><td>INT</td><td>DEFAULT 100</td><td>Available inventory stock</td><td>`85`</td></tr>
+<tr><td>`description`</td><td>TEXT</td><td>NULL</td><td>Marketing narrative</td><td>`Signature streetwear...`</td></tr>
+<tr><td>`fit`</td><td>TEXT</td><td>NULL</td><td>Fit specification</td><td>`Regular streetwear fit`</td></tr>
+<tr><td>`details`</td><td>TEXT</td><td>NULL</td><td>Pipe-separated fabric specs</td><td>`100% cotton</td><td>220GSM`</td></tr>
+<tr><td>`is_active`</td><td>TINYINT(1)</td><td>DEFAULT 1</td><td>Catalog display toggle</td><td>`1`</td></tr>
 </tbody></table>
-<p>|:---|:---|:---|:---|:---|</p>
+<h4>Table 4: `orders` (Customer Transactions Registry)</h4>
 <table>
-<thead><tr><th>`id`</th><th>INT</th><th>PRIMARY KEY, AUTO_INCREMENT</th><th>Unique category identifier</th><th>`1`</th></tr></thead>
+<thead><tr><th>Column Name</th><th>Data Type</th><th>Constraints</th><th>Description</th><th>Sample Value</th></tr></thead>
 <tbody>
-<tr><td><code>name</code></td><td>VARCHAR(100)</td><td>NOT NULL</td><td>Display name of the category</td><td><code>Men&#039;s T-Shirts</code></td></tr>
-<tr><td><code>slug</code></td><td>VARCHAR(100)</td><td>UNIQUE, NOT NULL</td><td>URL-friendly unique identifier</td><td><code>men-tshirts</code></td></tr>
-<tr><td><code>gender</code></td><td>ENUM(&#039;men&#039;,&#039;women&#039;,&#039;kids&#039;,&#039;unisex&#039;)</td><td>NOT NULL</td><td>Gender target group</td><td><code>men</code></td></tr>
-<tr><td><code>image_url</code></td><td>VARCHAR(500)</td><td>NULL</td><td>Relative path to category visual image</td><td><code>images/men/tshirt-1.jpg</code></td></tr>
-<tr><td><code>is_active</code></td><td>TINYINT(1)</td><td>DEFAULT 1</td><td>Whether category is shown</td><td><code>1</code></td></tr>
-<tr><td><code>sort_order</code></td><td>INT</td><td>DEFAULT 0</td><td>Display priority sequence</td><td><code>1</code></td></tr>
+<tr><td>`id`</td><td>INT</td><td>PRIMARY KEY, AUTO_INCREMENT</td><td>Unique order ID</td><td>`1`</td></tr>
+<tr><td>`order_number`</td><td>VARCHAR(20)</td><td>UNIQUE, NOT NULL</td><td>Public order tracking serial</td><td>`ELV-2026-1001`</td></tr>
+<tr><td>`user_id`</td><td>INT</td><td>FOREIGN KEY (users.id) NULL</td><td>Associated account ID if logged in</td><td>`NULL`</td></tr>
+<tr><td>`status`</td><td>ENUM(...)</td><td>DEFAULT 'pending'</td><td>Fulfillment lifecycle state</td><td>`delivered`</td></tr>
+<tr><td>`payment_status`</td><td>ENUM(...)</td><td>DEFAULT 'pending'</td><td>Payment settlement status</td><td>`paid`</td></tr>
+<tr><td>`payment_method`</td><td>VARCHAR(50)</td><td>DEFAULT 'cod'</td><td>Payment method used</td><td>`card / upi / cod`</td></tr>
+<tr><td>`subtotal`</td><td>DECIMAL(10,2)</td><td>NOT NULL</td><td>Sum before discount</td><td>`2098.00`</td></tr>
+<tr><td>`discount`</td><td>DECIMAL(10,2)</td><td>DEFAULT 0.00</td><td>Promo deduction in ₹</td><td>`200.00`</td></tr>
+<tr><td>`total`</td><td>DECIMAL(10,2)</td><td>NOT NULL</td><td>Net payable total in ₹</td><td>`1898.00`</td></tr>
+<tr><td>`shipping_name`</td><td>VARCHAR(150)</td><td>NOT NULL</td><td>Customer recipient name</td><td>`Rahul Sharma`</td></tr>
+<tr><td>`shipping_email`</td><td>VARCHAR(150)</td><td>NOT NULL</td><td>Notification email</td><td>`rahul.sharma@example.com`</td></tr>
+<tr><td>`shipping_phone`</td><td>VARCHAR(20)</td><td>NOT NULL</td><td>Contact phone number</td><td>`+91 98251 12345`</td></tr>
+<tr><td>`shipping_address`</td><td>TEXT</td><td>NOT NULL</td><td>Street delivery address</td><td>`A-402, Titanium City`</td></tr>
+<tr><td>`shipping_city`</td><td>VARCHAR(100)</td><td>NOT NULL</td><td>Destination city</td><td>`Ahmedabad`</td></tr>
+<tr><td>`shipping_pincode`</td><td>VARCHAR(10)</td><td>NOT NULL</td><td>Postal PIN code</td><td>`380015`</td></tr>
+<tr><td>`created_at`</td><td>TIMESTAMP</td><td>DEFAULT CURRENT_TIMESTAMP</td><td>Order submission time</td><td>`2026-11-20 10:15:00`</td></tr>
 </tbody></table>
-<h4>Table 3: `products`</h4>
-<p>The core catalog table holding all 29 apparel items.</p>
+<h4>Table 5: `order_items` (Order Line Items)</h4>
 <table>
-<thead><tr><th>Column Name</th><th>Data Type</th><th>Constraint</th><th>Description</th><th>Example</th></tr></thead>
+<thead><tr><th>Column Name</th><th>Data Type</th><th>Constraints</th><th>Description</th><th>Sample Value</th></tr></thead>
 <tbody>
+<tr><td>`id`</td><td>INT</td><td>PRIMARY KEY, AUTO_INCREMENT</td><td>Line item identifier</td><td>`1`</td></tr>
+<tr><td>`order_id`</td><td>INT</td><td>FOREIGN KEY (orders.id) CASCADE</td><td>Parent order reference</td><td>`1`</td></tr>
+<tr><td>`product_id`</td><td>INT</td><td>FOREIGN KEY (products.id)</td><td>Garment reference</td><td>`1`</td></tr>
+<tr><td>`product_name`</td><td>VARCHAR(200)</td><td>NOT NULL</td><td>Snapshot of garment name</td><td>`Men's Noir Graphic Tee`</td></tr>
+<tr><td>`product_image`</td><td>VARCHAR(500)</td><td>NULL</td><td>Snapshot of thumbnail path</td><td>`images/men/tshirt-1.jpg`</td></tr>
+<tr><td>`size`</td><td>VARCHAR(20)</td><td>NOT NULL</td><td>Selected garment size</td><td>`L`</td></tr>
+<tr><td>`color`</td><td>VARCHAR(50)</td><td>NULL</td><td>Selected garment color</td><td>`Black`</td></tr>
+<tr><td>`qty`</td><td>INT</td><td>NOT NULL</td><td>Quantity purchased</td><td>`1`</td></tr>
+<tr><td>`price`</td><td>DECIMAL(10,2)</td><td>NOT NULL</td><td>Unit price in ₹</td><td>`699.00`</td></tr>
+<tr><td>`total`</td><td>DECIMAL(10,2)</td><td>NOT NULL</td><td>Line total (price × qty)</td><td>`699.00`</td></tr>
 </tbody></table>
-<p>|:---|:---|:---|:---|:---|</p>
+<h4>Tables 6 to 14: Auxiliary Platform Data Stores</h4>
 <table>
-<thead><tr><th>`id`</th><th>INT</th><th>PRIMARY KEY, AUTO_INCREMENT</th><th>Unique product identifier</th><th>`1`</th></tr></thead>
+<thead><tr><th>Table Name</th><th>Key Column Attributes</th><th>Primary Constraints</th><th>Functional Purpose</th></tr></thead>
 <tbody>
-<tr><td><code>name</code></td><td>VARCHAR(200)</td><td>NOT NULL</td><td>Garment commercial name</td><td><code>Men&#039;s Noir Graphic Tee</code></td></tr>
-<tr><td><code>category</code></td><td>VARCHAR(100)</td><td>NOT NULL</td><td>High-level apparel category</td><td><code>T-Shirts</code></td></tr>
-<tr><td><code>subcategory</code></td><td>VARCHAR(100)</td><td>NULL</td><td>Secondary categorization</td><td><code>t-shirts</code> / <code>jeans</code></td></tr>
-<tr><td><code>gender</code></td><td>ENUM(&#039;men&#039;,&#039;women&#039;,&#039;kids&#039;)</td><td>NOT NULL</td><td>Apparel target group</td><td><code>men</code></td></tr>
-<tr><td><code>price</code></td><td>DECIMAL(10,2)</td><td>NOT NULL</td><td>Selling price in ₹</td><td><code>699.00</code></td></tr>
-<tr><td><code>old_price</code></td><td>DECIMAL(10,2)</td><td>NULL</td><td>Original MRP for discount strikethrough</td><td><code>899.00</code></td></tr>
-<tr><td><code>badge</code></td><td>VARCHAR(50)</td><td>NULL</td><td>Marketing badge tag</td><td><code>Best Seller</code> / <code>New</code></td></tr>
-<tr><td><code>rating</code></td><td>DECIMAL(3,2)</td><td>DEFAULT 4.50</td><td>Average star rating (1.0 to 5.0)</td><td><code>4.80</code></td></tr>
-<tr><td><code>stock_qty</code></td><td>INT</td><td>DEFAULT 100</td><td>Current warehouse inventory count</td><td><code>85</code></td></tr>
-<tr><td><code>description</code></td><td>TEXT</td><td>NULL</td><td>Detailed product narrative</td><td><code>Signature streetwear...</code></td></tr>
-<tr><td><code>fit</code></td><td>TEXT</td><td>NULL</td><td>Garment fit and drape guide</td><td><code>Regular streetwear fit</code></td></tr>
-<tr><td><code>details</code></td><td>TEXT</td><td>NULL</td><td>Pipe-separated fabric specifications</td><td>`100% combed cotton\</td><td>220GSM`</td></tr>
-<tr><td><code>is_active</code></td><td>TINYINT(1)</td><td>DEFAULT 1</td><td>Visibility toggle flag</td><td><code>1</code></td></tr>
+<tr><td>`product_images`</td><td>`id, product_id, url, sort_order`</td><td>`FOREIGN KEY (products.id)`</td><td>Multi-angle garment photography paths</td></tr>
+<tr><td>`product_sizes`</td><td>`id, product_id, size`</td><td>`FOREIGN KEY (products.id)`</td><td>Garment size options (S, M, L, XL, 32, 7-8Y)</td></tr>
+<tr><td>`product_colors`</td><td>`id, product_id, name, hex`</td><td>`FOREIGN KEY (products.id)`</td><td>Garment color swatches and hex values (`#1a1a1a`)</td></tr>
+<tr><td>`cart_items`</td><td>`id, session_id, user_id, product_id, qty`</td><td>`FOREIGN KEY (products.id)`</td><td>Server-side session shopping cart data</td></tr>
+<tr><td>`wishlist_items`</td><td>`id, session_id, user_id, product_id`</td><td>`FOREIGN KEY (products.id)`</td><td>Bookmarked customer favorites across visits</td></tr>
+<tr><td>`coupons`</td><td>`id, code, type, value, min_order, is_active`</td><td>`UNIQUE(code)`</td><td>Promo discount codes (WELCOME10, FLAT200, SAVE15)</td></tr>
+<tr><td>`reviews`</td><td>`id, product_id, name, rating, comment, is_approved`</td><td>`FOREIGN KEY (products.id)`</td><td>Customer product reviews and star ratings (1 to 5)</td></tr>
+<tr><td>`newsletter_subscribers`</td><td>`id, email, is_active, subscribed_at`</td><td>`UNIQUE(email)`</td><td>Email subscriptions for fashion releases</td></tr>
+<tr><td>`contact_messages`</td><td>`id, name, email, subject, message, status`</td><td>`ENUM(...)`</td><td>Customer support inquiries from contact page</td></tr>
+<tr><td>`settings`</td><td>`id, setting_key, setting_value`</td><td>`UNIQUE(setting_key)`</td><td>Global config parameters (`site_name`, `free_shipping_min`)</td></tr>
 </tbody></table>
-<h4>Table 4: `product_images`</h4>
-<p>Stores relative file paths for multi-angle product photography.</p>
-<table>
-<thead><tr><th>Column Name</th><th>Data Type</th><th>Constraint</th><th>Description</th><th>Example</th></tr></thead>
-<tbody>
-</tbody></table>
-<p>|:---|:---|:---|:---|:---|</p>
-<table>
-<thead><tr><th>`id`</th><th>INT</th><th>PRIMARY KEY, AUTO_INCREMENT</th><th>Image record ID</th><th>`1`</th></tr></thead>
-<tbody>
-<tr><td><code>product_id</code></td><td>INT</td><td>FOREIGN KEY (products.id)</td><td>Referenced product</td><td><code>1</code></td></tr>
-<tr><td><code>url</code></td><td>VARCHAR(500)</td><td>NOT NULL</td><td>Relative image file path</td><td><code>images/men/tshirt-1.jpg</code></td></tr>
-<tr><td><code>sort_order</code></td><td>INT</td><td>DEFAULT 0</td><td>Thumbnail sorting sequence</td><td><code>0</code></td></tr>
-</tbody></table>
-<h4>Table 5: `product_sizes`</h4>
-<p>Garment sizing options available for each apparel item.</p>
-<table>
-<thead><tr><th>Column Name</th><th>Data Type</th><th>Constraint</th><th>Description</th><th>Example</th></tr></thead>
-<tbody>
-</tbody></table>
-<p>|:---|:---|:---|:---|:---|</p>
-<table>
-<thead><tr><th>`id`</th><th>INT</th><th>PRIMARY KEY, AUTO_INCREMENT</th><th>Size record ID</th><th>`1`</th></tr></thead>
-<tbody>
-<tr><td><code>product_id</code></td><td>INT</td><td>FOREIGN KEY (products.id)</td><td>Referenced product</td><td><code>1</code></td></tr>
-<tr><td><code>size</code></td><td>VARCHAR(20)</td><td>NOT NULL</td><td>Garment size label</td><td><code>S</code>, <code>M</code>, <code>L</code>, <code>32</code>, <code>7-8Y</code></td></tr>
-</tbody></table>
-<h4>Table 6: `product_colors`</h4>
-<p>Color swatches and hexadecimal values for apparel items.</p>
-<table>
-<thead><tr><th>Column Name</th><th>Data Type</th><th>Constraint</th><th>Description</th><th>Example</th></tr></thead>
-<tbody>
-</tbody></table>
-<p>|:---|:---|:---|:---|:---|</p>
-<table>
-<thead><tr><th>`id`</th><th>INT</th><th>PRIMARY KEY, AUTO_INCREMENT</th><th>Color record ID</th><th>`1`</th></tr></thead>
-<tbody>
-<tr><td><code>product_id</code></td><td>INT</td><td>FOREIGN KEY (products.id)</td><td>Referenced product</td><td><code>1</code></td></tr>
-<tr><td><code>name</code></td><td>VARCHAR(50)</td><td>NOT NULL</td><td>Color commercial name</td><td><code>Black</code> / <code>Medium Denim</code></td></tr>
-<tr><td><code>hex</code></td><td>VARCHAR(10)</td><td>NOT NULL</td><td>CSS Hexadecimal color representation</td><td><code>#1a1a1a</code></td></tr>
-</tbody></table>
-<h4>Table 7: `orders`</h4>
-<p>Master transaction registry for all submitted customer purchases.</p>
-<table>
-<thead><tr><th>Column Name</th><th>Data Type</th><th>Constraint</th><th>Description</th><th>Example</th></tr></thead>
-<tbody>
-</tbody></table>
-<p>|:---|:---|:---|:---|:---|</p>
-<table>
-<thead><tr><th>`id`</th><th>INT</th><th>PRIMARY KEY, AUTO_INCREMENT</th><th>Unique order record ID</th><th>`1`</th></tr></thead>
-<tbody>
-<tr><td><code>order_number</code></td><td>VARCHAR(20)</td><td>UNIQUE, NOT NULL</td><td>Human-readable tracking number</td><td><code>ELV-2026-1001</code></td></tr>
-<tr><td><code>user_id</code></td><td>INT</td><td>FOREIGN KEY (users.id) NULL</td><td>Account ID if authenticated shopper</td><td><code>NULL</code> / <code>2</code></td></tr>
-<tr><td><code>status</code></td><td>ENUM(&#039;pending&#039;,&#039;confirmed&#039;,&#039;processing&#039;,&#039;shipped&#039;,&#039;delivered&#039;,&#039;cancelled&#039;)</td><td>DEFAULT &#039;pending&#039;</td><td>Fulfillment lifecycle state</td><td><code>delivered</code></td></tr>
-<tr><td><code>payment_status</code></td><td>ENUM(&#039;pending&#039;,&#039;paid&#039;,&#039;failed&#039;,&#039;refunded&#039;)</td><td>DEFAULT &#039;pending&#039;</td><td>Payment settlement state</td><td><code>paid</code></td></tr>
-<tr><td><code>payment_method</code></td><td>VARCHAR(50)</td><td>DEFAULT &#039;cod&#039;</td><td>Payment channel selected</td><td><code>upi</code> / <code>card</code> / <code>cod</code></td></tr>
-<tr><td><code>subtotal</code></td><td>DECIMAL(10,2)</td><td>NOT NULL</td><td>Sum of item totals before discounts</td><td><code>2098.00</code></td></tr>
-<tr><td><code>discount</code></td><td>DECIMAL(10,2)</td><td>DEFAULT 0.00</td><td>Total promo discount deducted in ₹</td><td><code>200.00</code></td></tr>
-<tr><td><code>total</code></td><td>DECIMAL(10,2)</td><td>NOT NULL</td><td>Final payable order amount</td><td><code>1898.00</code></td></tr>
-<tr><td><code>shipping_name</code></td><td>VARCHAR(150)</td><td>NOT NULL</td><td>Full name of recipient customer</td><td><code>Rahul Sharma</code></td></tr>
-<tr><td><code>shipping_email</code></td><td>VARCHAR(150)</td><td>NOT NULL</td><td>Notification email address</td><td><code>rahul.sharma@example.com</code></td></tr>
-<tr><td><code>shipping_phone</code></td><td>VARCHAR(20)</td><td>NOT NULL</td><td>Delivery contact mobile number</td><td><code>+91 98251 12345</code></td></tr>
-<tr><td><code>shipping_address</code></td><td>TEXT</td><td>NOT NULL</td><td>Detailed street and premises address</td><td><code>A-402, Titanium City</code></td></tr>
-<tr><td><code>shipping_city</code></td><td>VARCHAR(100)</td><td>NOT NULL</td><td>Destination municipality</td><td><code>Ahmedabad</code></td></tr>
-<tr><td><code>shipping_state</code></td><td>VARCHAR(100)</td><td>NOT NULL</td><td>Destination state/province</td><td><code>Gujarat</code></td></tr>
-<tr><td><code>shipping_pincode</code></td><td>VARCHAR(10)</td><td>NOT NULL</td><td>Postal code</td><td><code>380015</code></td></tr>
-<tr><td><code>created_at</code></td><td>TIMESTAMP</td><td>DEFAULT CURRENT_TIMESTAMP</td><td>Order submission timestamp</td><td><code>2026-11-20 10:15:00</code></td></tr>
-</tbody></table>
-<h4>Table 8: `order_items`</h4>
-<p>Individual apparel line items associated with each order.</p>
-<table>
-<thead><tr><th>Column Name</th><th>Data Type</th><th>Constraint</th><th>Description</th><th>Example</th></tr></thead>
-<tbody>
-</tbody></table>
-<p>|:---|:---|:---|:---|:---|</p>
-<table>
-<thead><tr><th>`id`</th><th>INT</th><th>PRIMARY KEY, AUTO_INCREMENT</th><th>Line item record ID</th><th>`1`</th></tr></thead>
-<tbody>
-<tr><td><code>order_id</code></td><td>INT</td><td>FOREIGN KEY (orders.id)</td><td>Parent order reference (CASCADE)</td><td><code>1</code></td></tr>
-<tr><td><code>product_id</code></td><td>INT</td><td>FOREIGN KEY (products.id)</td><td>Source product reference</td><td><code>1</code></td></tr>
-<tr><td><code>product_name</code></td><td>VARCHAR(200)</td><td>NOT NULL</td><td>Product name snapshot at checkout</td><td><code>Men&#039;s Noir Graphic Tee</code></td></tr>
-<tr><td><code>product_image</code></td><td>VARCHAR(500)</td><td>NULL</td><td>Relative thumbnail image snapshot</td><td><code>images/men/tshirt-1.jpg</code></td></tr>
-<tr><td><code>size</code></td><td>VARCHAR(20)</td><td>NOT NULL</td><td>Ordered size</td><td><code>L</code></td></tr>
-<tr><td><code>color</code></td><td>VARCHAR(50)</td><td>NULL</td><td>Ordered color swatch</td><td><code>Black</code></td></tr>
-<tr><td><code>qty</code></td><td>INT</td><td>NOT NULL</td><td>Number of units purchased</td><td><code>1</code></td></tr>
-<tr><td><code>price</code></td><td>DECIMAL(10,2)</td><td>NOT NULL</td><td>Unit price at time of purchase</td><td><code>699.00</code></td></tr>
-<tr><td><code>total</code></td><td>DECIMAL(10,2)</td><td>NOT NULL</td><td>Line item total (price × qty)</td><td><code>699.00</code></td></tr>
-</tbody></table>
-<h4>Table 9: `coupons`</h4>
-<p>Discount promo codes for cart savings.</p>
-<table>
-<thead><tr><th>Column Name</th><th>Data Type</th><th>Constraint</th><th>Description</th><th>Example</th></tr></thead>
-<tbody>
-</tbody></table>
-<p>|:---|:---|:---|:---|:---|</p>
-<table>
-<thead><tr><th>`id`</th><th>INT</th><th>PRIMARY KEY, AUTO_INCREMENT</th><th>Coupon record ID</th><th>`1`</th></tr></thead>
-<tbody>
-<tr><td><code>code</code></td><td>VARCHAR(50)</td><td>UNIQUE, NOT NULL</td><td>Promo voucher code string</td><td><code>WELCOME10</code></td></tr>
-<tr><td><code>type</code></td><td>ENUM(&#039;percent&#039;,&#039;fixed&#039;)</td><td>DEFAULT &#039;percent&#039;</td><td>Discount calculation method</td><td><code>percent</code></td></tr>
-<tr><td><code>value</code></td><td>DECIMAL(10,2)</td><td>NOT NULL</td><td>Discount percentage or flat ₹ off</td><td><code>10.00</code></td></tr>
-<tr><td><code>min_order</code></td><td>DECIMAL(10,2)</td><td>DEFAULT 0.00</td><td>Minimum cart subtotal required</td><td><code>500.00</code></td></tr>
-<tr><td><code>is_active</code></td><td>TINYINT(1)</td><td>DEFAULT 1</td><td>Coupon enablement flag</td><td><code>1</code></td></tr>
-</tbody></table>
-<h4>Table 10: `reviews`</h4>
-<p>Verified customer ratings and product testimonials.</p>
-<table>
-<thead><tr><th>Column Name</th><th>Data Type</th><th>Constraint</th><th>Description</th><th>Example</th></tr></thead>
-<tbody>
-</tbody></table>
-<p>|:---|:---|:---|:---|:---|</p>
-<table>
-<thead><tr><th>`id`</th><th>INT</th><th>PRIMARY KEY, AUTO_INCREMENT</th><th>Review record ID</th><th>`1`</th></tr></thead>
-<tbody>
-<tr><td><code>product_id</code></td><td>INT</td><td>FOREIGN KEY (products.id)</td><td>Garment reviewed</td><td><code>1</code></td></tr>
-<tr><td><code>name</code></td><td>VARCHAR(100)</td><td>NOT NULL</td><td>Reviewer author name</td><td><code>Rahul Sharma</code></td></tr>
-<tr><td><code>rating</code></td><td>INT</td><td>CHECK (rating BETWEEN 1 AND 5)</td><td>Star score</td><td><code>5</code></td></tr>
-<tr><td><code>title</code></td><td>VARCHAR(200)</td><td>NULL</td><td>Review headline summary</td><td><code>Exceptional Quality</code></td></tr>
-<tr><td><code>comment</code></td><td>TEXT</td><td>NOT NULL</td><td>Review commentary text</td><td><code>Heavy combed cotton feels...</code></td></tr>
-<tr><td><code>is_approved</code></td><td>TINYINT(1)</td><td>DEFAULT 0</td><td>Administrative approval status</td><td><code>1</code></td></tr>
-</tbody></table>
-<h4>Table 11: `newsletter_subscribers`</h4>
-<p>Email registry for brand marketing dispatches.</p>
-<table>
-<thead><tr><th>Column Name</th><th>Data Type</th><th>Constraint</th><th>Description</th><th>Example</th></tr></thead>
-<tbody>
-</tbody></table>
-<p>|:---|:---|:---|:---|:---|</p>
-<table>
-<thead><tr><th>`id`</th><th>INT</th><th>PRIMARY KEY, AUTO_INCREMENT</th><th>Subscriber record ID</th><th>`1`</th></tr></thead>
-<tbody>
-<tr><td><code>email</code></td><td>VARCHAR(150)</td><td>UNIQUE, NOT NULL</td><td>Customer subscription email</td><td><code>rahul.sharma@example.com</code></td></tr>
-<tr><td><code>is_active</code></td><td>TINYINT(1)</td><td>DEFAULT 1</td><td>Active subscriber flag</td><td><code>1</code></td></tr>
-</tbody></table>
-<h4>Table 12: `contact_messages`</h4>
-<p>Customer inquiries submitted through <code>contact.html</code>.</p>
-<table>
-<thead><tr><th>Column Name</th><th>Data Type</th><th>Constraint</th><th>Description</th><th>Example</th></tr></thead>
-<tbody>
-</tbody></table>
-<p>|:---|:---|:---|:---|:---|</p>
-<table>
-<thead><tr><th>`id`</th><th>INT</th><th>PRIMARY KEY, AUTO_INCREMENT</th><th>Message record ID</th><th>`1`</th></tr></thead>
-<tbody>
-<tr><td><code>name</code></td><td>VARCHAR(100)</td><td>NOT NULL</td><td>Inquirer full name</td><td><code>Rohan Trivedi</code></td></tr>
-<tr><td><code>email</code></td><td>VARCHAR(150)</td><td>NOT NULL</td><td>Inquirer email</td><td><code>rohan.t@example.com</code></td></tr>
-<tr><td><code>subject</code></td><td>VARCHAR(200)</td><td>NULL</td><td>Message subject line</td><td><code>Size exchange inquiry</code></td></tr>
-<tr><td><code>message</code></td><td>TEXT</td><td>NOT NULL</td><td>Full inquiry body text</td><td><code>Hi team, I would like to...</code></td></tr>
-<tr><td><code>status</code></td><td>ENUM(&#039;new&#039;,&#039;read&#039;,&#039;replied&#039;)</td><td>DEFAULT &#039;new&#039;</td><td>Administrative triage state</td><td><code>new</code></td></tr>
-</tbody></table>
-<h4>Table 13: `cart_items`</h4>
-<p>Server-side session cart storage for cross-request consistency.</p>
-<table>
-<thead><tr><th>Column Name</th><th>Data Type</th><th>Constraint</th><th>Description</th><th>Example</th></tr></thead>
-<tbody>
-</tbody></table>
-<p>|:---|:---|:---|:---|:---|</p>
-<table>
-<thead><tr><th>`id`</th><th>INT</th><th>PRIMARY KEY, AUTO_INCREMENT</th><th>Cart row identifier</th><th>`1`</th></tr></thead>
-<tbody>
-<tr><td><code>session_id</code></td><td>VARCHAR(100)</td><td>NOT NULL</td><td>Unique session token</td><td><code>a8f3b20...</code></td></tr>
-<tr><td><code>product_id</code></td><td>INT</td><td>FOREIGN KEY (products.id)</td><td>Referenced product</td><td><code>1</code></td></tr>
-<tr><td><code>qty</code></td><td>INT</td><td>DEFAULT 1</td><td>Item quantity</td><td><code>2</code></td></tr>
-</tbody></table>
-<h4>Table 14: `settings`</h4>
-<p>Global website configuration key-value storage.</p>
-<table>
-<thead><tr><th>Column Name</th><th>Data Type</th><th>Constraint</th><th>Description</th><th>Example</th></tr></thead>
-<tbody>
-</tbody></table>
-<p>|:---|:---|:---|:---|:---|</p>
-<table>
-<thead><tr><th>`id`</th><th>INT</th><th>PRIMARY KEY, AUTO_INCREMENT</th><th>Setting identifier</th><th>`1`</th></tr></thead>
-<tbody>
-<tr><td><code>setting_key</code></td><td>VARCHAR(100)</td><td>UNIQUE, NOT NULL</td><td>Configuration identifier</td><td><code>free_shipping_min</code></td></tr>
-<tr><td><code>setting_value</code></td><td>TEXT</td><td>NULL</td><td>Stored configuration setting</td><td><code>999</code></td></tr>
-</tbody></table>
-<hr style='border:0;border-top:1px solid #cbd5e1;margin:1.75rem 0;'>
-<h1>5. DEVELOPMENT &amp; IMPLEMENTATION</h1>
-<h3>5.1 Development Methodology</h3>
-<p>The team executed an <strong>Agile Scrum</strong> methodology structured into 2-week sprints:</p>
-<li><strong>Daily Progress Stand-Ups:</strong> Rapid 15-minute syncs to identify blockers, review CSS component integration, and coordinate backend endpoints.</li>
-<li><strong>Continuous Version Control:</strong> Git branch-based feature delivery (<code>feature/catalog</code>, <code>feature/checkout</code>, <code>bugfix/admin-nav</code>) merged into <code>main</code> after verification.</li>
-<li><strong>Continuous Database Synchronization:</strong> Creation of automated self-healing database seeding routines (<code>seed_db.php</code>) allowing zero-effort migration across different developer workstations.</li>
-<h3>5.2 Coding Standards &amp; Architectural Best Practices</h3>
-<li><strong>Frontend Architecture:</strong></li>
-<p>  - Semantic HTML5 elements (<code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code>).</p>
-<p>  - CSS3 Modern Design System utilizing CSS Variables for unified theming (<code>--clr-accent: #c9a96e; --clr-bg: #0a0a0a;</code>).</p>
-<p>  - Modular, immediately invoked function expressions (IIFE) in JavaScript preventing global namespace pollution.</p>
-<p>  - Event delegation on dynamic product lists and cart drawers to optimize memory footprint.</p>
-<li><strong>Backend Architecture:</strong></li>
-<p>  - Secure PHP Object Data (PDO) driver utilizing parameterized prepared statements.</p>
-<p>  - Strict input sanitization with <code>htmlspecialchars()</code> and <code>filter_var(..., FILTER_SANITIZE_EMAIL)</code>.</p>
-<p>  - Transactional integrity via <code>$pdo-&gt;beginTransaction()</code> and <code>$pdo-&gt;commit()</code> ensuring order and item rows insert atomically.</p>
-<p>  - Centralized JSON response helpers (<code>jsonResponse()</code>) with correct HTTP status codes (200, 400, 422, 500).</p>
-<h3>5.3 GitHub Repository Details</h3>
-<li><strong>Repository URL:</strong> [https://github.com/jaimisha15/Eleve-clothing-ecommerce](https://github.com/jaimisha15/Eleve-clothing-ecommerce)</li>
-<li><strong>Primary Branch:</strong> <code>main</code></li>
-<li><strong>Tracked Clean Commits:</strong></li>
-<p>  - <code>066cb36</code>: Organize reference images for Men, Women, Kids and completely purge footwear.</p>
-<p>  - <code>2e9803b</code>: Fix cart query selector errors and add safe component initialization.</p>
-<p>  - <code>d8c28f0</code>: Auto-redirect admin navigation, populate 29 apparel items and 6 sample orders in database.</p>
-<p>  - <code>8fd4006</code>: Fix customer name rendering in admin orders table, add single-click order deletion, and patch checkout CORS routing.</p>
-<p>  - <code>c29303a</code>: Enforce strict separation between customer login button and admin panel button in storefront navbar.</p>
-<h3>5.4 AI Tools, Development Libraries &amp; Frameworks</h3>
-<li><strong>Google Antigravity:</strong> Advanced agentic coding assistant used for continuous repository refactoring, automated testing, terminal orchestration, and architectural validation.</li>
-<li><strong>ChatGPT (OpenAI):</strong> Utilized for generating luxury copywriting, product descriptions, and drafting structural test cases.</li>
-<li><strong>PHP Data Objects (PDO):</strong> Built-in native PHP database interface ensuring robust, secure database access.</li>
-<li><strong>Google Fonts (Inter &amp; Playfair Display):</strong> Web typography providing the modern luxury editorial appearance.</li>
-<li><strong>KaTeX / LaTeX:</strong> Standardized mathematical and financial rendering.</li>
-<h3>5.5 Implementation Walkthrough &amp; Screen Modules</h3>
-<h4>1. Storefront Home Page (`index.html`)</h4>
-<p>The landing experience establishes brand authority with a full-bleed luxury banner, brand statement (<em>&quot;Define Your Elegance&quot;</em>), curated department quick-links (Women, Men, Kids), trending apparel spotlights, customer testimonials, and an interactive FAQ accordion.</p>
-<h4>2. Men&#039;s Department (`men.html` — 11 Garments)</h4>
-<p>Curated exclusively for men&#039;s fashion:</p>
-<li><strong>T-Shirts (7 Items):</strong> Men&#039;s Noir Graphic Tee (₹699), Minimalist Crew Neck Tee (₹599), Urban Street Tee (₹749), Vintage Wash Graphic Tee (₹699), Oversized Statement Tee (₹799), Athletics Printed T-Shirt (₹649), Signature Essential Tee (₹679).</li>
-<li><strong>Jeans (4 Items):</strong> Slim Fit Washed Jeans (₹1,399), Distressed Street Denim (₹1,499), Dark Indigo Tapered Jeans (₹1,299), Relaxed Straight Leg Jeans (₹1,349).</li>
-<li><em>All items link to authentic local photography located in <code>images/men/</code>.</em></li>
-<h4>3. Women&#039;s Department (`women.html` — 10 Garments)</h4>
-<p>Curated exclusively for women&#039;s contemporary wear:</p>
-<li><strong>T-Shirts (5 Items):</strong> Women&#039;s Cropped Graphic T-Shirt (₹599), Minimalist Aesthetic Tee (₹649), Oversized Graphic Tee (₹699), Casual Cotton Daily Tee (₹549), Ribbed Fitted T-Shirt (₹629).</li>
-<li><strong>Jeans (5 Items):</strong> High-Rise Flare Jeans (₹1,499), Mid-Rise Wide Leg Washed Jeans (₹1,599), Straight Cut Vintage Denim (₹1,299), Slim Fit Ankle Jeans (₹1,399), Classic Denim Trousers (₹1,249).</li>
-<li><em>All items link to authentic local photography located in <code>images/women/</code>.</em></li>
-<h4>4. Kids&#039; Department (`kids.html` — 8 Garments)</h4>
-<p>Curated for children&#039;s comfort and energetic play:</p>
-<li><strong>T-Shirts &amp; Jeans (2 Items):</strong> Kids Star Printed Crew Neck Tee (₹449), Kids Durable Summer Denim Pants (₹699).</li>
-<li><strong>Co-Ord Sets (6 Items):</strong> Explorer Playtime Outfit Set (₹799), Casual Summer Duo Set (₹649), Adventure Active Wear Set (₹599), Sunshine Weekend Co-Ord (₹699), Daily Smiles Casual Outfit (₹549), Bright Smile Graphic Outfit (₹599).</li>
-<li><em>All items link to authentic local photography located in <code>images/kids/</code>.</em></li>
-<h4>5. Product Detail View (`product-detail.html`)</h4>
-<p>Presents high-resolution garment previews, dynamic thumbnail swapping, real-time size pill selection (XS to XXL and kids age tags), color swatch indicators, real-time subtotal pricing, and detailed fabric composition specifications.</p>
-<h4>6. Sliding Cart &amp; Wishlist Drawers</h4>
-<p>Accessible from anywhere via the sticky header or bottom utility bar. Displays live item counter badges, instant quantity increment/decrement buttons, individual item removal, free shipping thresholds, and subtotal summaries.</p>
-<h4>7. Frictionless Checkout (`checkout.html`)</h4>
-<p>Permits customers to input their delivery details (Recipient Name, Mobile Phone, Street Address, City, State, and 6-digit Pincode) and select payment method (COD, Card, UPI, Net Banking). Upon submission, data is sent to <code>php/orders.php</code>, generating an authentic order number and storing the record in MySQL.</p>
-<h4>8. Admin Control Center (`admin/index.php` &amp; `admin/orders.php`)</h4>
-<li><strong>Protected Access:</strong> Accessible via credentials <code>admin@gmail.com</code> / <code>123</code>.</li>
-<li><strong>Live Business Metrics:</strong> Aggregates total paid revenue, total order count, active registered users, and active product counts.</li>
-<li><strong>Customer Name Resolution:</strong> Accurately reflects customer names (e.g. <em>Rahul Sharma</em>, <em>Ananya Desai</em>, <em>Jaimisha Patel</em>) instead of generic &quot;Guest&quot; labels.</li>
-<li><strong>Status Lifecycle Control:</strong> Allows one-click status transitions between <code>Pending</code>, <code>Confirmed</code>, <code>Processing</code>, <code>Shipped</code>, and <code>Delivered</code>.</li>
-<li><strong>Order Deletion:</strong> Administrators can safely delete completed or test orders with a single click, protected by a browser confirmation dialog.</li>
-<hr style='border:0;border-top:1px solid #cbd5e1;margin:1.75rem 0;'>
+<hr style="border:none;border-top:1px solid #e2e8f0;margin:2rem 0;">
+<h1>5. DEVELOPMENT & IMPLEMENTATION</h1>
+<h3>5.1 Development Approach (Agile Methodology)</h3>
+<p>The team implemented an iterative Agile Scrum methodology structured into 2-week sprint cycles. Daily stand-ups allowed team members to coordinate UI component styling, database migration scripts, and REST controller endpoints.</p>
+<h3>5.2 Coding Standards & Architectural Best Practices</h3>
+<ul>
+<li><strong>Naming Conventions:</strong> Classes use PascalCase (<code>OrderController</code>), JS functions use camelCase (<code>placeOrder</code>), constants use UPPER_CASE (<code>SITE_URL</code>), database tables use lowercase snake_case (<code>order_items</code>).</li>
+<li><strong>Frontend Standards:</strong> Strict adherence to HTML5 semantic tags (<code><header></code>, <code><main></code>, <code><section></code>, <code><article></code>, <code><aside></code>, <code><footer></code>) for accessibility and SEO.</li>
+<li><strong>Backend Security:</strong> All database queries execute through PHP Data Objects (PDO) with parameterized prepared statements, completely mitigating SQL Injection risks.</li>
+<li><strong>Input Sanitization:</strong> All dynamic user inputs rendered onto HTML views pass through <code>htmlspecialchars()</code> with UTF-8 encoding.</li>
+</ul>
+<h3>5.3 GitHub Repository Details & Version Control Structure</h3>
+<ul>
+<li><strong>Repository URL:</strong> <code>https://github.com/jaimisha15/Eleve-clothing-ecommerce</code></li>
+<li><strong>Branch:</strong> <code>main</code></li>
+</ul>
+<h3>5.4 AI Tools, Libraries and APIs Used</h3>
+<ul>
+<li><strong>Google Antigravity:</strong> Advanced agentic coding assistant used for automated codebase refactoring, terminal orchestration, script generation, and integration testing.</li>
+<li><strong>ChatGPT (OpenAI):</strong> Employed for drafting luxury brand copywriting, product narrative descriptions, and edge-case testing scripts.</li>
+<li><strong>PHP Data Objects (PDO):</strong> Built-in native PHP database abstraction layer providing robust, prepared statement database transactions.</li>
+<li><strong>Modern Fetch API:</strong> Asynchronous JavaScript API used for frictionless order submission and background cart synchronization without page reloads.</li>
+<li><strong>Google Fonts (Inter & Playfair):</strong> Editorial web fonts providing the modern luxury visual identity across storefront and admin views.</li>
+</ul>
+<hr style="border:none;border-top:1px solid #e2e8f0;margin:2rem 0;">
+<h3>5.5 Implementation Walkthrough & Live System Screenshots</h3>
+<h4>Suite A: Storefront Discovery & Visual Merchandising</h4>
+<h5>Screen 5.1: Storefront Landing Page & Header Navigation</h5>
+<div class="doc-figure"><img src="doc_assets/fig5_01_landing_hero.png" alt="Figure 5.1: Storefront Landing Page"><div class="doc-caption">Figure 5.1: Storefront Landing Page</div></div>
+<p><em>Figure 5.1: Storefront Landing Page — Dedicated '👑 ADMIN' Header Control, Category Carousel & Brand Identity</em></p>
+<ul>
+<li>Features the brand logo, live search input bar, dedicated customer LOGIN / REGISTER button, and a separate gold Admin button. The visual category bar sits directly below with thumbnails for Women, Men, and Kids.</li>
+<li>Strict architectural separation ensures customer authentication and administrative store governance remain cleanly isolated in the navigation bar.</li>
+</ul>
+<h5>Screen 5.2: Curated Women's Feature Banner</h5>
+<div class="doc-figure"><img src="doc_assets/fig5_02_womens_banner.png" alt="Figure 5.2: Women's Collection Feature Showcase"><div class="doc-caption">Figure 5.2: Women's Collection Feature Showcase</div></div>
+<p><em>Figure 5.2: Women's Collection Feature Showcase — Editorial Visual Merchandising Banner</em></p>
+<ul>
+<li>Presents a high-impact promotional billboard for the curated Women's collection with a call-to-action button linking directly to the filtered department catalog.</li>
+<li>Incorporates responsive multi-resolution image sources and CSS gradient overlays to maintain high readability across desktop and mobile screens.</li>
+</ul>
+<h5>Screen 5.3: Storefront Trust Propositions & Gender Navigation</h5>
+<div class="doc-figure"><img src="doc_assets/fig5_03_value_props.png" alt="Figure 5.3: Storefront Trust Propositions"><div class="doc-caption">Figure 5.3: Storefront Trust Propositions</div></div>
+<p><em>Figure 5.3: Storefront Trust Propositions & Curated Gender Navigation Bar</em></p>
+<ul>
+<li>Communicates store guarantees: Free Shipping over ₹999, Premium Handcrafted Quality, 30-Day Easy Returns, and 100% Encrypted Checkout.</li>
+<li>Includes a persistent announcement bar and smooth scroll anchor points leading into the curated department catalog sections.</li>
+</ul>
+<h5>Screen 5.4: Interactive Live Search Modal</h5>
+<div class="doc-figure"><img src="doc_assets/fig5_04_live_search.png" alt="Figure 5.4: Live Dynamic Search Overlay"><div class="doc-caption">Figure 5.4: Live Dynamic Search Overlay</div></div>
+<p><em>Figure 5.4: Live Dynamic Search Overlay with Real-Time Trending Suggestions & Product Cards</em></p>
+<ul>
+<li>Instantly triggered via the search icon or keyboard input, presenting popular trending picks with image thumbnails, categories, and discounted prices.</li>
+<li>Executes debounced client-side filtering over the pre-indexed catalog array, delivering instantaneous search responses without server roundtrips.</li>
+</ul>
+<hr style="border:none;border-top:1px solid #e2e8f0;margin:2rem 0;">
+<h4>Suite B: Catalog Filtering, Product Customization & Shopper Engagement</h4>
+<h5>Screen 5.5: Multi-Faceted Apparel Catalog & Sidebar Filters</h5>
+<div class="doc-figure"><img src="doc_assets/fig5_05_catalog_filters.png" alt="Figure 5.5: Complete Apparel Catalog Filters"><div class="doc-caption">Figure 5.5: Complete Apparel Catalog Filters</div></div>
+<p><em>Figure 5.5: Complete Apparel Catalog with Multi-Facet Filtering (Collections, Sizes & Sorting)</em></p>
+<ul>
+<li>Enables multi-facet filtration by Collections (New Arrivals, Best Sellers, Sale), Sizes (XS to XL), and Price sorting (Low-to-High / High-to-Low).</li>
+<li>Dynamic DOM manipulation refreshes product cards with smooth CSS transitions without requiring a full browser page reload.</li>
+</ul>
+<h5>Screen 5.6: Category Catalog with Interactive Price Range Slider</h5>
+<div class="doc-figure"><img src="doc_assets/fig5_06_price_slider.png" alt="Figure 5.6: Women's Catalog with Price Slider"><div class="doc-caption">Figure 5.6: Women's Catalog with Price Slider</div></div>
+<p><em>Figure 5.6: Women's Department Catalog with Dynamic Price Slider (₹0 – ₹4,000) & Gender Facets</em></p>
+<ul>
+<li>Features an interactive HTML5 dual range slider allowing shoppers to set minimum and maximum price thresholds in real time.</li>
+<li>Garment count badges update dynamically, showing exactly how many luxury items match the active budget criteria.</li>
+</ul>
+<h5>Screen 5.7: Product Quick-View, Color Swatches & Wishlist Drawer</h5>
+<div class="doc-figure"><img src="doc_assets/fig5_07_product_wishlist.png" alt="Figure 5.7: Product Detail Quick-View"><div class="doc-caption">Figure 5.7: Product Detail Quick-View</div></div>
+<p><em>Figure 5.7: Product Detail Quick-View with Color Swatches, Size Matrix & Slide-Out Wishlist Drawer</em></p>
+<ul>
+<li>Displays high-resolution garment imagery, interactive color swatches (Black, White, Navy), size selectors (S to XXL), and quantity steppers.</li>
+<li>The right slide-out Wishlist drawer enables instant bookmarking and single-click item removal with LocalStorage persistence.</li>
+</ul>
+<h5>Screen 5.8: Off-Canvas Shopping Cart Drawer</h5>
+<div class="doc-figure"><img src="doc_assets/fig5_08_cart_drawer.png" alt="Figure 5.8: Sliding Cart Drawer"><div class="doc-caption">Figure 5.8: Sliding Cart Drawer</div></div>
+<p><em>Figure 5.8: Sliding Cart Drawer with Real-Time Subtotal Calculation & Checkout Gateway</em></p>
+<ul>
+<li>The off-canvas shopping cart drawer displays selected garments with thumbnail, size, color, quantity, and unit price in Indian Rupees.</li>
+<li>Line-item subtotals update instantaneously. The 'PROCEED TO CHECKOUT' button navigates directly to the validated checkout pipeline.</li>
+</ul>
+<hr style="border:none;border-top:1px solid #e2e8f0;margin:2rem 0;">
+<h4>Suite C: Customer Authentication & Secure Checkout Pipeline</h4>
+<h5>Screen 5.9: Customer Authentication & Guest Access Modal</h5>
+<div class="doc-figure"><img src="doc_assets/fig5_09_auth_modal.png" alt="Figure 5.9: Customer Sign-In / Account Modal"><div class="doc-caption">Figure 5.9: Customer Sign-In / Account Modal</div></div>
+<p><em>Figure 5.9: Luxury Customer Sign-In / Account Creation Modal with Instant Guest Checkout</em></p>
+<ul>
+<li>Provides tabbed customer authentication for Sign In and Account Creation with Bcrypt password verification.</li>
+<li>Includes a 'CONTINUE AS GUEST' escape hatch, eliminating mandatory registration friction and drastically reducing checkout drop-off rates.</li>
+</ul>
+<h5>Screen 5.10: Two-Column Checkout Interface — Customer Shipping Information</h5>
+<div class="doc-figure"><img src="doc_assets/fig5_10_checkout_shipping.png" alt="Figure 5.10: Checkout Stage 1 Shipping"><div class="doc-caption">Figure 5.10: Checkout Stage 1 Shipping</div></div>
+<p><em>Figure 5.10: Checkout Stage 1 — Customer Shipping Destination & Order Summary Breakdown</em></p>
+<ul>
+<li>Presents a structured two-column layout: shipping address form on the left, order line items and financial breakdown on the right.</li>
+<li>Calculates subtotal (₹599) plus standard shipping (₹99) to produce net payable total (₹698), with coupon redemption support.</li>
+</ul>
+<h5>Screen 5.11: Multi-Gateway Payment Selection & Encrypted Submission</h5>
+<div class="doc-figure"><img src="doc_assets/fig5_11_checkout_payment.png" alt="Figure 5.11: Checkout Stage 2 Payment"><div class="doc-caption">Figure 5.11: Checkout Stage 2 Payment</div></div>
+<p><em>Figure 5.11: Checkout Stage 2 — Payment Gateway Options (COD, UPI, Card, Net Banking)</em></p>
+<ul>
+<li>Offers four distinct payment channels: Cash on Delivery (COD), UPI Payment (PhonePe, GPay, Paytm), Credit/Debit Card, and Net Banking.</li>
+<li>Clicking 'PLACE ORDER' initiates an asynchronous POST request to <code>php/orders.php</code>, executing an atomic transaction in MySQL.</li>
+</ul>
+<hr style="border:none;border-top:1px solid #e2e8f0;margin:2rem 0;">
+<h4>Suite D: Administrative Operations & Store Governance Suite</h4>
+<h5>Screen 5.12: Admin Control Center — Executive Analytics Dashboard</h5>
+<div class="doc-figure"><img src="doc_assets/fig5_12_admin_dashboard.png" alt="Figure 5.12: Admin Analytics Dashboard"><div class="doc-caption">Figure 5.12: Admin Analytics Dashboard</div></div>
+<p><em>Figure 5.12: Admin Analytics Dashboard — Real-Time KPI Metrics, 7-Day Revenue Trend & Quick Actions</em></p>
+<ul>
+<li>Surfaces four primary KPI tiles: Total Revenue (₹9,700), Total Orders (6), Active Products (29), and Pending Orders (2).</li>
+<li>Displays a 7-day revenue trend bar chart and quick-action shortcuts for rapid inventory and catalog management.</li>
+</ul>
+<h5>Screen 5.13: Catalog Management — Complete 29-Apparel Product Registry</h5>
+<div class="doc-figure"><img src="doc_assets/fig5_13_admin_products.png" alt="Figure 5.13: Admin Products Management"><div class="doc-caption">Figure 5.13: Admin Products Management</div></div>
+<p><em>Figure 5.13: Admin Products Management — Complete 29-Garment Inventory Table with Action Controls</em></p>
+<ul>
+<li>Tabulates all 29 active clothing items across Men, Women, and Kids with visual thumbnails, category badges, pricing, stock levels, and status indicators.</li>
+<li>Provides action triggers for Edit, Low-Stock Alert, and Delete, with instant modal confirmations for inventory modifications.</li>
+</ul>
+<h5>Screen 5.14: Taxonomy Architecture — Category & Slug Manager</h5>
+<div class="doc-figure"><img src="doc_assets/fig5_14_admin_categories.png" alt="Figure 5.14: Admin Category Manager"><div class="doc-caption">Figure 5.14: Admin Category Manager</div></div>
+<p><em>Figure 5.14: Admin Category Manager — Dynamic Taxonomy Slugs, Sort Orders & Creation Form</em></p>
+<ul>
+<li>Manages category taxonomies (Men's T-Shirts, Men's Jeans, Women's T-Shirts, Women's Jeans, Kids' T-Shirts, etc.) with URL slugs and sort priorities.</li>
+<li>Includes an inline '+ Add Category' form allowing instant creation of new apparel departments without code alterations.</li>
+</ul>
+<h5>Screen 5.15: Storefront Configuration — Site Settings & Credentials</h5>
+<div class="doc-figure"><img src="doc_assets/fig5_15_admin_settings.png" alt="Figure 5.15: Admin Site Settings"><div class="doc-caption">Figure 5.15: Admin Site Settings</div></div>
+<p><em>Figure 5.15: Admin Site Settings — General Store Config, Commerce Economics & Hero Customizer</em></p>
+<ul>
+<li>Configures global platform parameters: Store Name, Support Email, Contact Phone, Currency (₹ INR), Tax Rates, and Free Shipping Thresholds.</li>
+<li>Enables dynamic customization of the landing page Hero Title and Subtitle, as well as administrative credential password updates.</li>
+</ul>
+<hr style="border:none;border-top:1px solid #e2e8f0;margin:2rem 0;">
 <h1>6. PROPOSED ENHANCEMENTS</h1>
-<p>1. <strong>Production Payment Gateway Integration:</strong> Incorporate live merchant webhooks via Razorpay or Stripe for automated UPI QR code and NetBanking payment callbacks.</p>
-<p>2. <strong>AI-Powered Style Advisor:</strong> Implement an embedded machine-learning chatbot capable of recommending garment sizes based on height/weight and suggesting matching outfits (e.g., matching Wide Leg Jeans with Cropped Graphic Tees).</p>
-<p>3. <strong>Automated Courier Logistics API:</strong> Connect backend order dispatches to courier APIs (e.g. Shiprocket / Delhivery) to generate live airway bill (AWB) tracking numbers automatically.</p>
-<p>4. <strong>Progressive Web App (PWA):</strong> Register service workers and offline caching manifests enabling shoppers to install ELEVE directly on Android and iOS home screens.</p>
-<p>5. <strong>Multi-Currency &amp; Internationalization:</strong> Support real-time currency conversion (USD, EUR, GBP, AED) with multi-language locale switching.</p>
-<hr style='border:0;border-top:1px solid #cbd5e1;margin:1.75rem 0;'>
+<p>While ELEVÉ delivers a fully operational e-commerce platform, the following architectural enhancements are planned for future production versions:</p>
+<p>1. <strong>Live Payment Gateway Integration:</strong> Integrate Razorpay and Stripe merchant webhooks for automated UPI QR code scanning and instant payment callbacks.</p>
+<p>2. <strong>AI-Powered Virtual Style Advisor:</strong> Implement an embedded machine-learning chatbot capable of recommending garment sizes based on height/weight and suggesting matching apparel sets.</p>
+<p>3. <strong>Automated Logistics Tracking:</strong> Connect backend order dispatches to courier APIs (Shiprocket / Delhivery) to generate live airway bill (AWB) tracking numbers automatically.</p>
+<p>4. <strong>Progressive Web App (PWA):</strong> Register service workers and offline caching manifests enabling shoppers to install ELEVÉ directly onto Android and iOS home screens as a native app.</p>
+<p>5. <strong>Multi-Currency & Internationalization:</strong> Support real-time currency conversion (USD, EUR, GBP, AED) with multi-language locale switching for global luxury distribution.</p>
+<hr style="border:none;border-top:1px solid #e2e8f0;margin:2rem 0;">
 <h1>7. CONCLUSION</h1>
-<p>The <strong>ELEVÉ</strong> clothing store e-commerce application successfully demonstrates the design, engineering, and deployment of a full-stack digital commerce platform tailored to the luxury apparel industry. Over the course of the project lifecycle, our team achieved the following deliverables:</p>
-<li><strong>Clean Apparel Architecture:</strong> Eliminated clutter and curated a focused catalog of 29 high-quality garments strictly spanning Men, Women, and Kids.</li>
-<li><strong>Robust Full-Stack Pipeline:</strong> Integrated semantic frontend interfaces with secure PHP PDO controllers and a normalized 14-table MySQL database.</li>
-<li><strong>Unified Store Administration:</strong> Built an administrative console capable of real-time sales reporting, lifecycle order status transitions, and data governance.</li>
-<li><strong>Academic Rigor:</strong> Mastered real-world engineering concepts including Git version management, transaction atomicity, responsive mobile-first ergonomics, and parameterized database security.</li>
-<p>The resulting platform fulfills all curriculum benchmarks for the Master of Computer Applications (Integrated) program at Lok Jagruti Kendra University.</p>
-<hr style='border:0;border-top:1px solid #cbd5e1;margin:1.75rem 0;'>
-<h1>8. BIBLIOGRAPHY &amp; REFERENCES</h1>
-<p>1. <strong>W3C Standards:</strong> World Wide Web Consortium, <em>&quot;HTML5 &amp; CSS3 Specification Standards&quot;</em>, <a href="https://www.w3.org/TR/html52/" target="_blank">https://www.w3.org/TR/html52/</a></p>
-<p>2. <strong>MDN Web Docs:</strong> Mozilla Developer Network, <em>&quot;JavaScript ES6+ Language Specification &amp; DOM API Documentation&quot;</em>, <a href="https://developer.mozilla.org/" target="_blank">https://developer.mozilla.org/</a></p>
-<p>3. <strong>The PHP Group:</strong> <em>&quot;PHP 8.x PDO Manual &amp; Prepared Statement Security&quot;</em>, <a href="https://www.php.net/manual/en/book.pdo.php" target="_blank">https://www.php.net/manual/en/book.pdo.php</a></p>
-<p>4. <strong>Oracle Corporation:</strong> <em>&quot;MySQL 8.0 Reference Manual: Relational Schema Design &amp; InnoDB Foreign Key Optimization&quot;</em>, <a href="https://dev.mysql.com/doc/" target="_blank">https://dev.mysql.com/doc/</a></p>
-<p>5. <strong>Martin, Robert C.:</strong> <em>&quot;Clean Code: A Handbook of Agile Software Craftsmanship&quot;</em>, Prentice Hall, 2008.</p>
-<p>6. <strong>Academic Project Guidance:</strong> Dr. Anjum Y. Mansuri, Assistant Professor, Department of Computer Applications, LJ Institute of Computer Applications, Lok Jagruti Kendra University, Ahmedabad. GitHub: <a href="https://github.com/anjum-mansuri" target="_blank">@anjum-mansuri</a>.</p>
+<p>The ELEVÉ clothing store e-commerce project successfully demonstrates the comprehensive design, engineering, and deployment of a full-stack digital commerce platform tailored to the luxury apparel industry. Over the course of the project lifecycle, our team achieved the following deliverables:</p>
+<ul>
+<li><strong>Focused Apparel Merchandising:</strong> Curated an exclusive inventory of 29 real apparel items strictly spanning Men, Women, and Kids, with all footwear purged.</li>
+<li><strong>Robust Full-Stack Pipeline:</strong> Integrated semantic frontend interfaces with secure PHP PDO prepared statement controllers and a normalized 14-table MySQL database.</li>
+<li><strong>Unified Store Governance:</strong> Constructed an administrative suite capable of real-time sales reporting, lifecycle order status transitions, and data governance.</li>
+<li><strong>Academic Rigor & Teamwork:</strong> Applied real-world software engineering concepts including Git version management, transaction atomicity, and parameterized SQL security.</li>
+</ul>
+<p>The completed application satisfies all curriculum benchmarks for the Master of Computer Applications (Integrated) program at Lok Jagruti Kendra University (LJKU).</p>
+<hr style="border:none;border-top:1px solid #e2e8f0;margin:2rem 0;">
+<h1>8. BIBLIOGRAPHY & REFERENCES</h1>
+<ul>
+<li><strong>[1] W3C Standards:</strong> World Wide Web Consortium, "HTML5 & CSS3 Recommendation Standards", https://www.w3.org/TR/html52/</li>
+<li><strong>[2] MDN Web Docs:</strong> Mozilla Developer Network, "JavaScript ES6+ Language Specification & DOM API Documentation", https://developer.mozilla.org/</li>
+<li><strong>[3] The PHP Group:</strong> The PHP Group, "PHP 8.x PDO Manual & Prepared Statement Security", https://www.php.net/manual/en/book.pdo.php</li>
+<li><strong>[4] Oracle Corporation:</strong> Oracle Corporation, "MySQL 8.0 Reference Manual: Relational Schema Design & InnoDB Foreign Key Optimization", https://dev.mysql.com/doc/</li>
+<li><strong>[5] Martin, Robert C.:</strong> Martin, Robert C., "Clean Code: A Handbook of Agile Software Craftsmanship", Prentice Hall, 2008.</li>
+<li><strong>[6] Academic Guidance:</strong> Project completed under the guidance of Dr. Anjum Y. Mansuri, Assistant Professor, Computer Applications, LJ Institute of Computer Applications, LJ University, Ahmedabad. GitHub: <code>@anjum-mansuri</code>.</li>
+</ul>
+</div>
 
-</div></body></html>
+</div>
+</body>
+</html>
