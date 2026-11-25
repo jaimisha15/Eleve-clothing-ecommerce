@@ -21,3 +21,6 @@ desktop.ini
 
 # Raw reference photos folder (organized into /images)
 images of clothes/
+
+# Distribution archives
+*.zip
