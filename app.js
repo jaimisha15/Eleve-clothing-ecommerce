@@ -194,48 +194,46 @@
     updateUI() {
       const count = this.getCount();
       // Update cart count badges everywhere
-      $('.cart-count').forEach(badge => {
+      $$('.cart-count').forEach(badge => {
         badge.textContent = count;
         badge.classList.toggle('show', count > 0);
       });
 
       // Update cart totals
       const totalFormatted = `₹${this.getTotal().toLocaleString('en-IN')}`;
-      $('#cartTotal, .cart-total .amount').forEach(el => {
+      $$('#cartTotal, .cart-total .amount').forEach(el => {
         el.textContent = totalFormatted;
       });
 
       // Update cart items displays
-      const containers = $('#cartItems');
-      if (!containers.length) return;
+      const container = $('#cartItems');
+      if (!container) return;
       const items = this.getItems();
 
-      containers.forEach(container => {
-        if (items.length === 0) {
-          container.innerHTML = '<div class="cart-empty" style="text-align:center;padding:2.5rem 1rem;color:var(--clr-text-muted);">Your cart is empty</div>';
-          return;
-        }
+      if (items.length === 0) {
+        container.innerHTML = '<div class="cart-empty" style="text-align:center;padding:2.5rem 1rem;color:var(--clr-text-muted);">Your cart is empty</div>';
+        return;
+      }
 
-        container.innerHTML = items.map((item, i) => `
-          <div class="cart-item" style="display:flex;gap:0.75rem;padding:0.75rem 0;border-bottom:1px solid var(--clr-border);align-items:center;">
-            <div class="cart-item-img" style="width:55px;height:65px;flex-shrink:0;border-radius:4px;overflow:hidden;background:#1e1e1e;">
-              <img src="${item.img || 'images/men/tshirt-1.jpg'}" alt="${item.name}" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
-            </div>
-            <div style="flex:1;min-width:0;">
-              <div class="cart-item-name" style="font-weight:600;font-size:0.85rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${item.name}</div>
-              <div style="font-size:0.75rem;color:var(--clr-text-muted);margin:0.2rem 0;">${item.size ? 'Size: ' + item.size : ''} ${item.color ? '• ' + item.color : ''} × ${item.qty}</div>
-              <div class="cart-item-price" style="color:var(--clr-accent);font-weight:700;font-size:0.85rem;">₹${((parseFloat(item.price) || 0) * (parseInt(item.qty) || 1)).toLocaleString('en-IN')}</div>
-            </div>
-            <button type="button" class="cart-item-remove" data-remove="${i}" aria-label="Remove ${item.name}" style="background:none;border:none;color:#ff6b6b;font-size:1.1rem;cursor:pointer;padding:0.4rem;" title="Remove item">✕</button>
+      container.innerHTML = items.map((item, i) => `
+        <div class="cart-item" style="display:flex;gap:0.75rem;padding:0.75rem 0;border-bottom:1px solid var(--clr-border);align-items:center;">
+          <div class="cart-item-img" style="width:55px;height:65px;flex-shrink:0;border-radius:4px;overflow:hidden;background:#1e1e1e;">
+            <img src="${item.img || 'images/men/tshirt-1.jpg'}" alt="${item.name}" style="width:100%;height:100%;object-fit:cover;" loading="lazy">
           </div>
-        `).join('');
+          <div style="flex:1;min-width:0;">
+            <div class="cart-item-name" style="font-weight:600;font-size:0.85rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${item.name}</div>
+            <div style="font-size:0.75rem;color:var(--clr-text-muted);margin:0.2rem 0;">${item.size ? 'Size: ' + item.size : ''} ${item.color ? '• ' + item.color : ''} × ${item.qty}</div>
+            <div class="cart-item-price" style="color:var(--clr-accent);font-weight:700;font-size:0.85rem;">₹${((parseFloat(item.price) || 0) * (parseInt(item.qty) || 1)).toLocaleString('en-IN')}</div>
+          </div>
+          <button type="button" class="cart-item-remove" data-remove="${i}" aria-label="Remove ${item.name}" style="background:none;border:none;color:#ff6b6b;font-size:1.1rem;cursor:pointer;padding:0.4rem;" title="Remove item">✕</button>
+        </div>
+      `).join('');
 
-        // Remove buttons
-        $('[data-remove]', container).forEach(btn => {
-          btn.onclick = () => {
-            Cart.removeItem(parseInt(btn.dataset.remove));
-          };
-        });
+      // Remove buttons
+      $$('[data-remove]', container).forEach(btn => {
+        btn.onclick = () => {
+          Cart.removeItem(parseInt(btn.dataset.remove));
+        };
       });
     }
   };
@@ -737,16 +735,30 @@
         const pColors = p.colors || [];
         const priceMatch = p.price <= maxPrice;
 
+        const pGenderLower = pGender.toLowerCase();
+        const pSubCatLower = pSubCat.toLowerCase();
+        const pCatLower = pCat.toLowerCase();
+        const activeCatsLower = activeCategories.map(c => c.toLowerCase());
+
         const searchMatch = !urlSearchQuery || 
           (p.name && p.name.toLowerCase().includes(urlSearchQuery)) ||
-          (p.category && p.category.toLowerCase().includes(urlSearchQuery)) ||
-          (p.subcategory && p.subcategory.toLowerCase().includes(urlSearchQuery)) ||
-          (p.gender && p.gender.toLowerCase().includes(urlSearchQuery)) ||
+          (pCatLower.includes(urlSearchQuery)) ||
+          (pSubCatLower.includes(urlSearchQuery)) ||
+          (pGenderLower.includes(urlSearchQuery)) ||
           (p.description && p.description.toLowerCase().includes(urlSearchQuery));
 
-        const genderMatch = activeGenders.length === 0 || activeGenders.includes(pGender) || (urlGender && pGender === urlGender && activeGenders.length === 0);
-        const catMatch = activeCategories.length === 0 || activeCategories.includes(pSubCat) || activeCategories.includes(pCat.toLowerCase()) || (urlCategory && (pSubCat === urlCategory || pCat.toLowerCase() === urlCategory) && activeCategories.length === 0);
-        const sizeMatch = activeSizes.length === 0 || activeSizes.some(s => pSizes.includes(s));
+        const genderMatch = activeGenders.length === 0 || 
+          activeGenders.map(g => g.toLowerCase()).includes(pGenderLower) || 
+          (urlGender && pGenderLower === urlGender.toLowerCase() && activeGenders.length === 0);
+
+        const catMatch = activeCategories.length === 0 || 
+          activeCatsLower.includes(pSubCatLower) || 
+          activeCatsLower.includes(pCatLower) || 
+          (urlCategory && (pSubCatLower === urlCategory.toLowerCase() || pCatLower === urlCategory.toLowerCase()) && activeCategories.length === 0);
+
+        const sizeMatch = activeSizes.length === 0 || 
+          activeSizes.some(s => pSizes.some(ps => ps.toString().toLowerCase() === s.toString().toLowerCase()));
+
         const colorMatch = activeColors.length === 0 || activeColors.some(c => 
           pColors.some(pc => (pc.name && pc.name.toLowerCase() === c.toLowerCase()) || (typeof pc === 'string' && pc.toLowerCase() === c.toLowerCase()))
         );
@@ -777,7 +789,20 @@
       }
 
       // Render
-      productGrid.innerHTML = filteredProducts.map(createProductCard).join('');
+      if (filteredProducts.length === 0) {
+        productGrid.innerHTML = `
+          <div style="grid-column: 1 / -1; text-align: center; padding: 4rem 1rem;">
+            <div style="font-size: 3rem; margin-bottom: 1rem;">🛍️</div>
+            <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem;">No products match your filters</h3>
+            <p style="color: var(--clr-text-muted); margin-bottom: 1.5rem;">Try adjusting or clearing your filters to see more results.</p>
+            <button type="button" class="btn btn-outline" id="noResultsClearBtn" style="display:inline-block">Clear All Filters</button>
+          </div>
+        `;
+        const resetBtn = $('#noResultsClearBtn');
+        if (resetBtn && clearBtn) resetBtn.addEventListener('click', () => clearBtn.click());
+      } else {
+        productGrid.innerHTML = filteredProducts.map(createProductCard).join('');
+      }
       
       if (resultsCount) resultsCount.textContent = filteredProducts.length;
 
@@ -1675,35 +1700,40 @@
 
   /* ---------- Initialize Everything ---------- */
   function init() {
-    initPageTransitions();
-    initLoader();
-    initHeader();
-    initMobileNav();
-    initTiltCards();
-    initScrollReveal();
-    initCart();
-    initWishlistFlyout();
-    initSearch();
-    initAuthModal();
-    initBottomNav();
-    initQuickAdd();
-    initProductDetail(); // Must run before individual component inits
+    const safeRun = (fn, name) => {
+      try { fn(); }
+      catch (e) { console.error(`Error in ${name || fn.name}:`, e); }
+    };
+
+    safeRun(initPageTransitions, 'initPageTransitions');
+    safeRun(initLoader, 'initLoader');
+    safeRun(initHeader, 'initHeader');
+    safeRun(initMobileNav, 'initMobileNav');
+    safeRun(initFilters, 'initFilters'); // Products & counters render immediately
+    safeRun(initTiltCards, 'initTiltCards');
+    safeRun(initScrollReveal, 'initScrollReveal');
+    safeRun(initCart, 'initCart');
+    safeRun(initWishlistFlyout, 'initWishlistFlyout');
+    safeRun(initSearch, 'initSearch');
+    safeRun(initAuthModal, 'initAuthModal');
+    safeRun(initBottomNav, 'initBottomNav');
+    safeRun(initQuickAdd, 'initQuickAdd');
+    safeRun(initProductDetail, 'initProductDetail');
 
     // Skip these if product detail page already initialized them
     if (!window._pdpInitialized) {
-      initAddToCart();
-      initSizeSelector();
-      initColorSelector();
-      initGallery();
-      initAccordion();
-      initWishlist();
+      safeRun(initAddToCart, 'initAddToCart');
+      safeRun(initSizeSelector, 'initSizeSelector');
+      safeRun(initColorSelector, 'initColorSelector');
+      safeRun(initGallery, 'initGallery');
+      safeRun(initAccordion, 'initAccordion');
+      safeRun(initWishlist, 'initWishlist');
     }
 
-    initFilters();
-    initNewsletter();
-    initContactForm();
-    initParallax();
-    initHeroCursorEffect();
+    safeRun(initNewsletter, 'initNewsletter');
+    safeRun(initContactForm, 'initContactForm');
+    safeRun(initParallax, 'initParallax');
+    safeRun(initHeroCursorEffect, 'initHeroCursorEffect');
   }
 
   // Run when DOM is ready
