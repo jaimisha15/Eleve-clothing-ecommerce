@@ -267,7 +267,7 @@ if (isset($_GET['toggle'])) {
             <td>
               <div style="display:flex;align-items:center;gap:.75rem">
                 <?php if ($p['image']): ?>
-                  <img src="<?= htmlspecialchars($p['image']) ?>" class="td-img" alt="">
+                  <img src="<?= htmlspecialchars(adminImgUrl($p['image'])) ?>" class="td-img" alt="">
                 <?php else: ?>
                   <div class="td-img" style="background:var(--surface2);display:flex;align-items:center;justify-content:center">📦</div>
                 <?php endif; ?>

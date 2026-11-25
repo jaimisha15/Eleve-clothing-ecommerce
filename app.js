@@ -1698,6 +1698,43 @@
     });
   }
 
+  
+  /* ---------- Smart Navigation for PHP / Admin Links ---------- */
+  function initSmartPhpLinks() {
+    document.addEventListener('click', function (e) {
+      const link = e.target.closest('a');
+      if (!link) return;
+      const href = link.getAttribute('href');
+      if (!href) return;
+
+      const isAdminOrPhp = href.includes('admin') || href.endsWith('.php') || href.includes('.php?');
+      if (!isAdminOrPhp) return;
+
+      const isFileProto = window.location.protocol === 'file:';
+      const isLiveServer = window.location.port === '5500' || window.location.port === '3000' || window.location.port === '8080';
+
+      if (isFileProto || isLiveServer) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        let cleanPath = href.replace(/^\.\//, '').replace(/^\//, '');
+        if (cleanPath === 'admin' || cleanPath === 'admin/') {
+          cleanPath = 'admin/index.php';
+        }
+
+        const targetUrl = 'http://localhost/FINALUDPFOLDER/' + cleanPath;
+        if (typeof showToast === 'function') {
+          showToast('Opening ' + cleanPath + ' on local server...', 'info');
+        }
+        setTimeout(() => {
+          window.location.href = targetUrl;
+        }, 150);
+      }
+    }, true);
+  }
+  // Immediately register smart links listener
+  initSmartPhpLinks();
+
   /* ---------- Initialize Everything ---------- */
   function init() {
     const safeRun = (fn, name) => {
@@ -1705,6 +1742,7 @@
       catch (e) { console.error(`Error in ${name || fn.name}:`, e); }
     };
 
+    safeRun(initSmartPhpLinks, 'initSmartPhpLinks');
     safeRun(initPageTransitions, 'initPageTransitions');
     safeRun(initLoader, 'initLoader');
     safeRun(initHeader, 'initHeader');

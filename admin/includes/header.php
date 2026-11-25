@@ -2,6 +2,16 @@
 require_once __DIR__ . '/../../php/config.php';
 requireAdmin();
 
+if (!function_exists('adminImgUrl')) {
+    function adminImgUrl(?string $url): string {
+        if (!$url) return '';
+        if (preg_match('#^(https?:|data:|/)#i', $url)) {
+            return $url;
+        }
+        return '../' . ltrim($url, './');
+    }
+}
+
 $currentPage = basename($_SERVER['PHP_SELF'], '.php');
 ?>
 <!DOCTYPE html>
@@ -209,9 +219,9 @@ select.form-control{cursor:pointer}
 
   <div class="sidebar-footer">
     <div class="sidebar-user">
-      <div class="sidebar-avatar"><?= strtoupper(substr($_SESSION['user_name'], 0, 1)) ?></div>
+      <div class="sidebar-avatar"><?= strtoupper(substr($_SESSION['user_name'] ?? 'Admin', 0, 1)) ?></div>
       <div>
-        <div class="sidebar-name"><?= htmlspecialchars($_SESSION['user_name']) ?></div>
+        <div class="sidebar-name"><?= htmlspecialchars($_SESSION['user_name'] ?? 'Admin') ?></div>
         <div class="sidebar-role">Administrator</div>
       </div>
     </div>

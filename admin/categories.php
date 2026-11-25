@@ -49,7 +49,7 @@ $categories = $db->query("SELECT * FROM categories ORDER BY sort_order ASC, name
           <tr>
             <td>
               <?php if ($cat['image_url']): ?>
-              <img src="<?= htmlspecialchars($cat['image_url']) ?>" style="width:36px;height:36px;border-radius:6px;object-fit:cover;vertical-align:middle;margin-right:.5rem">
+              <img src="<?= htmlspecialchars(adminImgUrl($cat['image_url'])) ?>" style="width:36px;height:36px;border-radius:6px;object-fit:cover;vertical-align:middle;margin-right:.5rem">
               <?php endif; ?>
               <strong><?= htmlspecialchars($cat['name']) ?></strong>
             </td>

@@ -50,7 +50,7 @@ if ($view) {
                   <td>
                     <div style="display:flex;align-items:center;gap:.6rem">
                       <?php if ($item['product_image']): ?>
-                        <img src="<?= htmlspecialchars($item['product_image']) ?>" style="width:40px;height:40px;border-radius:6px;object-fit:cover">
+                        <img src="<?= htmlspecialchars(adminImgUrl($item['product_image'])) ?>" style="width:40px;height:40px;border-radius:6px;object-fit:cover">
                       <?php endif; ?>
                       <?= htmlspecialchars($item['product_name']) ?>
                     </div>

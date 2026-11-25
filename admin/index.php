@@ -151,7 +151,7 @@ $chartData = $db->query("SELECT DATE(created_at) AS date, COALESCE(SUM(total),0)
       <div style="display:flex;align-items:center;gap:.75rem;padding:.6rem .5rem;border-bottom:1px solid var(--border)">
         <div style="width:24px;height:24px;border-radius:50%;background:rgba(201,169,110,.15);display:flex;align-items:center;justify-content:center;font-size:.75rem;color:var(--accent);font-weight:700;flex-shrink:0"><?= $i+1 ?></div>
         <?php if ($p['image']): ?>
-          <img src="<?= htmlspecialchars($p['image']) ?>" style="width:40px;height:40px;border-radius:6px;object-fit:cover">
+          <img src="<?= htmlspecialchars(adminImgUrl($p['image'])) ?>" style="width:40px;height:40px;border-radius:6px;object-fit:cover">
         <?php endif; ?>
         <div style="flex:1;min-width:0">
           <div style="font-size:.82rem;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap"><?= htmlspecialchars($p['name']) ?></div>

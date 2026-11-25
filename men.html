@@ -29,7 +29,7 @@
 
       <!-- Header Utilities -->
       <div class="header-actions">
-        <a href="admin/index.php" class="btn-admin-pill" style="padding:0.42rem 0.85rem;background:linear-gradient(135deg,#c9a96e,#b89355);color:#0a0a0a;border-radius:20px;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-decoration:none;display:inline-flex;align-items:center;gap:0.35rem;text-transform:uppercase;box-shadow:0 2px 8px rgba(201,169,110,0.3);white-space:nowrap;transition:opacity 0.2s;" title="Admin Dashboard">👑 Admin</a>
+        <a href="admin/index.php" onclick="if(location.protocol==='file:'){location.href='http://localhost/FINALUDPFOLDER/admin/index.php';return false;}" class="btn-admin-pill" style="padding:0.42rem 0.85rem;background:linear-gradient(135deg,#c9a96e,#b89355);color:#0a0a0a;border-radius:20px;font-size:0.75rem;font-weight:700;letter-spacing:0.06em;text-decoration:none;display:inline-flex;align-items:center;gap:0.35rem;text-transform:uppercase;box-shadow:0 2px 8px rgba(201,169,110,0.3);white-space:nowrap;transition:opacity 0.2s;" title="Admin Dashboard">👑 Admin</a>
         <button class="btn-auth-pill" id="authBtn">SIGN UP / SIGN IN</button>
 
         <button class="header-action-item" id="wishlistNavBtn" aria-label="Favourites">
@@ -50,7 +50,7 @@
             <span class="action-label">More</span>
           </button>
           <div class="more-menu" id="moreMenu">
-            <a href="admin/index.php" style="color:#c9a96e;font-weight:700;">👑 Admin Panel</a>
+            <a href="admin/index.php" onclick="if(location.protocol==='file:'){location.href='http://localhost/FINALUDPFOLDER/admin/index.php';return false;}" style="color:#c9a96e;font-weight:700;">👑 Admin Panel</a>
             <a href="products.html">All Products</a>
             <a href="about.html">About Brand</a>
             <a href="contact.html">Customer Care</a>
@@ -94,7 +94,7 @@
 
   <!-- Mobile Nav -->
   <div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile navigation">
-    <a href="admin/index.php" style="color:#c9a96e;font-weight:700;">👑 Admin Panel</a>
+    <a href="admin/index.php" onclick="if(location.protocol==='file:'){location.href='http://localhost/FINALUDPFOLDER/admin/index.php';return false;}" style="color:#c9a96e;font-weight:700;">👑 Admin Panel</a>
     <a href="index.html">Home</a>
     <a href="men.html" class="active">Men</a>
     <a href="women.html">Women</a>

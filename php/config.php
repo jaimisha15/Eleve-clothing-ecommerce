@@ -9,7 +9,14 @@ define('DB_PASS', '');
 define('DB_NAME', 'eleve_ecommerce');
 define('DB_CHARSET', 'utf8mb4');
 
-define('SITE_URL', 'http://localhost/Eleve-clothing-ecommerce');
+if (!defined('SITE_URL')) {
+    $proto = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https://' : 'http://';
+    $host  = $_SERVER['HTTP_HOST'] ?? 'localhost';
+    $uri   = $_SERVER['SCRIPT_NAME'] ?? '';
+    $parts = explode('/', trim($uri, '/'));
+    $folder = (!empty($parts[0]) && $parts[0] !== 'admin' && $parts[0] !== 'php' && strpos($parts[0], '.php') === false) ? '/' . $parts[0] : '/FINALUDPFOLDER';
+    define('SITE_URL', $proto . $host . $folder);
+}
 define('ADMIN_EMAIL', 'admin@gmail.com');
 define('ADMIN_PASS', '123');
 
@@ -83,16 +90,16 @@ function getDB(): PDO {
 // ============================================================
 function ensureAllTablesAndAdmin(PDO $pdo): void {
     try {
-        // Check if products table exists
-        $hasProducts = false;
+        // Check products count - must have exactly 29 clean products
+        $prodCount = 0;
         try {
-            $check = $pdo->query("SHOW TABLES LIKE 'products'")->fetch();
-            $hasProducts = !empty($check);
+            $prodCount = (int) $pdo->query("SELECT COUNT(*) FROM products")->fetchColumn();
         } catch (Exception $e) {
-            $hasProducts = false;
+            $prodCount = 0;
         }
 
-        if (!$hasProducts) {
+        // If products missing or outdated count (e.g. old 21), reload clean database.sql
+        if ($prodCount !== 29) {
             $sqlFile = __DIR__ . '/../database.sql';
             if (file_exists($sqlFile)) {
                 $sql = file_get_contents($sqlFile);
@@ -118,7 +125,7 @@ function ensureAllTablesAndAdmin(PDO $pdo): void {
         $stmt = $pdo->prepare("SELECT id, password FROM users WHERE email = ? LIMIT 1");
         $stmt->execute(['admin@gmail.com']);
         $admin = $stmt->fetch();
-        $targetHash = password_hash('123', PASSWORD_BCRYPT, ['cost' => 12]);
+        $targetHash = '$2y$12$NdjdsGvv7TJeN1e/jWUQse8YcgDRjNbrAtJmAK8fcE5g6W10K6VNq'; // bcrypt of '123'
 
         if (!$admin) {
             $pdo->prepare("INSERT INTO users (name, email, password, role, is_active) VALUES ('Admin', 'admin@gmail.com', ?, 'admin', 1)")
