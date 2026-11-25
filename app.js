@@ -1425,28 +1425,21 @@
 
     let currentUser = null;
 
-    // Check auth status
+    // Check auth status (only customer user accounts change the login button, never admin)
     fetch('php/auth.php?action=check').then(r => r.json()).then(data => {
       if (data.logged_in && data.user) {
-        currentUser = data.user;
-        if (authBtn) {
-          if (data.user.role === 'admin') {
-            authBtn.innerHTML = '👑 ' + (data.user.name || 'Admin');
-            authBtn.style.color = '#c9a96e';
-          } else {
-            authBtn.innerHTML = '👤 ' + data.user.name.split(' ')[0];
+        if (data.user.role === 'user') {
+          currentUser = data.user;
+          if (authBtn) {
+            authBtn.innerHTML = '👤 ' + (data.user.name ? data.user.name.split(' ')[0] : 'Account');
           }
         }
       }
     }).catch(() => {});
 
     function openAuth() {
-      if (currentUser && currentUser.role === 'admin') {
-        window.location.href = 'admin/index.php';
-        return;
-      }
       if (!authModal || !authOverlay) return;
-      if (currentUser) {
+      if (currentUser && currentUser.role === 'user') {
         showAccountView(currentUser);
       } else {
         showSignInTab();
